@@ -1,0 +1,685 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      8568,        444]*)
+(*NotebookOutlinePosition[      9480,        476]*)
+(*  CellTagsIndexPosition[      9393,        470]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    StyleBox[\(Lecture\  - \ January\ 29\),
+      "Title",
+      FontColor->RGBColor[0, 0, 1]]], "Input"],
+
+Cell["Variables", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(x\)], "Input"],
+
+Cell[BoxData[
+    \(7\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(?x\)\)], "Input"],
+
+Cell["Global`x", "Print",
+  CellTags->"Info3442216173-8124817"],
+
+Cell[BoxData[
+    InterpretationBox[GridBox[{
+          {GridBox[{
+                {\(x = 7\)}
+                },
+              GridBaseline->{Baseline, {1, 1}},
+              ColumnWidths->0.999,
+              ColumnAlignments->{Left}]}
+          },
+        GridBaseline->{Baseline, {1, 1}},
+        ColumnAlignments->{Left}],
+      Definition[ "x"],
+      Editable->False]], "Print",
+  CellTags->"Info3442216173-8124817"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(y\)], "Input"],
+
+Cell[BoxData[
+    \(y\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Matt = 12\)], "Input"],
+
+Cell[BoxData[
+    \(12\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Matt + x\)], "Input"],
+
+Cell[BoxData[
+    \(19\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(x\)], "Input"],
+
+Cell[BoxData[
+    \(7\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Clear[x]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(x\)], "Input"],
+
+Cell[BoxData[
+    \(x\)], "Output"]
+}, Open  ]],
+
+Cell["Use to clear everything:", "Text"],
+
+Cell[BoxData[
+    \(Clear["\<`*\>"]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(b = 3\)], "Input"],
+
+Cell[BoxData[
+    \(3\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(d + b + 7 + a\)], "Input"],
+
+Cell[BoxData[
+    \(10 + a + d\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Matt + Clayton\)], "Input"],
+
+Cell[BoxData[
+    \(Clayton + Matt\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(matt = 7\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(matt\\)\\\" is similar to existing symbol \\\
+\"\\!\\(Matt\\)\\\". \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    \(7\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Matt + matt\)], "Input"],
+
+Cell[BoxData[
+    \(7 + Matt\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{1, 3, 7, 9, 2}, 3]\)], "Input"],
+
+Cell[BoxData[
+    \({3}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{2\/3, 7\/3, 2\/5, 11\/5, 13\/2}, HoldPattern[2\/_]]\)], "Input"],
+
+Cell[BoxData[
+    \({}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{x, y, z, a\/p, c\/q, a\/m, d\/m, e\/n}, a\/_]\)], "Input"],
+
+Cell[BoxData[
+    \({a\/p, a\/m}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{x, y, z, a\/p, c\/q, a\/m, d\/m, e\/n}, _\/m]\)], "Input"],
+
+Cell[BoxData[
+    \({a\/m, d\/m}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{x, y, z, a\/p, c\/q, a\/m, d\/m, e\/n}, 
+      HoldPattern[a\/_] || HoldPattern[_\/m]]\)], "Input"],
+
+Cell[BoxData[
+    \({}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{1, x, y, z, a\/p, c\/q, a\/m, d\/m, e\/n}, 
+      HoldPattern[_\/_]]\)], "Input"],
+
+Cell[BoxData[
+    \({a\/p, c\/q, a\/m, d\/m, e\/n}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{1, x, y, z, a\/p, c\/q, a\/m, d\/m, e\/n}, _]\)], "Input"],
+
+Cell[BoxData[
+    \({1, x, y, z, a\/p, c\/q, a\/m, d\/m, e\/n}\)], "Output"]
+}, Open  ]],
+
+Cell["Going beyond just picking things out of a list...", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{x, y, z, a\/p, c\/q, a\/m, d\/m, e\/n}, 
+      num_\/m \[Rule] num]\)], "Input"],
+
+Cell[BoxData[
+    \({a, d}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[a + b + a\/m + d\/m + x\/y, num_\/m \[Rule] num]\)], "Input"],
+
+Cell[BoxData[
+    \({a, d}\)], "Output"]
+}, Open  ]],
+
+Cell["Replacement Statements=Another way to use a rule.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(x\^2 + 1 /. x \[Rule] 5\)], "Input"],
+
+Cell[BoxData[
+    \(26\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Sin[x] + x\ y + 4 /. x \[Rule] 5\)], "Input"],
+
+Cell[BoxData[
+    \(4 + 5\ y + Sin[5]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Sin[x] + x\ y + 4 /. {x \[Rule] 5, y \[Rule] 3}\)], "Input"],
+
+Cell[BoxData[
+    \(19 + Sin[5]\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "How to define a function in ",
+  StyleBox["Mathematica",
+    FontSlant->"Italic"],
+  "."
+}], "Text"],
+
+Cell[BoxData[
+    \(f[x_] := x\^2 + 3\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f[3]\)], "Input"],
+
+Cell[BoxData[
+    \(12\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(g[a_\^b_] := a + b\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(g[3\^2]\)], "Input"],
+
+Cell[BoxData[
+    \(g[9]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(g[\((x + y)\)\^3]\)], "Input"],
+
+Cell[BoxData[
+    \(3 + x + y\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(g[3\^2]\)], "Input"],
+
+Cell[BoxData[
+    \(g[9]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(g[11]\)], "Input"],
+
+Cell[BoxData[
+    \(g[11]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(g[Unevaluated[3\^2]]\)], "Input"],
+
+Cell[BoxData[
+    \(5\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(h[x] := x\^2\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(h[6]\)], "Input"],
+
+Cell[BoxData[
+    \(h[6]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[Expand[\((x + 2  y)\)\^3], 
+      HoldPattern[_\ \ y\^n_] \[Rule] n]\)], "Input"],
+
+Cell[BoxData[
+    \({2, 3}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Expand[\((x + 2  y)\)\^3]\)], "Input"],
+
+Cell[BoxData[
+    \(x\^3 + 6\ x\^2\ y + 12\ x\ y\^2 + 8\ y\^3\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Trevor[AnyPoly_] := 
+      Cases[Expand[AnyPoly], HoldPattern[_\ \ y\^n_. ] \[Rule] n]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Trevor[\((x + 2  y)\)\^3]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 2, 3}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Expand[AnyPoly]\)], "Input"],
+
+Cell[BoxData[
+    \(AnyPoly\)], "Output"]
+}, Open  ]],
+
+Cell["In general, : means \"delay\"", "Text"],
+
+Cell["Solve command!!!", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Solve[2  x + 1 \[Equal] 5, x]\)], "Input"],
+
+Cell[BoxData[
+    \({{x \[Rule] 2}}\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 728}},
+WindowSize->{999, 607},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+ShowSelection->True,
+FontSize->24
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "Info3442216173-8124817"->{
+    Cell[2077, 72, 63, 1, 35, "Print",
+      CellTags->"Info3442216173-8124817"],
+    Cell[2143, 75, 423, 13, 35, "Print",
+      CellTags->"Info3442216173-8124817"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"Info3442216173-8124817", 9201, 461}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 119, 3, 50, "Input"],
+Cell[1876, 56, 25, 0, 45, "Text"],
+
+Cell[CellGroupData[{
+Cell[1926, 60, 34, 1, 39, "Input"],
+Cell[1963, 63, 35, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2035, 69, 39, 1, 39, "Input"],
+Cell[2077, 72, 63, 1, 35, "Print",
+  CellTags->"Info3442216173-8124817"],
+Cell[2143, 75, 423, 13, 35, "Print",
+  CellTags->"Info3442216173-8124817"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2603, 93, 34, 1, 39, "Input"],
+Cell[2640, 96, 35, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2712, 102, 42, 1, 39, "Input"],
+Cell[2757, 105, 36, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2830, 111, 41, 1, 39, "Input"],
+Cell[2874, 114, 36, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2947, 120, 34, 1, 39, "Input"],
+Cell[2984, 123, 35, 1, 39, "Output"]
+}, Open  ]],
+Cell[3034, 127, 41, 1, 39, "Input"],
+
+Cell[CellGroupData[{
+Cell[3100, 132, 34, 1, 39, "Input"],
+Cell[3137, 135, 35, 1, 39, "Output"]
+}, Open  ]],
+Cell[3187, 139, 40, 0, 45, "Text"],
+Cell[3230, 141, 48, 1, 39, "Input"],
+
+Cell[CellGroupData[{
+Cell[3303, 146, 38, 1, 39, "Input"],
+Cell[3344, 149, 35, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3416, 155, 46, 1, 39, "Input"],
+Cell[3465, 158, 44, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3546, 164, 47, 1, 39, "Input"],
+Cell[3596, 167, 48, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3681, 173, 41, 1, 39, "Input"],
+Cell[3725, 176, 356, 5, 21, "Message"],
+Cell[4084, 183, 35, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4156, 189, 44, 1, 39, "Input"],
+Cell[4203, 192, 42, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4282, 198, 58, 1, 39, "Input"],
+Cell[4343, 201, 37, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4417, 207, 91, 1, 70, "Input"],
+Cell[4511, 210, 36, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4584, 216, 85, 1, 70, "Input"],
+Cell[4672, 219, 46, 1, 64, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4755, 225, 85, 1, 70, "Input"],
+Cell[4843, 228, 46, 1, 64, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4926, 234, 126, 2, 134, "Input"],
+Cell[5055, 238, 36, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5128, 244, 108, 2, 70, "Input"],
+Cell[5239, 248, 64, 1, 69, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5340, 254, 85, 1, 70, "Input"],
+Cell[5428, 257, 76, 1, 69, "Output"]
+}, Open  ]],
+Cell[5519, 261, 65, 0, 45, "Text"],
+
+Cell[CellGroupData[{
+Cell[5609, 265, 107, 2, 70, "Input"],
+Cell[5719, 269, 40, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5796, 275, 87, 1, 70, "Input"],
+Cell[5886, 278, 40, 1, 39, "Output"]
+}, Open  ]],
+Cell[5941, 282, 65, 0, 45, "Text"],
+
+Cell[CellGroupData[{
+Cell[6031, 286, 56, 1, 40, "Input"],
+Cell[6090, 289, 36, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6163, 295, 65, 1, 39, "Input"],
+Cell[6231, 298, 51, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6319, 304, 80, 1, 39, "Input"],
+Cell[6402, 307, 45, 1, 39, "Output"]
+}, Open  ]],
+Cell[6462, 311, 119, 5, 45, "Text"],
+Cell[6584, 318, 50, 1, 40, "Input"],
+
+Cell[CellGroupData[{
+Cell[6659, 323, 37, 1, 39, "Input"],
+Cell[6699, 326, 36, 1, 39, "Output"]
+}, Open  ]],
+Cell[6750, 330, 51, 1, 41, "Input"],
+
+Cell[CellGroupData[{
+Cell[6826, 335, 40, 1, 40, "Input"],
+Cell[6869, 338, 38, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6944, 344, 50, 1, 40, "Input"],
+Cell[6997, 347, 43, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7077, 353, 40, 1, 40, "Input"],
+Cell[7120, 356, 38, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7195, 362, 38, 1, 39, "Input"],
+Cell[7236, 365, 39, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7312, 371, 53, 1, 40, "Input"],
+Cell[7368, 374, 35, 1, 39, "Output"]
+}, Open  ]],
+Cell[7418, 378, 45, 1, 40, "Input"],
+
+Cell[CellGroupData[{
+Cell[7488, 383, 37, 1, 39, "Input"],
+Cell[7528, 386, 38, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7603, 392, 107, 2, 40, "Input"],
+Cell[7713, 396, 40, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7790, 402, 58, 1, 40, "Input"],
+Cell[7851, 405, 75, 1, 39, "Output"]
+}, Open  ]],
+Cell[7941, 409, 119, 2, 39, "Input"],
+
+Cell[CellGroupData[{
+Cell[8085, 415, 58, 1, 40, "Input"],
+Cell[8146, 418, 43, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8226, 424, 48, 1, 39, "Input"],
+Cell[8277, 427, 41, 1, 39, "Output"]
+}, Open  ]],
+Cell[8333, 431, 45, 0, 45, "Text"],
+Cell[8381, 433, 32, 0, 45, "Text"],
+
+Cell[CellGroupData[{
+Cell[8438, 437, 62, 1, 39, "Input"],
+Cell[8503, 440, 49, 1, 39, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

@@ -1,0 +1,210 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      4653,        154]*)
+(*NotebookOutlinePosition[      5523,        186]*)
+(*  CellTagsIndexPosition[      5448,        180]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Lecture - April 16 ", "Title"],
+
+Cell["A Little Front-End Programming", "Text"],
+
+Cell[RawData["\<\
+Cell[BoxData[GridBox[{
+        {
+          StyleBox[
+            ButtonBox[\"Function\"],
+            Editable->False], 
+          ButtonBox[\"\\[Placeholder]\"]},
+        {
+          StyleBox[
+            ButtonBox[\"Variable\"],
+            Editable->False], 
+          ButtonBox[\"\\[Placeholder]\"]},
+        {
+          StyleBox[
+            ButtonBox[\"Range\"],
+            Editable->False], 
+          ButtonBox[\"\\[Placeholder]\"]}
+        },
+      RowSpacings->0,
+      ColumnSpacings->0,
+      GridDefaultElement:>ButtonBox[ \"\\\\[Placeholder]\"]]], \"Input\",
+  CellTags->\"Input Grid\"]\
+\>"], "Input",
+  CellTags->"Input Grid"],
+
+Cell[BoxData[
+    \(MakeCell[] := 
+      CellPrint[
+        Cell[BoxData[
+            GridBox[{{StyleBox[ButtonBox["\<Function\>"], 
+                    Editable \[Rule] False], 
+                  ButtonBox["\<\[Placeholder]\>"]}, {StyleBox[
+                    ButtonBox["\<Variable\>"], Editable \[Rule] False], 
+                  ButtonBox["\<\[Placeholder]\>"]}, {StyleBox[
+                    ButtonBox["\<Range\>"], Editable \[Rule] False], 
+                  ButtonBox["\<\[Placeholder]\>"]}}, RowSpacings \[Rule] 0, 
+              ColumnSpacings \[Rule] 0, 
+              GridDefaultElement \[RuleDelayed] 
+                ButtonBox["\<\\[Placeholder]\>"]]], "\<Input\>", 
+          CellTags \[Rule] "\<Input Grid\>"]]\)], "Input"],
+
+Cell[BoxData[
+    \(MakeCell[]\)], "Input"],
+
+Cell[BoxData[GridBox[{
+        {
+          StyleBox[
+            ButtonBox["Function"],
+            Editable->False], 
+          ButtonBox["\[Placeholder]"]},
+        {
+          StyleBox[
+            ButtonBox["Variable"],
+            Editable->False], 
+          ButtonBox["\[Placeholder]"]},
+        {
+          StyleBox[
+            ButtonBox["Range"],
+            Editable->False], 
+          ButtonBox["\[Placeholder]"]}
+        },
+      RowSpacings->0,
+      ColumnSpacings->0,
+      GridDefaultElement:>ButtonBox[ "\\[Placeholder]"]]], "Input",
+  GeneratedCell->True,
+  CellAutoOverwrite->True,
+  CellTags->"Input Grid"],
+
+Cell[BoxData[
+    ButtonBox[\(Go!\),
+      ButtonFunction:>(MakeCell[ ]&),
+      ButtonEvaluator->"Local",
+      Active->True,
+      ButtonStyle->None]], "Input"],
+
+Cell[BoxData[GridBox[{
+        {
+          StyleBox[
+            ButtonBox["Function"],
+            Editable->False], 
+          ButtonBox[\(x\^2\)]},
+        {
+          StyleBox[
+            ButtonBox["Variable"],
+            Editable->False], 
+          ButtonBox["x"]},
+        {
+          StyleBox[
+            ButtonBox["Range"],
+            Editable->False], 
+          ButtonBox[\({a, b}\)]}
+        },
+      RowSpacings->0,
+      ColumnSpacings->0,
+      GridDefaultElement:>ButtonBox[ "\\[Placeholder]"]]], "Input"]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 728}},
+WindowSize->{933, 571},
+WindowMargins->{{12, Automatic}, {Automatic, 15}},
+ShowCellTags->True,
+FontSize->36
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "Input Grid"->{
+    Cell[1864, 57, 661, 23, 335, "Input",
+      CellTags->"Input Grid"],
+    Cell[3316, 101, 628, 22, 142, "Input",
+      CellTags->"Input Grid"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"Input Grid", 5275, 171}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 36, 0, 88, "Title"],
+Cell[1815, 55, 46, 0, 54, "Text"],
+Cell[1864, 57, 661, 23, 335, "Input",
+  CellTags->"Input Grid"],
+Cell[2528, 82, 739, 14, 950, "Input"],
+Cell[3270, 98, 43, 1, 50, "Input"],
+Cell[3316, 101, 628, 22, 142, "Input",
+  CellTags->"Input Grid"],
+Cell[3947, 125, 162, 5, 52, "Input"],
+Cell[4112, 132, 525, 19, 136, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

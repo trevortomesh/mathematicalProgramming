@@ -1,0 +1,4766 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[    159053,       4533]*)
+(*NotebookOutlinePosition[    159702,       4556]*)
+(*  CellTagsIndexPosition[    159658,       4552]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Lecture - March 26", "Title"],
+
+Cell["Hints for the Chessboard (again)", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(List1 = CharacterRange["\<a\>", "\<h\>"]\)], "Input"],
+
+Cell[BoxData[
+    \({"a", "b", "c", "d", "e", "f", "g", "h"}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(List2 = CharacterRange["\<1\>", "\<8\>"]\)], "Input"],
+
+Cell[BoxData[
+    \({"1", "2", "3", "4", "5", "6", "7", "8"}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(OrderedPairs = Distribute[{List1, List2}, List]\)], "Input"],
+
+Cell[BoxData[
+    \({{"a", "1"}, {"a", "2"}, {"a", "3"}, {"a", "4"}, {"a", "5"}, {"a", 
+        "6"}, {"a", "7"}, {"a", "8"}, {"b", "1"}, {"b", "2"}, {"b", 
+        "3"}, {"b", "4"}, {"b", "5"}, {"b", "6"}, {"b", "7"}, {"b", 
+        "8"}, {"c", "1"}, {"c", "2"}, {"c", "3"}, {"c", "4"}, {"c", 
+        "5"}, {"c", "6"}, {"c", "7"}, {"c", "8"}, {"d", "1"}, {"d", 
+        "2"}, {"d", "3"}, {"d", "4"}, {"d", "5"}, {"d", "6"}, {"d", 
+        "7"}, {"d", "8"}, {"e", "1"}, {"e", "2"}, {"e", "3"}, {"e", 
+        "4"}, {"e", "5"}, {"e", "6"}, {"e", "7"}, {"e", "8"}, {"f", 
+        "1"}, {"f", "2"}, {"f", "3"}, {"f", "4"}, {"f", "5"}, {"f", 
+        "6"}, {"f", "7"}, {"f", "8"}, {"g", "1"}, {"g", "2"}, {"g", 
+        "3"}, {"g", "4"}, {"g", "5"}, {"g", "6"}, {"g", "7"}, {"g", 
+        "8"}, {"h", "1"}, {"h", "2"}, {"h", "3"}, {"h", "4"}, {"h", 
+        "5"}, {"h", "6"}, {"h", "7"}, {"h", "8"}}\)], "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Labels = 
+      Cases[OrderedPairs, {letter_, number_} \[RuleDelayed] 
+          StringJoin[letter, number]]\)], "Input"],
+
+Cell[BoxData[
+    \({"a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "b1", "b2", "b3", 
+      "b4", "b5", "b6", "b7", "b8", "c1", "c2", "c3", "c4", "c5", "c6", "c7", 
+      "c8", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "e1", "e2", "e3", 
+      "e4", "e5", "e6", "e7", "e8", "f1", "f2", "f3", "f4", "f5", "f6", "f7", 
+      "f8", "g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8", "h1", "h2", "h3", 
+      "h4", "h5", "h6", "h7", "h8"}\)], "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(StringJoin @@@ OrderedPairs\)], "Input"],
+
+Cell[BoxData[
+    \({"a1", "a2", "a3", "a4", "a5", "a6", "a7", "a8", "b1", "b2", "b3", 
+      "b4", "b5", "b6", "b7", "b8", "c1", "c2", "c3", "c4", "c5", "c6", "c7", 
+      "c8", "d1", "d2", "d3", "d4", "d5", "d6", "d7", "d8", "e1", "e2", "e3", 
+      "e4", "e5", "e6", "e7", "e8", "f1", "f2", "f3", "f4", "f5", "f6", "f7", 
+      "f8", "g1", "g2", "g3", "g4", "g5", "g6", "g7", "g8", "h1", "h2", "h3", 
+      "h4", "h5", "h6", "h7", "h8"}\)], "Output"]
+}, Open  ]],
+
+Cell["Explaining the @@@", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(?f\)\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(Information::"notfound"\), \(\(:\)\(\ \)\), "\<\"Symbol \
+\\!\\(\\\"f\\\"\\) not found. \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::notfound\\\"]\\)\"\>"}]], "Message"]
+}, Open  ]],
+
+Cell["This is just regular mapping", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f /@ {a, b, c}\)], "Input"],
+
+Cell[BoxData[
+    \({f[a], f[b], f[c]}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+
+
+This is applying\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f @@ g[a, b]\)], "Input"],
+
+Cell[BoxData[
+    \(f[a, b]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f @@ {a, b}\)], "Input"],
+
+Cell[BoxData[
+    \(f[a, b]\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+
+
+Here's f \"of\" each sub-expression:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f /@ {{a, b}, {c, d}}\)], "Input"],
+
+Cell[BoxData[
+    \({f[{a, b}], f[{c, d}]}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+
+
+Here's f \"applied\" to each sub-expression:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f @@@ {{a, b}, {c, d}}\)], "Input"],
+
+Cell[BoxData[
+    \({f[a, b], f[c, d]}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+@@@ does both mapping and applying.
+
+
+
+@@@ is the same as saying\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Apply[f, {{a, b}, {c, d}}, {1}]\)], "Input"],
+
+Cell[BoxData[
+    \({f[a, b], f[c, d]}\)], "Output"]
+}, Open  ]],
+
+Cell["", "Text"],
+
+Cell["\<\
+
+Notice the difference between applying at level 0:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Apply[f, {{a, b}, {c, d}}, {0}]\)], "Input"],
+
+Cell[BoxData[
+    \(f[{a, b}, {c, d}]\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+
+
+Applying at level 0 is the same as applying in the regular sense:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f @@ {{a, b}, {c, d}}\)], "Input"],
+
+Cell[BoxData[
+    \(f[{a, b}, {c, d}]\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+
+
+
+Notice what happens when we apply at level 2:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Apply[f, {{{a, b}, {c}}, {d, {e, x}}}, {2}]\)], "Input"],
+
+Cell[BoxData[
+    \({{f[a, b], f[c]}, {d, f[e, x]}}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+
+
+
+\
+\>", "Text"],
+
+Cell["\<\
+Notice that, in the expression below, the sub-expression is at \
+level 3, so f isn't applied:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Apply[f, {{{a, b, {e, x}}, {c}}, {d, {q, y}}}, {2}]\)], "Input"],
+
+Cell[BoxData[
+    \({{f[a, b, {e, x}], f[c]}, {d, f[q, y]}}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+
+
+In the following, we apply f to every level from 1 to 3, which creates quite \
+a mess:\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Apply[f, {{g[a, b, {e, p}], {c}}, {d, {e, q, {h, z}}}}, 3]\)], "Input"],
+
+Cell[BoxData[
+    \({f[f[a, b, f[e, p]], f[c]], f[d, f[e, q, f[h, z]]]}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Applying at level -2 means working one level in from the deepest \
+level of the list. (The deepest level of the list is -1.)
+
+
+\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Apply[
+      f, {{g[a, b, {e, f}], {c}}, {d, {e, f, {h, z}}}}, {\(-2\)}]\)], "Input"],
+
+Cell[BoxData[
+    \({{g[a, b, f[e, f]], f[c]}, {d, {e, f, f[h, z]}}}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+
+
+
+Here's how to make the tracer dots that you'll need in a future assignment. \
+(The dots trace out a cycloid.)\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(TracerDots = {};\)\), "\[IndentingNewLine]", 
+    \(Do[Show[
+        TracerDots = 
+          Append[TracerDots, 
+            Point[{Sin[t - \[Pi]], Cos[t - \[Pi]]} + {0, 1} + {t, 0}]]; 
+        Graphics[{RGBColor[1, 0, 0], Disk[{t, 1}, 1], GrayLevel[0], 
+            PointSize[0.015], TracerDots}], AspectRatio \[Rule] Automatic, 
+        PlotRange \[Rule] {{\(-1\), 9}, 1.05 {\(-0.05\), 2}}], {t, 0, 
+        2  \[Pi], \[Pi]\/20}]\)}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.1 .10525 m
+.1 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Iooooo`?oo`001?l00005ool00?_o
+oooo000Fooooo`Ooo`000_l00009ool00?Sooooo000DoooooaOoo`00mOooool0017ooooo6ooo003d
+ooooo`003ooooolNool00??ooooo000=ooooob;oo`00lOooool000cooooo9Ooo003_ooooo`002ooo
+oolWool00>kooooo000:ooooobSoo`00k_ooool000Wooooo:_oo003]ooooo`002?ooool/ool00>co
+oooo0007ooooobkoo`00joooool000Oooooo;_oo003[ooooo`001_ooool`ool00>[ooooo0006oooo
+oc7oo`00jOooool000Gooooo<_oo003Yooooo`001?ooooldool00>Sooooo0004ooooocCoo`00j?oo
+ool000?ooooo=_oo003Wooooo`000ooooolfool00>Oooooo0003ooooocKoo`00ioooool000;ooooo
+>?oo003Vooooo`000_oooolhool00>Kooooo0002ooooocSoo`00i_ooool000;ooooo>?oo003Voooo
+o`000_oooolhool00>Kooooo00000oooooooo`00ool0000gool00>Kooooo00000oooooooo`00ool0
+000gool00>Kooooo00000oooooooo`00ool0000gool00>Kooooo00000oooooooo`00ool0000gool0
+0>Kooooo00000oooooooo`00ool0000gool00>Kooooo0002ooooocSoo`00i_ooool000;ooooo>?oo
+003Vooooo`000_oooolhool00>Kooooo0002ooooocSoo`00i_ooool000;ooooo>?oo003Vooooo`00
+0ooooolfool00>Oooooo0003ooooocKoo`00ioooool000?ooooo=_oo003Wooooo`001?ooooldool0
+0>Sooooo0004ooooocCoo`00j?ooool000Gooooo<_oo003Yooooo`001_oooolaool00>Wooooo0006
+oooooc3oo`00j_ooool000Oooooo;_oo003[ooooo`001oooool^ool00>_ooooo0008ooooobcoo`00
+k?ooool000Wooooo:_oo003]ooooo`002_oooolYool00>gooooo000;ooooobKoo`00koooool000go
+oooo8_oo003aooooo`003ooooolOool00?;ooooo000@oooooagoo`00loooool001;ooooo6_oo003d
+ooooo`005OoooolEool00?Kooooo000Goooooa3oo`00nOooool001gooooo1Ooo003nooooo`00oooo
+oolQooooo`00oooooolQooooo`00\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.11571 .10525 m
+.11571 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co00002_oo003fooooo`00
+6oooool2ool000;o00003_oo003cooooo`006?oooolGool00?7ooooo000Foooooa_oo`00koooool0
+01?ooooo7ooo003^ooooo`004OoooolSool00>cooooo000@ooooobGoo`00joooool000oooooo9ooo
+003Zooooo`003_oooolYool00>Wooooo000=ooooob_oo`00j?ooool000gooooo;?oo003Wooooo`00
+3?ooool^ool00>Kooooo000<ooooobkoo`00i_ooool000_ooooo<?oo003Uooooo`002_oooolaool0
+0>Gooooo000:oooooc7oo`00iOooool000Wooooo<ooo003Tooooo`002Ooooolcool00>Cooooo0008
+ooooocGoo`00hoooool000Sooooo=Ooo003Sooooo`002?ooooleool00>?ooooo0007ooooocOoo`00
+h_ooool000Oooooo=ooo003Rooooo`001_oooolhool00>;ooooo0006ooooocSoo`00h_ooool000Ko
+oooo>?oo003Rooooo`001_oooolhool00>;ooooo0006ooooocWoo`00hOooool000Kooooo>Ooo003Q
+ooooo`001_ooooliool00>7ooooo0006ooooocSoo`00h_ooool000Kooooo>?oo003Rooooo`001_oo
+oolhool00>;ooooo0006ooooocSoo`00h_ooool000Oooooo=ooo003Rooooo`001ooooolgool00>;o
+oooo0008ooooocGoo`00hoooool000Sooooo=Ooo003Sooooo`002?ooooleool00>?ooooo0009oooo
+oc?oo`00i?ooool000Wooooo<ooo003Tooooo`002Ooooolbool00>Gooooo000:oooooc7oo`00iOoo
+ool000_ooooo<?oo003Uooooo`003?ooool^ool00>Kooooo000<ooooobkoo`00i_ooool000gooooo
+;?oo003Wooooo`003Oooool[ool00>Sooooo000>ooooobWoo`00jOooool000oooooo9_oo003[oooo
+o`004_oooolRool00>cooooo000Cooooob3oo`00kOooool001Cooooo7Ooo003_ooooo`005ooooolI
+ool00?3ooooo000IoooooaGoo`00l_ooool001cooooo4?oo003dooooo`008_ooool4ool00?[ooooo
+003oooooob7ooooo003oooooob7ooooo0000\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.13142 .10525 m
+.13142 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co00000_ooool<ool00?;o
+oooo000Looooo`Co00004Ooo003_ooooo`007Oooool2o`0001Goo`00k?ooool001[ooooo6ooo003[
+ooooo`006?oooolNool00>[ooooo000Fooooob;oo`00j?ooool001Gooooo9?oo003Wooooo`005?oo
+oolVool00>Kooooo000CooooobSoo`00iOooool001;ooooo:_oo003Tooooo`004Oooool/ool00>?o
+oooo000@ooooobkoo`00h_ooool0013ooooo;_oo003Rooooo`003oooool`ool00>7ooooo000?oooo
+oc7oo`00h?ooool000kooooo<_oo003Pooooo`003Oooooldool00=oooooo000=ooooocCoo`00gooo
+ool000cooooo=_oo003Nooooo`003?oooolfool00=kooooo000<ooooocKoo`00g_ooool000_ooooo
+=ooo003Nooooo`002ooooolgool00=kooooo000;ooooocOoo`00g_ooool000_ooooo>?oo003Moooo
+o`002ooooolhool00=gooooo000:ooooocWoo`00gOooool000[ooooo>Ooo003Mooooo`002_ooooli
+ool00=gooooo000:ooooocWoo`00gOooool000[ooooo>Ooo003Mooooo`002ooooolhool00=gooooo
+000;ooooocSoo`00gOooool000_ooooo=ooo003Nooooo`002ooooolgool00=kooooo000;ooooocOo
+o`00g_ooool000cooooo=_oo003Nooooo`003?oooolfool00=kooooo000<ooooocKoo`00g_ooool0
+00gooooo=?oo003Oooooo`003Oooooldool00=oooooo000=oooooc?oo`00h?ooool000kooooo<_oo
+003Pooooo`003oooool`ool00>7ooooo000@ooooobkoo`00h_ooool0013ooooo;_oo003Rooooo`00
+4Oooool/ool00>?ooooo000Booooob[oo`00i?ooool001?ooooo:?oo003Uooooo`005?oooolUool0
+0>Oooooo000Fooooob;oo`00j?ooool001Oooooo8?oo003Yooooo`006?oooolNool00>[ooooo000K
+oooooa[oo`00joooool001kooooo5Ooo003]ooooo`008?ooool@ool00?3ooooo000Vooooo`Goo`00
+mOooool00?oooooo8Oooool00?oooooo8Oooool00001\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.14712 .10525 m
+.14712 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co00001oooool<ool00>go
+oooo000Looooo`Co00001?oooolAool00>_ooooo000Mooooo`Co00005ooo003Xooooo`007Oooool4
+o`0001Soo`00ioooool001cooooo0_oo0002o`0001[oo`00i_ooool001[ooooo8ooo003Sooooo`00
+6OoooolUool00>;ooooo000HooooobOoo`00hOooool001Oooooo:Ooo003Pooooo`005_ooool[ool0
+0=oooooo000Fooooob_oo`00goooool001Gooooo;Ooo003Nooooo`005Oooool]ool00=kooooo000D
+ooooobooo`00gOooool001?ooooo<Ooo003Looooo`004ooooolaool00=cooooo000Boooooc?oo`00
+foooool001;ooooo<ooo003Kooooo`004Oooooleool00=[ooooo000@ooooocKoo`00f_ooool0013o
+oooo=_oo003Jooooo`004?oooolgool00=Wooooo000@ooooocOoo`00fOooool000oooooo>?oo003I
+ooooo`003ooooolhool00=Wooooo000?ooooocSoo`00fOooool000oooooo>?oo003Iooooo`003ooo
+oolhool00=Wooooo000?ooooocSoo`00fOooool000oooooo>?oo003Iooooo`003ooooolhool00=Wo
+oooo000?ooooocSoo`00fOooool000oooooo>?oo003Iooooo`003ooooolhool00=Wooooo000@oooo
+ocOoo`00fOooool0013ooooo=ooo003Iooooo`004?oooolfool00=[ooooo000@ooooocKoo`00f_oo
+ool0013ooooo=_oo003Jooooo`004Oooooldool00=_ooooo000Boooooc?oo`00foooool001;ooooo
+<_oo003Looooo`004ooooolaool00=cooooo000Dooooobooo`00gOooool001Gooooo;Ooo003Noooo
+o`005Oooool]ool00=kooooo000Fooooob_oo`00goooool001Kooooo:ooo003Oooooo`005ooooolY
+ool00>3ooooo000HooooobKoo`00h_ooool001_ooooo8Ooo003Tooooo`007?oooolOool00>Gooooo
+000Moooooagoo`00i_ooool001oooooo6_oo003Wooooo`008_oooolEool00>Wooooo000Uooooo`oo
+o`00k?ooool002[ooooo1Ooo003aooooo`00oooooolQooooo`00oooooolQooooo`00\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.16283 .10525 m
+.16283 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co00002oooool<ool00>Wo
+oooo000Looooo`Co00002?oooolBool00>Kooooo000Mooooo`Co00001OoooolFool00>Cooooo000M
+ooooo`Co00000_oooolKool00>;ooooo000Mooooo`Co00007_oo003Qooooo`007Oooool4o`00023o
+o`00goooool001kooooo0_l0000Rool00=kooooo000MooooobKoo`00gOooool001cooooo:?oo003L
+ooooo`006ooooolZool00=_ooooo000Jooooobcoo`00f_ooool001Wooooo;_oo003Iooooo`006Ooo
+ool^ool00=Wooooo000Hoooooc3oo`00f?ooool001Oooooo<Ooo003Hooooo`005ooooolbool00=Oo
+oooo000FooooocCoo`00e_ooool001Kooooo=?oo003Fooooo`005Ooooolfool00=Gooooo000Eoooo
+ocKoo`00eOooool001Gooooo=_oo003Eooooo`005?oooolgool00=Gooooo000DooooocOoo`00eOoo
+ool001Cooooo=ooo003Eooooo`005?oooolhool00=Cooooo000DooooocSoo`00e?ooool001?ooooo
+>Ooo003Dooooo`004oooooliool00=Cooooo000CooooocWoo`00e?ooool001?ooooo>Ooo003Doooo
+o`004oooooliool00=Cooooo000DooooocSoo`00e?ooool001Cooooo>?oo003Dooooo`005?oooolg
+ool00=Gooooo000DooooocOoo`00eOooool001Cooooo=ooo003Eooooo`005Ooooolfool00=Gooooo
+000EooooocKoo`00eOooool001Gooooo=_oo003Eooooo`005_ooooldool00=Kooooo000FooooocCo
+o`00e_ooool001Kooooo<ooo003Gooooo`005ooooolaool00=Sooooo000Hoooooc3oo`00f?ooool0
+01Wooooo;_oo003Iooooo`006Oooool^ool00=Wooooo000Jooooobcoo`00f_ooool001_ooooo:_oo
+003Kooooo`007?oooolXool00=cooooo000MooooobGoo`00g_ooool001oooooo8_oo003Oooooo`00
+8?oooolPool00>3ooooo000Qoooooagoo`00h_ooool002Cooooo6Ooo003Sooooo`009ooooolDool0
+0>Gooooo000Yoooooa3oo`00ioooool002oooooo1?oo003]ooooo`00oooooolQooooo`00oooooolQ
+ooooo`00\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.17854 .10525 m
+.17854 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co00003oooool=ool00>Co
+oooo000Looooo`Co00003OoooolAool00>;ooooo000Mooooo`Co00002OoooolGool00=oooooo000M
+ooooo`Co00001_oooolKool00=kooooo000Mooooo`Co00001?oooolNool00=gooooo000Mooooo`Co
+00000_oooolSool00=[ooooo000Nooooo`?o000000?oooooool00?oo00008ooo003Iooooo`007_oo
+ool4o`0002Koo`00f?ooool001kooooo1?l0000Wool00=Oooooo000Oooooo`;o0000:Ooo003Foooo
+o`007_ooool/ool00=Kooooo000Mooooobkoo`00eOooool001gooooo;_oo003Eooooo`007?ooool`
+ool00=Cooooo000Loooooc7oo`00doooool001_ooooo<_oo003Cooooo`006_ooooldool00=;ooooo
+000JooooocCoo`00d_ooool001Wooooo=_oo003Aooooo`006Ooooolfool00=7ooooo000IooooocKo
+o`00dOooool001Wooooo=ooo003@ooooo`006Ooooolgool00=3ooooo000HooooocSoo`00d?ooool0
+01Sooooo>?oo003@ooooo`006?oooolhool00=3ooooo000HooooocSoo`00d?ooool001Sooooo>?oo
+003@ooooo`006?oooolhool00=3ooooo000HooooocSoo`00d?ooool001Sooooo>?oo003@ooooo`00
+6?oooolhool00=3ooooo000HooooocSoo`00d?ooool001Sooooo>?oo003@ooooo`006Ooooolgool0
+0=3ooooo000IooooocOoo`00d?ooool001Wooooo=_oo003Aooooo`006Ooooolfool00=7ooooo000I
+ooooocKoo`00dOooool001[ooooo=?oo003Booooo`006_ooooldool00=;ooooo000Koooooc;oo`00
+doooool001cooooo<Ooo003Cooooo`007?ooool`ool00=Cooooo000Mooooobkoo`00eOooool001go
+oooo;_oo003Eooooo`007_ooool/ool00=Kooooo000Oooooob_oo`00e_ooool0023ooooo:Ooo003G
+ooooo`008OoooolVool00=Wooooo000Sooooob;oo`00foooool002Gooooo7ooo003Looooo`009_oo
+oolMool00=gooooo000Xoooooa[oo`00g_ooool002_ooooo5Ooo003Pooooo`00;_ooool?ool00>?o
+oooo000cooooo`Goo`00j?ooool00?oooooo8Oooool00?oooooo8Oooool00001\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.19425 .10525 m
+.19425 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co00005?ooool<ool00>3o
+oooo000Looooo`Co00004OoooolBool00=gooooo000Mooooo`Co00003OoooolGool00=_ooooo000M
+ooooo`Co00002ooooolKool00=Wooooo000Mooooo`Co00002?oooolOool00=Sooooo000Mooooo`Co
+00001ooooolRool00=Kooooo000Nooooo`?o00001_oooolTool00=Gooooo000Nooooo`Co00001?oo
+oolVool00=Cooooo000Nooooo`Co00000ooooolXool00=?ooooo000Oooooo`Co000000?oooooool0
+0?oo0000:?oo003Booooo`008?ooool4o`0002_oo`00dOooool0023ooooo1?l0000/ool00=3ooooo
+000Qooooo`;o0000;Ooo003@ooooo`008Oooool`ool00<oooooo000Poooooc7oo`00coooool0023o
+oooo<_oo003>ooooo`007oooooldool00<gooooo000OooooocCoo`00cOooool001kooooo=Ooo003=
+ooooo`007_ooooleool00<gooooo000NooooocGoo`00cOooool001gooooo=ooo003<ooooo`007Ooo
+oolgool00<cooooo000LooooocSoo`00c?ooool001cooooo>Ooo003;ooooo`007?ooooliool00<_o
+oooo000LooooocWoo`00boooool001cooooo>Ooo003;ooooo`007?ooooliool00<_ooooo000Loooo
+ocWoo`00boooool001cooooo>Ooo003;ooooo`007?ooooliool00<_ooooo000LooooocWoo`00booo
+ool001cooooo>?oo003<ooooo`007Ooooolgool00<cooooo000MooooocOoo`00c?ooool001kooooo
+=Ooo003=ooooo`007_ooooleool00<gooooo000NooooocGoo`00cOooool001oooooo=?oo003=oooo
+o`007oooooldool00<gooooo000Ooooooc?oo`00c_ooool0023ooooo<Ooo003?ooooo`008Oooool`
+ool00<oooooo000Rooooobkoo`00d?ooool002;ooooo;_oo003@ooooo`008oooool/ool00=7ooooo
+000Tooooob[oo`00d_ooool002Gooooo:?oo003Cooooo`009_oooolUool00=Gooooo000Xooooob;o
+o`00e_ooool002Wooooo8?oo003Gooooo`00:_oooolMool00=Wooooo000]oooooaWoo`00f_ooool0
+02oooooo5Ooo003Looooo`00<_ooool@ool00=kooooo000hooooo`Coo`00i?ooool00?oooooo8Ooo
+ool00?oooooo8Oooool00001\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.20996 .10525 m
+.20996 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co00006?ooool=ool00=_o
+oooo000Looooo`Co00005_oooolAool00=Wooooo000Mooooo`Co00004_oooolGool00=Kooooo000M
+ooooo`Co00003ooooolKool00=Gooooo000Mooooo`Co00003OoooolNool00=Cooooo000Mooooo`Co
+00002ooooolSool00=7ooooo000Nooooo`?o00002_oooolUool00=3ooooo000Nooooo`Co00002?oo
+oolWool00<oooooo000Nooooo`Co00001ooooolYool00<kooooo000Oooooo`Co00001Oooool[ool0
+0<gooooo000Pooooo`Co00000oooool/ool00<gooooo000Pooooo`Co00000_ooool^ool00<cooooo
+000Qooooo`;o00000oooool^ool00<cooooo000Sooooo`;o0000<?oo003;ooooo`008_ooool4o`00
+033oo`00b_ooool002;ooooo1?l0000`ool00<[ooooo000Sooooo`;o0000<_oo0039ooooo`008ooo
+ooldool00<Wooooo000RooooocKoo`00b?ooool002;ooooo=_oo0038ooooo`008_oooolfool00<So
+oooo000QooooocSoo`00aoooool0027ooooo>?oo0037ooooo`008Ooooolhool00<Oooooo000Qoooo
+ocSoo`00aoooool0027ooooo>?oo0037ooooo`008Ooooolhool00<Oooooo000QooooocSoo`00aooo
+ool0027ooooo>?oo0037ooooo`008Ooooolhool00<Oooooo000QooooocSoo`00aoooool0027ooooo
+>?oo0037ooooo`008Ooooolhool00<Oooooo000QooooocSoo`00aoooool0027ooooo>?oo0037oooo
+o`008Ooooolhool00<Oooooo000RooooocKoo`00b?ooool002;ooooo=_oo0038ooooo`008_oooolf
+ool00<Sooooo000SooooocCoo`00bOooool002?ooooo=?oo0039ooooo`009?oooolbool00<[ooooo
+000Uoooooc7oo`00b_ooool002Gooooo<?oo003;ooooo`009_ooool^ool00<cooooo000Vooooobko
+o`00c?ooool002Oooooo;?oo003=ooooo`00:?ooool[ool00<gooooo000YooooobWoo`00c_ooool0
+02[ooooo9_oo003@ooooo`00;?oooolRool00=;ooooo000^oooooaooo`00doooool002oooooo7Ooo
+003Dooooo`00<OoooolJool00=Gooooo000doooooaGoo`00eoooool003Oooooo3ooo003Jooooo`00
+??ooool5ool00=oooooo003oooooob7ooooo003oooooob7ooooo0000\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.22566 .10525 m
+.22566 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co00007Oooool<ool00=Oo
+oooo000Looooo`Co00006_oooolBool00=Cooooo000Mooooo`Co00005_oooolGool00=;ooooo000M
+ooooo`Co00005?oooolKool00=3ooooo000Mooooo`Co00004OoooolOool00<oooooo000Mooooo`Co
+00004?oooolRool00<gooooo000Nooooo`?o00003ooooolTool00<cooooo000Nooooo`Co00003Ooo
+oolVool00<_ooooo000Nooooo`Co00003?oooolXool00<[ooooo000Oooooo`Co00002_oooolZool0
+0<Wooooo000Pooooo`Co00002?ooool/ool00<Sooooo000Pooooo`Co00001oooool^ool00<Oooooo
+000Qooooo`;o00002?ooool^ool00<Oooooo000Sooooo`;o00001Oooool`ool00<Kooooo000Roooo
+o`Co00000ooooolaool00<Kooooo000Rooooo`Co00000ooooolaool00<Kooooo000Sooooo`;o0000
+0ooooolcool00<Gooooo000Vooooo`;o0000<ooo0035ooooo`009Oooool4o`0003?oo`00a?ooool0
+02Gooooo1?l0000cool00<Cooooo000Vooooo`;o0000=?oo0034ooooo`009_oooolgool00<?ooooo
+000VooooocOoo`00`oooool002Gooooo>?oo0033ooooo`009Oooooliool00<;ooooo000UooooocWo
+o`00`_ooool002Gooooo>Ooo0032ooooo`009Oooooliool00<;ooooo000UooooocWoo`00`_ooool0
+02Gooooo>Ooo0032ooooo`009Oooooliool00<;ooooo000UooooocWoo`00`_ooool002Gooooo>Ooo
+0032ooooo`009Ooooolhool00<?ooooo000VooooocOoo`00`oooool002Kooooo=ooo0033ooooo`00
+9oooooleool00<Cooooo000WooooocGoo`00a?ooool002Oooooo=Ooo0034ooooo`00:?oooolcool0
+0<Gooooo000Xoooooc?oo`00aOooool002Sooooo<_oo0036ooooo`00:Ooooolaool00<Kooooo000Z
+oooooc3oo`00a_ooool002_ooooo;_oo0037ooooo`00:oooool^ool00<Oooooo000/ooooobcoo`00
+b?ooool002gooooo:_oo0039ooooo`00;_oooolXool00<[ooooo000_ooooobGoo`00c?ooool0037o
+oooo8_oo003=ooooo`00<_oooolPool00<kooooo000coooooagoo`00d?ooool003Kooooo6Ooo003A
+ooooo`00>?oooolEool00=?ooooo000koooooa3oo`00eOooool0047ooooo1?oo003Kooooo`00oooo
+oolQooooo`00oooooolQooooo`00\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.24137 .10525 m
+.24137 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co00008Oooool<ool00=?o
+oooo000Looooo`Co00007_oooolBool00=3ooooo000Mooooo`Co00006ooooolGool00<gooooo000M
+ooooo`Co00006?oooolKool00<cooooo000Mooooo`Co00005_oooolNool00<_ooooo000Mooooo`Co
+00005?oooolRool00<Wooooo000Nooooo`?o00004ooooolUool00<Oooooo000Nooooo`Co00004Ooo
+oolWool00<Kooooo000Nooooo`Co00004?oooolXool00<Kooooo000Oooooo`Co00003_oooolZool0
+0<Gooooo000Pooooo`Co00003?ooool/ool00<Cooooo000Pooooo`Co00002oooool^ool00<?ooooo
+000Qooooo`;o00003?ooool^ool00<?ooooo000Sooooo`;o00002Oooool`ool00<;ooooo000Roooo
+o`Co00002?oooolaool00<7ooooo000Rooooo`Co00001ooooolbool00<7ooooo000Sooooo`;o0000
+1oooooldool00<3ooooo000Vooooo`;o00001?ooooldool00<3ooooo000Uooooo`Co00000_oooolf
+ool00;oooooo000Uooooo`Co00000_oooolfool00;oooooo000Vooooo`;o00000ooooolfool00;oo
+oooo000Yooooo`;o0000=ooo002nooooo`00:?ooool4o`0003Koo`00__ooool002Sooooo1?l0000f
+ool00;kooooo000Yooooo`;o0000=ooo002nooooo`00:_oooolhool00;kooooo000ZooooocSoo`00
+__ooool002[ooooo>?oo002nooooo`00:_oooolhool00;kooooo000ZooooocSoo`00__ooool002[o
+oooo>?oo002nooooo`00:_oooolhool00;kooooo000ZooooocSoo`00__ooool002[ooooo>?oo002n
+ooooo`00:_oooolhool00;kooooo000ZooooocSoo`00__ooool002_ooooo=_oo002oooooo`00:ooo
+oolfool00;oooooo000[ooooocKoo`00_oooool002cooooo=?oo0030ooooo`00;?ooooldool00<3o
+oooo000]oooooc;oo`00`Oooool002kooooo<Ooo0031ooooo`00;_ooool`ool00<;ooooo000_oooo
+obkoo`00`oooool002oooooo;_oo0033ooooo`00<?ooool/ool00<Cooooo000aooooob[oo`00aOoo
+ool003;ooooo:Ooo0035ooooo`00<ooooolVool00<Oooooo000eooooob;oo`00bOooool003Oooooo
+7ooo003:ooooo`00>?oooolMool00<_ooooo000joooooa[oo`00c?ooool003gooooo5Ooo003>oooo
+o`00?oooool@ool00=7ooooo0015ooooo`Goo`00e_ooool00?oooooo8Oooool00?oooooo8Oooool0
+0001\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.25708 .10525 m
+.25708 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co00009_ooool<ool00<ko
+oooo000Looooo`Co00008ooooolBool00<_ooooo000Mooooo`Co00007ooooolGool00<Wooooo000M
+ooooo`Co00007OoooolKool00<Oooooo000Mooooo`Co00006_oooolOool00<Kooooo000Mooooo`Co
+00006OoooolRool00<Cooooo000Nooooo`?o00006?oooolTool00<?ooooo000Nooooo`Co00005Ooo
+oolWool00<;ooooo000Nooooo`Co00005?oooolYool00<7ooooo000Oooooo`Co00004_ooool[ool0
+0<3ooooo000Pooooo`Co00004Oooool/ool00;oooooo000Pooooo`Co00004?ooool^ool00;kooooo
+000Qooooo`;o00004Oooool^ool00;kooooo000Sooooo`;o00003_ooool`ool00;gooooo000Roooo
+o`Co00003?oooolaool00;gooooo000Rooooo`Co00003?oooolaool00;gooooo000Sooooo`;o0000
+3?oooolcool00;cooooo000Vooooo`;o00002Ooooolcool00;cooooo000Uooooo`Co00001ooooole
+ool00;_ooooo000Uooooo`Co00001oooooleool00;_ooooo000Vooooo`;o00002?ooooleool00;_o
+oooo000Yooooo`;o00001?oooolgool00;[ooooo000Xooooo`Co00000ooooolgool00;[ooooo000X
+ooooo`Co00000_oooolhool00;[ooooo000Yooooo`;o00000ooooolhool00;[ooooo000^ooooocSo
+o`00^_ooool002gooooo0_l0000gool00;[ooooo000/ooooo`Co0000=ooo002iooooo`00;?ooool4
+o`0003Ooo`00^Oooool002gooooo0_l0000hool00;Wooooo000^ooooocSoo`00^_ooool002kooooo
+>?oo002jooooo`00;_oooolhool00;[ooooo000^ooooocSoo`00^_ooool002oooooo=ooo002joooo
+o`00;ooooolgool00;[ooooo000`ooooocGoo`00^oooool0033ooooo=Ooo002kooooo`00<?oooole
+ool00;_ooooo000aoooooc?oo`00_?ooool0037ooooo<ooo002looooo`00<Ooooolbool00;gooooo
+000boooooc7oo`00_Oooool003?ooooo<?oo002mooooo`00=?ooool^ool00;kooooo000dooooobko
+o`00__ooool003Gooooo;?oo002oooooo`00=Oooool[ool00<3ooooo000fooooobWoo`00`Oooool0
+03Oooooo9_oo0033ooooo`00>_oooolRool00<Cooooo000kooooob3oo`00aOooool003cooooo7Ooo
+0037ooooo`00?ooooolIool00<Sooooo0011oooooaGoo`00b_ooool004Cooooo4?oo003<ooooo`00
+B_ooool4ool00=;ooooo003oooooob7ooooo003oooooob7ooooo0000\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.27279 .10525 m
+.27279 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000:_ooool<ool00<[o
+oooo000Looooo`Co00009ooooolBool00<Oooooo000Mooooo`Co00009?oooolGool00<Cooooo000M
+ooooo`Co00008OoooolKool00<?ooooo000Mooooo`Co00007ooooolNool00<;ooooo000Mooooo`Co
+00007OoooolRool00<3ooooo000Nooooo`?o00007?oooolTool00;oooooo000Nooooo`Co00006_oo
+oolVool00;kooooo000Nooooo`Co00006OoooolXool00;gooooo000Oooooo`Co00005ooooolZool0
+0;cooooo000Pooooo`Co00005Oooool/ool00;_ooooo000Pooooo`Co00005?ooool^ool00;[ooooo
+000Qooooo`;o00005Oooool^ool00;[ooooo000Sooooo`;o00004_ooool`ool00;Wooooo000Roooo
+o`Co00004Ooooolaool00;Sooooo000Rooooo`Co00004?oooolbool00;Sooooo000Sooooo`;o0000
+4?ooooldool00;Oooooo000Vooooo`;o00003Oooooldool00;Oooooo000Uooooo`Co00002ooooolf
+ool00;Kooooo000Uooooo`Co00002ooooolfool00;Kooooo000Vooooo`;o00003?oooolfool00;Ko
+oooo000Yooooo`;o00002?oooolgool00;Kooooo000Xooooo`Co00001ooooolgool00;Kooooo000X
+ooooo`Co00001ooooolgool00;Kooooo000Yooooo`;o00002?oooolhool00;Gooooo000cooooocSo
+o`00]Oooool002gooooo0_l00003ooooocWoo`00]Oooool002cooooo1?l00002ooooocWoo`00]Ooo
+ool002cooooo1?l00002ooooocWoo`00]Oooool002gooooo0_l00003ooooocWoo`00]Oooool003;o
+oooo0_l0000gool00;Gooooo000aooooo`Co0000=_oo002eooooo`00<Oooool4o`0003Koo`00]Ooo
+ool003;ooooo0_l0000fool00;Kooooo000cooooocOoo`00]_ooool003?ooooo=ooo002fooooo`00
+=?oooolfool00;Kooooo000dooooocKoo`00]_ooool003Cooooo=_oo002fooooo`00=Oooooldool0
+0;Oooooo000eooooocCoo`00]oooool003Kooooo<_oo002hooooo`00=ooooolaool00;Sooooo000g
+oooooc3oo`00^Oooool003Sooooo;_oo002jooooo`00>?ooool^ool00;[ooooo000iooooobcoo`00
+^oooool003[ooooo:_oo002looooo`00>ooooolXool00;gooooo000looooobGoo`00_oooool003ko
+oooo8_oo0030ooooo`00@?oooolOool00<7ooooo0011oooooagoo`00`_ooool004?ooooo6_oo0033
+ooooo`00A_oooolEool00<Gooooo0018oooooa3oo`00b?ooool004kooooo1Ooo003=ooooo`00oooo
+oolQooooo`00oooooolQooooo`00\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.2885 .10525 m
+.2885 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000;oooool<ool00<Go
+oooo000Looooo`Co0000;?oooolAool00<?ooooo000Mooooo`Co0000:?oooolGool00<3ooooo000M
+ooooo`Co00009OoooolKool00;oooooo000Mooooo`Co00008ooooolNool00;kooooo000Mooooo`Co
+00008OoooolSool00;_ooooo000Nooooo`?o00008?oooolUool00;[ooooo000Nooooo`Co00007_oo
+oolWool00;Wooooo000Nooooo`Co00007OoooolYool00;Sooooo000Oooooo`Co00006oooool[ool0
+0;Oooooo000Pooooo`Co00006_ooool/ool00;Kooooo000Pooooo`Co00006Oooool^ool00;Gooooo
+000Qooooo`;o00006_ooool^ool00;Gooooo000Sooooo`;o00005oooool`ool00;Cooooo000Roooo
+o`Co00005Ooooolaool00;Cooooo000Rooooo`Co00005Ooooolaool00;Cooooo000Sooooo`;o0000
+5Ooooolcool00;?ooooo000Vooooo`;o00004_oooolcool00;?ooooo000Uooooo`Co00004?oooole
+ool00;;ooooo000Uooooo`Co00004?ooooleool00;;ooooo000Vooooo`;o00004Oooooleool00;;o
+oooo000Yooooo`;o00003Ooooolgool00;7ooooo000Xooooo`Co00003?oooolgool00;7ooooo000X
+ooooo`Co00002ooooolhool00;7ooooo000Yooooo`;o00003?oooolhool00;7ooooo000gooooocSo
+o`00/Oooool002gooooo0_l00008ooooocSoo`00/Oooool002cooooo1?l00007ooooocSoo`00/Ooo
+ool002cooooo1?l00007ooooocSoo`00/Oooool002gooooo0_l00008ooooocSoo`00/Oooool003;o
+oooo0_l00003ooooocSoo`00/Oooool0037ooooo1?l00002ooooocSoo`00/Oooool0037ooooo1?l0
+0002ooooocSoo`00/Oooool003;ooooo0_l00003ooooocSoo`00/Oooool003Sooooo=ooo002aoooo
+o`00>?ooool2o`0003Goo`00/Oooool003Oooooo1?l0000cool00;;ooooo000gooooo`Co0000<ooo
+002booooo`00>?ooool2o`0003Coo`00/_ooool003[ooooo<ooo002cooooo`00>_oooolcool00;?o
+oooo000joooooc;oo`00]?ooool003_ooooo<Ooo002dooooo`00??ooool`ool00;Cooooo000moooo
+obkoo`00]Oooool003gooooo;_oo002eooooo`00?_ooool/ool00;Kooooo000nooooob_oo`00]ooo
+ool003oooooo:Ooo002hooooo`00@?oooolVool00;[ooooo0013ooooob7oo`00_?ooool004Cooooo
+7ooo002mooooo`00AOoooolMool00;kooooo0017oooooa[oo`00_oooool004[ooooo5Ooo0031oooo
+o`00COooool?ool00<Cooooo001Booooo`Goo`00bOooool00?oooooo8Oooool00?oooooo8Oooool0
+0001\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.3042 .10525 m
+.3042 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000<oooool<ool00<7o
+oooo000Looooo`Co0000<?oooolBool00;kooooo000Mooooo`Co0000;OoooolFool00;cooooo000M
+ooooo`Co0000:_oooolKool00;[ooooo000Mooooo`Co00009ooooolOool00;Wooooo000Mooooo`Co
+00009_oooolRool00;Oooooo000Nooooo`?o00009OoooolTool00;Kooooo000Nooooo`Co00008ooo
+oolVool00;Gooooo000Nooooo`Co00008_oooolXool00;Cooooo000Oooooo`Co00008?oooolZool0
+0;?ooooo000Pooooo`Co00007_ooool/ool00;;ooooo000Pooooo`Co00007Oooool^ool00;7ooooo
+000Qooooo`;o00007_ooool^ool00;7ooooo000Sooooo`;o00006oooool`ool00;3ooooo000Roooo
+o`Co00006Ooooolaool00;3ooooo000Rooooo`Co00006Ooooolbool00:oooooo000Sooooo`;o0000
+6Oooooldool00:kooooo000Vooooo`;o00005_ooooldool00:kooooo000Uooooo`Co00005?oooolf
+ool00:gooooo000Uooooo`Co00005?oooolfool00:gooooo000Vooooo`;o00005Ooooolfool00:go
+oooo000Yooooo`;o00004Ooooolgool00:gooooo000Xooooo`Co00004?oooolgool00:gooooo000X
+ooooo`Co00004?oooolgool00:gooooo000Yooooo`;o00004Ooooolhool00:cooooo000looooocSo
+o`00[?ooool002gooooo0_l0000<ooooocWoo`00[?ooool002cooooo1?l0000;ooooocWoo`00[?oo
+ool002cooooo1?l0000;ooooocWoo`00[?ooool002gooooo0_l0000<ooooocWoo`00[?ooool003;o
+oooo0_l00007ooooocWoo`00[?ooool0037ooooo1?l00007ooooocSoo`00[?ooool0037ooooo1?l0
+0007ooooocSoo`00[?ooool003;ooooo0_l00008ooooocOoo`00[Oooool003cooooo=ooo002]oooo
+o`00>?ooool2o`0000;ooooo=ooo002]ooooo`00=oooool4o`0000;ooooo=_oo002]ooooo`00=ooo
+ool4o`0000;ooooo=_oo002]ooooo`00>?ooool2o`0000?ooooo=_oo002]ooooo`00?_ooool2o`00
+03;oo`00[_ooool003gooooo1?l0000aool00:kooooo000mooooo`Co0000<?oo002_ooooo`00?_oo
+ool2o`00033oo`00/?ooool0043ooooo<?oo002`ooooo`00@Oooool^ool00;7ooooo0011ooooobko
+o`00/Oooool004;ooooo;?oo002booooo`00@ooooolZool00;?ooooo0014ooooobSoo`00]?ooool0
+04Gooooo9Ooo002fooooo`00AooooolRool00;Oooooo0018ooooob3oo`00^?ooool004Wooooo7Ooo
+002jooooo`00C?oooolIool00;_ooooo001?oooooaCoo`00_Oooool0057ooooo4?oo002oooooo`00
+Eoooool4ool00<Gooooo003oooooob7ooooo003oooooob7ooooo0000\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.31991 .10525 m
+.31991 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000>?ooool<ool00;co
+oooo000Looooo`Co0000=OoooolAool00;[ooooo000Mooooo`Co0000<OoooolGool00;Oooooo000M
+ooooo`Co0000;_oooolKool00;Kooooo000Mooooo`Co0000;?oooolNool00;Gooooo000Mooooo`Co
+0000:_oooolSool00;;ooooo000Nooooo`?o0000:OoooolUool00;7ooooo000Nooooo`Co00009ooo
+oolWool00;3ooooo000Nooooo`Co00009_oooolYool00:oooooo000Oooooo`Co00009?ooool[ool0
+0:kooooo000Pooooo`Co00008_ooool/ool00:kooooo000Pooooo`Co00008Oooool^ool00:gooooo
+000Qooooo`;o00008_ooool^ool00:gooooo000Sooooo`;o00007oooool`ool00:cooooo000Roooo
+o`Co00007_oooolaool00:_ooooo000Rooooo`Co00007_oooolaool00:_ooooo000Sooooo`;o0000
+7_oooolcool00:[ooooo000Vooooo`;o00006ooooolcool00:[ooooo000Uooooo`Co00006Ooooole
+ool00:Wooooo000Uooooo`Co00006?oooolfool00:Wooooo000Vooooo`;o00006Ooooolfool00:Wo
+oooo000Yooooo`;o00005_oooolgool00:Sooooo000Xooooo`Co00005Ooooolgool00:Sooooo000X
+ooooo`Co00005?oooolhool00:Sooooo000Yooooo`;o00005Ooooolhool00:Sooooo0010ooooocSo
+o`00Z?ooool002gooooo0_l0000AooooocSoo`00Z?ooool002cooooo1?l0000@ooooocSoo`00Z?oo
+ool002cooooo1?l0000@ooooocSoo`00Z?ooool002gooooo0_l0000AooooocSoo`00Z?ooool003;o
+oooo0_l0000<ooooocSoo`00Z?ooool0037ooooo1?l0000;ooooocSoo`00Z?ooool0037ooooo1?l0
+000;ooooocSoo`00Z?ooool003;ooooo0_l0000<ooooocSoo`00Z?ooool0047ooooo=ooo002Xoooo
+o`00>?ooool2o`0000Oooooo=ooo002Xooooo`00=oooool4o`0000Kooooo=_oo002Yooooo`00=ooo
+ool4o`0000Kooooo=_oo002Yooooo`00>?ooool2o`0000Oooooo=_oo002Yooooo`00?_ooool2o`00
+00;ooooo=?oo002Zooooo`00?Oooool4o`0000;ooooo<ooo002Zooooo`00?Oooool4o`0000;ooooo
+<_oo002[ooooo`00?_ooool2o`0000Cooooo<Ooo002[ooooo`00A?ooool00ooo003o0000o`00000]
+ool00:cooooo0014ooooo`Co0000:ooo002]ooooo`00A?ooool4o`0002_oo`00[Oooool004Gooooo
+0_l0000[ool00:kooooo0017ooooob_oo`00[_ooool004Sooooo:Ooo002_ooooo`00BOoooolVool0
+0;7ooooo001;ooooob;oo`00/oooool004gooooo7ooo002dooooo`00C_oooolMool00;Gooooo001@
+oooooa[oo`00]_ooool005?ooooo5Ooo002hooooo`00E_ooool?ool00;_ooooo001Kooooo`Goo`00
+`?ooool00?oooooo8Oooool00?oooooo8Oooool00001\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.33562 .10525 m
+.33562 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000??ooool<ool00;So
+oooo000Looooo`Co0000>OoooolBool00;Gooooo000Mooooo`Co0000=OoooolGool00;?ooooo000M
+ooooo`Co0000<ooooolKool00;7ooooo000Mooooo`Co0000<?oooolOool00;3ooooo000Mooooo`Co
+0000;ooooolRool00:kooooo000Nooooo`?o0000;_oooolTool00:gooooo000Nooooo`Co0000;?oo
+oolVool00:cooooo000Nooooo`Co0000:ooooolXool00:_ooooo000Oooooo`Co0000:OoooolZool0
+0:[ooooo000Pooooo`Co00009oooool/ool00:Wooooo000Pooooo`Co00009_ooool^ool00:Sooooo
+000Qooooo`;o00009oooool^ool00:Sooooo000Sooooo`;o00009?ooool`ool00:Oooooo000Roooo
+o`Co00008_oooolaool00:Oooooo000Rooooo`Co00008_oooolbool00:Kooooo000Sooooo`;o0000
+8_ooooldool00:Gooooo000Vooooo`;o00007oooooldool00:Gooooo000Uooooo`Co00007Ooooolf
+ool00:Cooooo000Uooooo`Co00007Ooooolfool00:Cooooo000Vooooo`;o00007_oooolfool00:Co
+oooo000Yooooo`;o00006_oooolgool00:Cooooo000Xooooo`Co00006Ooooolgool00:Cooooo000X
+ooooo`Co00006?oooolhool00:Cooooo000Yooooo`;o00006Oooooliool00:?ooooo0014ooooocWo
+o`00Xoooool002gooooo0_l0000EooooocWoo`00Xoooool002cooooo1?l0000DooooocWoo`00Xooo
+ool002cooooo1?l0000DooooocWoo`00Xoooool002gooooo0_l0000EooooocWoo`00Xoooool003;o
+oooo0_l0000@ooooocWoo`00Xoooool0037ooooo1?l0000?ooooocWoo`00Xoooool0037ooooo1?l0
+000?ooooocWoo`00Xoooool003;ooooo0_l0000@ooooocSoo`00Y?ooool004Gooooo=ooo002Toooo
+o`00>?ooool2o`0000_ooooo=ooo002Tooooo`00=oooool4o`0000_ooooo=_oo002Tooooo`00=ooo
+ool4o`0000_ooooo=_oo002Tooooo`00>?ooool2o`0000cooooo=_oo002Tooooo`00?_ooool2o`00
+00Oooooo=?oo002Uooooo`00?Oooool4o`0000Kooooo=?oo002Uooooo`00?Oooool4o`0000Kooooo
+<ooo002Vooooo`00?_ooool2o`0000Sooooo<Ooo002Wooooo`00AOooool2o`0000;ooooo<?oo002W
+ooooo`00A?ooool4o`0000;ooooo;_oo002Xooooo`00A?ooool4o`0000;ooooo;_oo002Xooooo`00
+AOooool2o`0000Cooooo00?oo`00o`000?l00000:Ooo002Yooooo`00Boooool4o`0002Ooo`00Z_oo
+ool004_ooooo1?l0000Vool00:_ooooo001<ooooo`;o00009Ooo002]ooooo`00D?oooolRool00:ko
+oooo001Aooooob3oo`00[oooool005;ooooo7Ooo002aooooo`00EOoooolIool00;;ooooo001Goooo
+oaGoo`00]?ooool005[ooooo4?oo002fooooo`00H?ooool4ool00;cooooo003oooooob7ooooo003o
+ooooob7ooooo0000\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.35133 .10525 m
+.35133 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000@?ooool=ool00;?o
+oooo000Looooo`Co0000?_oooolAool00;7ooooo000Mooooo`Co0000>_oooolGool00:kooooo000M
+ooooo`Co0000=ooooolKool00:gooooo000Mooooo`Co0000=OoooolNool00:cooooo000Mooooo`Co
+0000<ooooolSool00:Wooooo000Nooooo`?o0000<_oooolUool00:Sooooo000Nooooo`Co0000<?oo
+oolWool00:Oooooo000Nooooo`Co0000;ooooolYool00:Kooooo000Oooooo`Co0000;Oooool[ool0
+0:Gooooo000Pooooo`Co0000:oooool/ool00:Gooooo000Pooooo`Co0000:_ooool^ool00:Cooooo
+000Qooooo`;o0000:oooool^ool00:Cooooo000Sooooo`;o0000:?ooool`ool00:?ooooo000Roooo
+o`Co00009ooooolaool00:;ooooo000Rooooo`Co00009_oooolbool00:;ooooo000Sooooo`;o0000
+9_ooooldool00:7ooooo000Vooooo`;o00008oooooldool00:7ooooo000Uooooo`Co00008Ooooolf
+ool00:3ooooo000Uooooo`Co00008Ooooolfool00:3ooooo000Vooooo`;o00008_oooolfool00:3o
+oooo000Yooooo`;o00007_oooolhool009oooooo000Xooooo`Co00007Ooooolhool009oooooo000X
+ooooo`Co00007Ooooolhool009oooooo000Yooooo`;o00007_oooolhool009oooooo0019ooooocSo
+o`00Woooool002gooooo0_l0000JooooocSoo`00Woooool002cooooo1?l0000IooooocSoo`00Wooo
+ool002cooooo1?l0000IooooocSoo`00Woooool002gooooo0_l0000JooooocSoo`00Woooool003;o
+oooo0_l0000EooooocSoo`00Woooool0037ooooo1?l0000DooooocSoo`00Woooool0037ooooo1?l0
+000DooooocSoo`00Woooool003;ooooo0_l0000EooooocSoo`00Woooool004Wooooo>?oo002Ooooo
+o`00>?ooool2o`0000oooooo>?oo002Oooooo`00=oooool4o`0000oooooo=_oo002Pooooo`00=ooo
+ool4o`0000oooooo=_oo002Pooooo`00>?ooool2o`00013ooooo=_oo002Pooooo`00?_ooool2o`00
+00_ooooo=?oo002Qooooo`00?Oooool4o`0000[ooooo=?oo002Qooooo`00?Oooool4o`0000_ooooo
+<_oo002Rooooo`00?_ooool2o`0000gooooo<Ooo002Rooooo`00AOooool2o`0000Kooooo<?oo002S
+ooooo`00A?ooool4o`0000Kooooo;_oo002Tooooo`00A?ooool4o`0000Kooooo;_oo002Tooooo`00
+AOooool2o`0000Gooooo0_l000000oooooooo`00ool0000Zool00:Gooooo001;ooooo`Co000000?o
+ooooool00?oo0000:Ooo002Uooooo`00Boooool4o`0000;ooooo:Ooo002Vooooo`00C?ooool2o`00
+00Cooooo0_oo0002o`0002;oo`00Z?ooool005?ooooo1?l0000Oool00:[ooooo001Cooooo`Co0000
+7_oo002[ooooo`00E?ooool2o`000003oooooooo003oo`0001_oo`00[?ooool005Wooooo6_oo002]
+ooooo`00G?oooolEool00:oooooo001Oooooo`ooo`00/_ooool006Cooooo1Ooo002gooooo`00oooo
+oolQooooo`00oooooolQooooo`00\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.36704 .10525 m
+.36704 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000AOooool<ool00:oo
+oooo000Looooo`Co0000@_oooolBool00:cooooo000Mooooo`Co0000?_oooolGool00:[ooooo000M
+ooooo`Co0000??oooolKool00:Sooooo000Mooooo`Co0000>OoooolOool00:Oooooo000Mooooo`Co
+0000>?oooolRool00:Gooooo000Nooooo`?o0000=ooooolTool00:Cooooo000Nooooo`Co0000=Ooo
+oolVool00:?ooooo000Nooooo`Co0000=?oooolXool00:;ooooo000Oooooo`Co0000<_oooolZool0
+0:7ooooo000Pooooo`Co0000<?ooool/ool00:3ooooo000Pooooo`Co0000;oooool^ool009oooooo
+000Qooooo`;o0000<?ooool^ool009oooooo000Sooooo`;o0000;Oooool`ool009kooooo000Roooo
+o`Co0000:ooooolaool009kooooo000Rooooo`Co0000:ooooolaool009kooooo000Sooooo`;o0000
+:ooooolcool009gooooo000Vooooo`;o0000:?oooolcool009gooooo000Uooooo`Co00009_oooole
+ool009cooooo000Uooooo`Co00009_ooooleool009cooooo000Vooooo`;o00009oooooleool009co
+oooo000Yooooo`;o00008ooooolgool009_ooooo000Xooooo`Co00008_oooolgool009_ooooo000X
+ooooo`Co00008Ooooolhool009_ooooo000Yooooo`;o00008_ooooliool009[ooooo001=ooooocWo
+o`00V_ooool002gooooo0_l0000NooooocWoo`00V_ooool002cooooo1?l0000MooooocWoo`00V_oo
+ool002cooooo1?l0000MooooocWoo`00V_ooool002gooooo0_l0000NooooocWoo`00V_ooool003;o
+oooo0_l0000IooooocWoo`00V_ooool0037ooooo1?l0000HooooocWoo`00V_ooool0037ooooo1?l0
+000HooooocWoo`00V_ooool003;ooooo0_l0000IooooocSoo`00Voooool004kooooo=ooo002Koooo
+o`00>?ooool2o`0001Cooooo=ooo002Kooooo`00=oooool4o`0001Cooooo=Ooo002Looooo`00=ooo
+ool4o`0001Cooooo=Ooo002Looooo`00>?ooool2o`0001Gooooo=Ooo002Looooo`00?_ooool2o`00
+013ooooo<ooo002Mooooo`00?Oooool4o`0000oooooo<ooo002Mooooo`00?Oooool4o`0000oooooo
+<_oo002Nooooo`00?_ooool2o`00017ooooo<Ooo002Nooooo`00AOooool2o`0000_ooooo<?oo002N
+ooooo`00A?ooool4o`0000_ooooo;_oo002Oooooo`00A?ooool4o`0000_ooooo;_oo002Oooooo`00
+AOooool2o`0000Gooooo0_l00006ooooobcoo`00X?ooool004_ooooo1?l00006ooooob[oo`00XOoo
+ool004_ooooo1?l00007ooooobSoo`00X_ooool004cooooo0_l00006ooooo`;o000000?oooooool0
+0?oo00008ooo002Tooooo`00Doooool4o`0000;ooooo8_oo002Uooooo`00Doooool4o`0000?ooooo
+0_oo0002o`0001coo`00Y_ooool005Cooooo0_l00005ooooo`Co00006Ooo002Xooooo`00Foooool4
+o`0001Soo`00ZOooool005cooooo0_l00002oooooaGoo`00Zoooool006?ooooo4?oo002]ooooo`00
+JOooool4ool00;?ooooo003oooooob7ooooo003oooooob7ooooo0000\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.38274 .10525 m
+.38274 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000BOooool<ool00:_o
+oooo000Looooo`Co0000AooooolAool00:Sooooo000Mooooo`Co0000@ooooolGool00:Gooooo000M
+ooooo`Co0000@?oooolKool00:Cooooo000Mooooo`Co0000?_oooolNool00:?ooooo000Mooooo`Co
+0000??oooolRool00:7ooooo000Nooooo`?o0000>ooooolUool009oooooo000Nooooo`Co0000>Ooo
+oolWool009kooooo000Nooooo`Co0000>?oooolXool009kooooo000Oooooo`Co0000=_oooolZool0
+09gooooo000Pooooo`Co0000=?ooool/ool009cooooo000Pooooo`Co0000<oooool^ool009_ooooo
+000Qooooo`;o0000=?ooool^ool009_ooooo000Sooooo`;o0000<Oooool`ool009[ooooo000Roooo
+o`Co0000<?oooolaool009Wooooo000Rooooo`Co0000;ooooolbool009Wooooo000Sooooo`;o0000
+;oooooldool009Sooooo000Vooooo`;o0000;?ooooldool009Sooooo000Uooooo`Co0000:_oooolf
+ool009Oooooo000Uooooo`Co0000:_oooolfool009Oooooo000Vooooo`;o0000:ooooolfool009Oo
+oooo000Yooooo`;o00009ooooolhool009Kooooo000Xooooo`Co00009_oooolhool009Kooooo000X
+ooooo`Co00009_oooolhool009Kooooo000Yooooo`;o00009ooooolhool009Kooooo001BooooocSo
+o`00U_ooool002gooooo0_l0000SooooocSoo`00U_ooool002cooooo1?l0000RooooocSoo`00U_oo
+ool002cooooo1?l0000RooooocSoo`00U_ooool002gooooo0_l0000SooooocSoo`00U_ooool003;o
+oooo0_l0000NooooocSoo`00U_ooool0037ooooo1?l0000MooooocSoo`00U_ooool0037ooooo1?l0
+000MooooocSoo`00U_ooool003;ooooo0_l0000NooooocSoo`00U_ooool005;ooooo>?oo002Foooo
+o`00>?ooool2o`0001Sooooo>?oo002Fooooo`00=oooool4o`0001Sooooo=_oo002Gooooo`00=ooo
+ool4o`0001Sooooo=_oo002Gooooo`00>?ooool2o`0001Wooooo=_oo002Gooooo`00?_ooool2o`00
+01Cooooo=?oo002Hooooo`00?Oooool4o`0001?ooooo=?oo002Hooooo`00?Oooool4o`0001Cooooo
+<_oo002Iooooo`00?_ooool2o`0001Kooooo<Ooo002Iooooo`00AOooool2o`0000oooooo<?oo002J
+ooooo`00A?ooool4o`0000oooooo;_oo002Kooooo`00A?ooool4o`0000oooooo;_oo002Kooooo`00
+AOooool2o`0000Gooooo0_l0000:ooooobcoo`00W?ooool004_ooooo1?l0000:ooooob[oo`00WOoo
+ool004_ooooo1?l0000;ooooobWoo`00WOooool004cooooo0_l00006ooooo`;o00001OoooolVool0
+09oooooo001Cooooo`Co00001_oooolRool00:7ooooo001Cooooo`Co00001Oooool2o`000003oooo
+oooo003oo`0001goo`00X_ooool005Cooooo0_l00005ooooo`Co000000?oooooool00?oo00006ooo
+002Sooooo`00Foooool4o`0000?ooooo0_oo0002o`0001Koo`00Y?ooool005cooooo0_l00005oooo
+o`Co00004ooo002Vooooo`00Hoooool4o`000003oooooooo003oo`0000goo`00ZOooool006Cooooo
+0_l00007ooooo`Goo`00[_ooool00?oooooo8Oooool00?oooooo8Oooool00001\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.39845 .10525 m
+.39845 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000C_ooool<ool00:Ko
+oooo000Looooo`Co0000BooooolBool00:?ooooo000Mooooo`Co0000AooooolGool00:7ooooo000M
+ooooo`Co0000AOoooolKool009oooooo000Mooooo`Co0000@_oooolOool009kooooo000Mooooo`Co
+0000@OoooolRool009cooooo000Nooooo`?o0000@?oooolTool009_ooooo000Nooooo`Co0000?_oo
+oolVool009[ooooo000Nooooo`Co0000?OoooolXool009Wooooo000Oooooo`Co0000>ooooolZool0
+09Sooooo000Pooooo`Co0000>Oooool/ool009Oooooo000Pooooo`Co0000>?ooool^ool009Kooooo
+000Qooooo`;o0000>Oooool^ool009Kooooo000Sooooo`;o0000=_ooool`ool009Gooooo000Roooo
+o`Co0000=?oooolaool009Gooooo000Rooooo`Co0000=?oooolaool009Gooooo000Sooooo`;o0000
+=?oooolcool009Cooooo000Vooooo`;o0000<Ooooolcool009Cooooo000Uooooo`Co0000;ooooole
+ool009?ooooo000Uooooo`Co0000;oooooleool009?ooooo000Vooooo`;o0000<?ooooleool009?o
+oooo000Yooooo`;o0000;?oooolgool009;ooooo000Xooooo`Co0000:ooooolgool009;ooooo000X
+ooooo`Co0000:_oooolhool009;ooooo000Yooooo`;o0000:ooooolhool009;ooooo001FooooocSo
+o`00T_ooool002gooooo0_l0000WooooocSoo`00T_ooool002cooooo1?l0000VooooocWoo`00TOoo
+ool002cooooo1?l0000VooooocWoo`00TOooool002gooooo0_l0000WooooocWoo`00TOooool003;o
+oooo0_l0000RooooocSoo`00T_ooool0037ooooo1?l0000QooooocSoo`00T_ooool0037ooooo1?l0
+000QooooocSoo`00T_ooool003;ooooo0_l0000RooooocSoo`00T_ooool005Oooooo=ooo002Boooo
+o`00>?ooool2o`0001gooooo=ooo002Booooo`00=oooool4o`0001gooooo=Ooo002Cooooo`00=ooo
+ool4o`0001gooooo=Ooo002Cooooo`00>?ooool2o`0001kooooo=Ooo002Cooooo`00?_ooool2o`00
+01Wooooo<ooo002Dooooo`00?Oooool4o`0001Sooooo<ooo002Dooooo`00?Oooool4o`0001Sooooo
+<_oo002Eooooo`00?_ooool2o`0001[ooooo<Ooo002Eooooo`00AOooool2o`0001Cooooo<?oo002E
+ooooo`00A?ooool4o`0001Cooooo;_oo002Fooooo`00A?ooool4o`0001Cooooo;_oo002Fooooo`00
+AOooool2o`0000Gooooo0_l0000?ooooobcoo`00Uoooool004_ooooo1?l0000>ooooob_oo`00V?oo
+ool004_ooooo1?l0000@ooooobSoo`00VOooool004cooooo0_l00006ooooo`;o00002_oooolUool0
+09_ooooo001Cooooo`Co00002ooooolRool009cooooo001Cooooo`Co00001Oooool2o`0000Gooooo
+8?oo002Mooooo`00E?ooool2o`0000Gooooo1?l00005oooooagoo`00Woooool005_ooooo1?l00005
+ooooo`;o000000?oooooool00?oo00005ooo002Pooooo`00G?ooool2o`0000Gooooo1?l00002oooo
+o`Coo`000_l0000?ool00:;ooooo001Sooooo`Co00001Oooool4o`0000coo`00Y?ooool006Cooooo
+0_l00006ooooo`Co00000_ooool4ool00:[ooooo001]ooooo`;o0000/Oooool00?oooooo8Oooool0
+0001\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.41416 .10525 m
+.41416 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000D_ooool<ool00:;o
+oooo000Looooo`Co0000CooooolBool009oooooo000Mooooo`Co0000C?oooolGool009cooooo000M
+ooooo`Co0000BOoooolKool009_ooooo000Mooooo`Co0000AooooolNool009[ooooo000Mooooo`Co
+0000AOoooolRool009Sooooo000Nooooo`?o0000A?oooolTool009Oooooo000Nooooo`Co0000@_oo
+oolVool009Kooooo000Nooooo`Co0000@OoooolXool009Gooooo000Oooooo`Co0000?ooooolZool0
+09Cooooo000Pooooo`Co0000?Oooool/ool009?ooooo000Pooooo`Co0000??ooool^ool009;ooooo
+000Qooooo`;o0000?Oooool^ool009;ooooo000Sooooo`;o0000>_ooool`ool0097ooooo000Roooo
+o`Co0000>Ooooolaool0093ooooo000Rooooo`Co0000>?oooolbool0093ooooo000Sooooo`;o0000
+>?ooooldool008oooooo000Vooooo`;o0000=Oooooldool008oooooo000Uooooo`Co0000<ooooolf
+ool008kooooo000Uooooo`Co0000<ooooolfool008kooooo000Vooooo`;o0000=?oooolfool008ko
+oooo000Yooooo`;o0000<?oooolgool008kooooo000Xooooo`Co0000;ooooolgool008kooooo000X
+ooooo`Co0000;ooooolgool008kooooo000Yooooo`;o0000<?oooolhool008gooooo001KooooocSo
+o`00SOooool002gooooo0_l0000[ooooocWoo`00SOooool002cooooo1?l0000ZooooocWoo`00SOoo
+ool002cooooo1?l0000ZooooocWoo`00SOooool002gooooo0_l0000[ooooocWoo`00SOooool003;o
+oooo0_l0000VooooocWoo`00SOooool0037ooooo1?l0000VooooocSoo`00SOooool0037ooooo1?l0
+000VooooocSoo`00SOooool003;ooooo0_l0000WooooocOoo`00S_ooool005_ooooo=ooo002>oooo
+o`00>?ooool2o`00027ooooo=ooo002>ooooo`00=oooool4o`00027ooooo=_oo002>ooooo`00=ooo
+ool4o`00027ooooo=_oo002>ooooo`00>?ooool2o`0002;ooooo=_oo002>ooooo`00?_ooool2o`00
+01gooooo=?oo002?ooooo`00?Oooool4o`0001cooooo=?oo002?ooooo`00?Oooool4o`0001gooooo
+<_oo002@ooooo`00?_ooool2o`0001oooooo<Ooo002@ooooo`00AOooool2o`0001Sooooo<?oo002A
+ooooo`00A?ooool4o`0001Sooooo;_oo002Booooo`00A?ooool4o`0001Sooooo;_oo002Booooo`00
+AOooool2o`0000Gooooo0_l0000Cooooobcoo`00Toooool004_ooooo1?l0000Cooooob[oo`00U?oo
+ool004_ooooo1?l0000DooooobSoo`00UOooool004cooooo0_l00006ooooo`;o00003_oooolUool0
+09Oooooo001Cooooo`Co00003ooooolRool009Sooooo001Cooooo`Co00001Oooool2o`0000[ooooo
+7ooo002Iooooo`00E?ooool2o`0000Gooooo1?l0000:oooooagoo`00V_ooool005_ooooo1?l00005
+ooooo`;o00001OoooolJool009_ooooo001Looooo`;o00001Oooool4o`0000Kooooo0_l00007ool0
+00;o00002ooo002Mooooo`00Hoooool4o`0000Gooooo1?l00005ool000Co00001ooo002Pooooo`00
+I?ooool2o`0000Kooooo1?l00005ooooo`Co00000_oo002Uooooo`00KOooool2o`0000Oooooo0_l0
+002Xooooo`00oooooolQooooo`00\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.42987 .10525 m
+.42987 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000Eoooool<ool009go
+oooo000Looooo`Co0000E?oooolAool009_ooooo000Mooooo`Co0000D?oooolGool009Sooooo000M
+ooooo`Co0000C_oooolKool009Kooooo000Mooooo`Co0000BooooolOool009Gooooo000Mooooo`Co
+0000BOoooolSool009?ooooo000Nooooo`?o0000B?oooolUool009;ooooo000Nooooo`Co0000A_oo
+oolWool0097ooooo000Nooooo`Co0000AOoooolYool0093ooooo000Oooooo`Co0000@oooool[ool0
+08oooooo000Pooooo`Co0000@_ooool/ool008kooooo000Pooooo`Co0000@Oooool^ool008gooooo
+000Qooooo`;o0000@_ooool^ool008gooooo000Sooooo`;o0000?oooool`ool008cooooo000Roooo
+o`Co0000?Ooooolaool008cooooo000Rooooo`Co0000?Ooooolaool008cooooo000Sooooo`;o0000
+?Ooooolcool008_ooooo000Vooooo`;o0000>_oooolcool008_ooooo000Uooooo`Co0000>?oooole
+ool008[ooooo000Uooooo`Co0000>?ooooleool008[ooooo000Vooooo`;o0000>Oooooleool008[o
+oooo000Yooooo`;o0000=Ooooolgool008Wooooo000Xooooo`Co0000=?oooolgool008Wooooo000X
+ooooo`Co0000<ooooolhool008Wooooo000Yooooo`;o0000=?oooolhool008Wooooo001OooooocSo
+o`00ROooool002gooooo0_l0000`ooooocSoo`00ROooool002cooooo1?l0000_ooooocSoo`00ROoo
+ool002cooooo1?l0000_ooooocSoo`00ROooool002gooooo0_l0000`ooooocSoo`00ROooool003;o
+oooo0_l0000[ooooocSoo`00ROooool0037ooooo1?l0000ZooooocSoo`00ROooool0037ooooo1?l0
+000ZooooocSoo`00ROooool003;ooooo0_l0000[ooooocSoo`00ROooool0063ooooo=ooo0029oooo
+o`00>?ooool2o`0002Kooooo=ooo0029ooooo`00=oooool4o`0002Kooooo=Ooo002:ooooo`00=ooo
+ool4o`0002Kooooo=Ooo002:ooooo`00>?ooool2o`0002Oooooo=Ooo002:ooooo`00?_ooool2o`00
+02;ooooo<ooo002;ooooo`00?Oooool4o`00027ooooo<ooo002;ooooo`00?Oooool4o`00027ooooo
+<_oo002<ooooo`00?_ooool2o`0002?ooooo<Ooo002<ooooo`00AOooool2o`0001gooooo<?oo002<
+ooooo`00A?ooool4o`0001gooooo;_oo002=ooooo`00A?ooool4o`0001gooooo;_oo002=ooooo`00
+AOooool2o`0000Gooooo0_l0000Hooooobcoo`00S_ooool004_ooooo1?l0000Gooooob_oo`00Sooo
+ool004_ooooo1?l0000HooooobWoo`00T?ooool004cooooo0_l00006ooooo`;o00004_oooolVool0
+09;ooooo001Cooooo`Co00005?oooolRool009?ooooo001Cooooo`Co00001Oooool2o`0000kooooo
+8?oo002Dooooo`00E?ooool2o`0000Gooooo1?l0000>oooooagoo`00U_ooool005_ooooo1?l00005
+ooooo`;o00002_oooolIool009Oooooo001Looooo`;o00001Oooool4o`0000Kooooo0_l00003oooo
+o`Coo`000_l00007ool000;o00001_oo002Iooooo`00Hoooool4o`0000Gooooo1?l00005ooooo`Co
+00001Ooo0004o`0000;oo`00W?ooool006Cooooo0_l00006ooooo`Co00001Oooool4o`000003oooo
+oooo003oo`0000;oo`001?l0002Nooooo`00KOooool2o`0000Oooooo0_l00007ooooo`;o0000Wooo
+ool00?oooooo8Oooool00001\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.44558 .10525 m
+.44558 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000Foooool<ool009Wo
+oooo000Looooo`Co0000F?oooolBool009Kooooo000Mooooo`Co0000EOoooolGool009?ooooo000M
+ooooo`Co0000D_oooolKool009;ooooo000Mooooo`Co0000CooooolOool0097ooooo000Mooooo`Co
+0000C_oooolRool008oooooo000Nooooo`?o0000COoooolTool008kooooo000Nooooo`Co0000Booo
+oolVool008gooooo000Nooooo`Co0000B_oooolXool008cooooo000Oooooo`Co0000B?oooolZool0
+08_ooooo000Pooooo`Co0000A_ooool/ool008[ooooo000Pooooo`Co0000AOooool^ool008Wooooo
+000Qooooo`;o0000A_ooool^ool008Wooooo000Sooooo`;o0000@oooool`ool008Sooooo000Roooo
+o`Co0000@Ooooolaool008Sooooo000Rooooo`Co0000@Ooooolbool008Oooooo000Sooooo`;o0000
+@Oooooldool008Kooooo000Vooooo`;o0000?_ooooldool008Kooooo000Uooooo`Co0000??oooolf
+ool008Gooooo000Uooooo`Co0000??oooolfool008Gooooo000Vooooo`;o0000?Ooooolfool008Go
+oooo000Yooooo`;o0000>Ooooolgool008Gooooo000Xooooo`Co0000>?oooolgool008Gooooo000X
+ooooo`Co0000>?oooolgool008Gooooo000Yooooo`;o0000>Ooooolhool008Cooooo001TooooocSo
+o`00Q?ooool002gooooo0_l0000dooooocWoo`00Q?ooool002cooooo1?l0000cooooocWoo`00Q?oo
+ool002cooooo1?l0000cooooocWoo`00Q?ooool002gooooo0_l0000dooooocWoo`00Q?ooool003;o
+oooo0_l0000_ooooocWoo`00Q?ooool0037ooooo1?l0000_ooooocSoo`00Q?ooool0037ooooo1?l0
+000_ooooocSoo`00Q?ooool003;ooooo0_l0000`ooooocOoo`00QOooool006Cooooo=ooo0025oooo
+o`00>?ooool2o`0002[ooooo=ooo0025ooooo`00=oooool4o`0002[ooooo=_oo0025ooooo`00=ooo
+ool4o`0002[ooooo=_oo0025ooooo`00>?ooool2o`0002_ooooo=_oo0025ooooo`00?_ooool2o`00
+02Kooooo=?oo0026ooooo`00?Oooool4o`0002Gooooo=?oo0026ooooo`00?Oooool4o`0002Gooooo
+<ooo0027ooooo`00?_ooool2o`0002Oooooo<Ooo0028ooooo`00AOooool2o`00027ooooo<?oo0028
+ooooo`00A?ooool4o`00027ooooo;_oo0029ooooo`00A?ooool4o`00027ooooo;_oo0029ooooo`00
+AOooool2o`0000Gooooo0_l0000Looooobcoo`00R_ooool004_ooooo1?l0000Looooob[oo`00Rooo
+ool004_ooooo1?l0000MooooobSoo`00S?ooool004cooooo0_l00006ooooo`;o00005ooooolUool0
+08kooooo001Cooooo`Co00006?oooolRool008oooooo001Cooooo`Co00001Oooool2o`0001;ooooo
+8?oo002@ooooo`00E?ooool2o`0000Gooooo1?l0000Boooooakoo`00TOooool005_ooooo1?l00005
+ooooo`;o00003_oooolDool000;o00001?oo002Booooo`00G?ooool2o`0000Gooooo1?l00006oooo
+o`;o00001oooool2o`0000Ooo`000_l00006ool000Co000000?oo`00ooooooooool0T_ooool006?o
+oooo1?l00005ooooo`Co00001Oooool4o`0000Goo`001?l00005ool000Co0000UOooool006Cooooo
+0_l00006ooooo`Co00001Oooool4o`0000Gooooo1?l00002ool000Cooooo0_l0002Fooooo`00KOoo
+ool2o`0000Oooooo0_l00007ooooo`;o0000Woooool00?oooooo8Oooool00001\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.46128 .10525 m
+.46128 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000H?ooool<ool009Co
+oooo000Looooo`Co0000GOoooolAool009;ooooo000Mooooo`Co0000FOoooolGool008oooooo000M
+ooooo`Co0000E_oooolKool008kooooo000Mooooo`Co0000E?oooolNool008gooooo000Mooooo`Co
+0000D_oooolSool008[ooooo000Nooooo`?o0000DOoooolUool008Wooooo000Nooooo`Co0000Cooo
+oolWool008Sooooo000Nooooo`Co0000C_oooolYool008Oooooo000Oooooo`Co0000C?ooool[ool0
+08Kooooo000Pooooo`Co0000B_ooool/ool008Kooooo000Pooooo`Co0000BOooool^ool008Gooooo
+000Qooooo`;o0000B_ooool^ool008Gooooo000Sooooo`;o0000Aoooool`ool008Cooooo000Roooo
+o`Co0000A_oooolaool008?ooooo000Rooooo`Co0000A_oooolaool008?ooooo000Sooooo`;o0000
+A_oooolcool008;ooooo000Vooooo`;o0000@ooooolcool008;ooooo000Uooooo`Co0000@Ooooole
+ool0087ooooo000Uooooo`Co0000@?oooolfool0087ooooo000Vooooo`;o0000@Ooooolfool0087o
+oooo000Yooooo`;o0000?_oooolgool0083ooooo000Xooooo`Co0000?Ooooolgool0083ooooo000X
+ooooo`Co0000??oooolhool0083ooooo000Yooooo`;o0000?Ooooolhool0083ooooo001XooooocSo
+o`00P?ooool002gooooo0_l0000iooooocSoo`00P?ooool002cooooo1?l0000hooooocSoo`00P?oo
+ool002cooooo1?l0000hooooocSoo`00P?ooool002gooooo0_l0000iooooocSoo`00P?ooool003;o
+oooo0_l0000dooooocSoo`00P?ooool0037ooooo1?l0000cooooocSoo`00P?ooool0037ooooo1?l0
+000cooooocSoo`00P?ooool003;ooooo0_l0000dooooocSoo`00P?ooool006Wooooo=ooo0020oooo
+o`00>?ooool2o`0002oooooo=ooo0020ooooo`00=oooool4o`0002kooooo=_oo0021ooooo`00=ooo
+ool4o`0002kooooo=_oo0021ooooo`00>?ooool2o`0002oooooo=_oo0021ooooo`00?_ooool2o`00
+02[ooooo=?oo0022ooooo`00?Oooool4o`0002[ooooo<ooo0022ooooo`00?Oooool4o`0002[ooooo
+<_oo0023ooooo`00?_ooool2o`0002cooooo<Ooo0023ooooo`00AOooool2o`0002Gooooo<?oo0024
+ooooo`00A?ooool4o`0002Gooooo;_oo0025ooooo`00A?ooool4o`0002Gooooo;_oo0025ooooo`00
+AOooool2o`0000Gooooo0_l0000Pooooobcoo`00Q_ooool004_ooooo1?l0000Pooooob_oo`00Q_oo
+ool004_ooooo1?l0000QooooobWoo`00Qoooool004cooooo0_l00006ooooo`;o00006ooooolVool0
+08Wooooo001Cooooo`Co00007OoooolQool008_ooooo001Cooooo`Co00001Oooool2o`0001Oooooo
+6ooo0002o`0000;oo`00S?ooool005Cooooo0_l00005ooooo`Co00005ooooolIool000Co0000SOoo
+ool005_ooooo1?l00005ooooo`;o00004_ooool@ool000;o00001Ooo0004o`0008gooooo001Loooo
+o`;o00001Oooool4o`0000Kooooo0_l00007ooooo`;o00000oooool4ool000;o00001_oo0004o`00
+00Goo`000_l0002>ooooo`00Hoooool4o`0000Gooooo1?l00005ooooo`Co00001Oooool4o`0000Go
+o`001?l00002ool009?ooooo001Tooooo`;o00001_ooool4o`0000Gooooo1?l00005ooooo`Co0000
+00?oooooool00?oo00000ooo0002o`0009Kooooo001]ooooo`;o00001oooool2o`0000Oooooo0_l0
+002Oooooo`00oooooolQooooo`00\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.47699 .10525 m
+.47699 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000I?ooool<ool0093o
+oooo000Looooo`Co0000HOoooolBool008gooooo000Mooooo`Co0000GOoooolGool008_ooooo000M
+ooooo`Co0000FooooolKool008Wooooo000Mooooo`Co0000F?oooolOool008Sooooo000Mooooo`Co
+0000EooooolRool008Kooooo000Nooooo`?o0000E_oooolTool008Gooooo000Nooooo`Co0000E?oo
+oolVool008Cooooo000Nooooo`Co0000DooooolXool008?ooooo000Oooooo`Co0000DOoooolZool0
+08;ooooo000Pooooo`Co0000Coooool/ool0087ooooo000Pooooo`Co0000C_ooool^ool0083ooooo
+000Qooooo`;o0000Coooool^ool0083ooooo000Sooooo`;o0000C?ooool`ool007oooooo000Roooo
+o`Co0000B_oooolaool007oooooo000Rooooo`Co0000B_oooolbool007kooooo000Sooooo`;o0000
+B_ooooldool007gooooo000Vooooo`;o0000Aoooooldool007gooooo000Uooooo`Co0000AOoooolf
+ool007cooooo000Uooooo`Co0000AOoooolfool007cooooo000Vooooo`;o0000A_oooolfool007co
+oooo000Yooooo`;o0000@_oooolgool007cooooo000Xooooo`Co0000@Ooooolgool007cooooo000X
+ooooo`Co0000@?oooolhool007cooooo000Yooooo`;o0000@Oooooliool007_ooooo001/ooooocWo
+o`00Noooool002gooooo0_l0000mooooocWoo`00Noooool002cooooo1?l0000looooocWoo`00Nooo
+ool002cooooo1?l0000looooocWoo`00Noooool002gooooo0_l0000mooooocWoo`00Noooool003;o
+oooo0_l0000hooooocWoo`00Noooool0037ooooo1?l0000gooooocWoo`00Noooool0037ooooo1?l0
+000gooooocWoo`00Noooool003;ooooo0_l0000hooooocSoo`00O?ooool006gooooo=ooo001loooo
+o`00>?ooool2o`0003?ooooo=ooo001looooo`00=oooool4o`0003?ooooo=_oo001looooo`00=ooo
+ool4o`0003?ooooo=_oo001looooo`00>?ooool2o`0003Cooooo=_oo001looooo`00?_ooool2o`00
+02oooooo=?oo001mooooo`00?Oooool4o`0002kooooo=?oo001mooooo`00?Oooool4o`0002kooooo
+<ooo001nooooo`00?_ooool2o`00033ooooo<Ooo001oooooo`00AOooool2o`0002[ooooo<?oo001o
+ooooo`00A?ooool4o`0002[ooooo;_oo0020ooooo`00A?ooool4o`0002[ooooo;_oo0020ooooo`00
+AOooool2o`0000Gooooo0_l0000Uooooobcoo`00POooool004_ooooo1?l0000Uooooob[oo`00P_oo
+ool004_ooooo1?l0000VooooobSoo`00Poooool004cooooo0_l00006ooooo`;o00008?oooolSool0
+00;o0000QOooool005?ooooo1?l0000Qooooob3oo`001?l00024ooooo`00Doooool4o`0000Gooooo
+0_l0000KoooooaOoo`000_l00006ool000Co0000Q?ooool005Cooooo0_l00005ooooo`Co00006ooo
+oolEool000Co00001?oo0002ooooo`;o0000QOooool005_ooooo1?l00005ooooo`;o00005oooool;
+ool000;o00001Ooo0004o`0000?oo`00R_ooool005cooooo0_l00005ooooo`Co00001_ooool2o`00
+00Oooooo0_l00007ooooo`;o00001_oo0004o`0000Goo`000_l00002ool008cooooo001Sooooo`Co
+00001Oooool4o`0000Gooooo1?l00005ooooo`Co00001Ooo0004o`0000Ooo`00S_ooool006Cooooo
+0_l00006ooooo`Co00001Oooool4o`0000Gooooo1?l00006ooooo`;o00000_oo002Dooooo`00KOoo
+ool2o`0000Oooooo0_l00007ooooo`;o0000Woooool00?oooooo8Oooool00001\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.4927 .10525 m
+.4927 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+.56341 .17596 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000J?ooool=ool008_o
+oooo000Looooo`Co0000I_oooolAool008Wooooo000Mooooo`Co0000H_oooolGool008Kooooo000M
+ooooo`Co0000GooooolKool008Gooooo000Mooooo`Co0000GOoooolNool008Cooooo000Mooooo`Co
+0000FooooolSool0087ooooo000Nooooo`?o0000F_oooolUool0083ooooo000Nooooo`Co0000F?oo
+oolWool007oooooo000Nooooo`Co0000EooooolYool007kooooo000Oooooo`Co0000EOooool[ool0
+07gooooo000Pooooo`Co0000Doooool/ool007gooooo000Pooooo`Co0000D_ooool^ool007cooooo
+000Qooooo`;o0000Doooool^ool007cooooo000Sooooo`;o0000D?ooool`ool007_ooooo000Roooo
+o`Co0000Cooooolaool007[ooooo000Rooooo`Co0000C_oooolbool007[ooooo000Sooooo`;o0000
+C_ooooldool007Wooooo000Vooooo`;o0000Boooooldool007Wooooo000Uooooo`Co0000BOoooolf
+ool007Sooooo000Uooooo`Co0000BOoooolfool007Sooooo000Vooooo`;o0000B_oooolfool007So
+oooo000Yooooo`;o0000Aooooolgool007Oooooo000Xooooo`Co0000A_oooolgool007Oooooo000X
+ooooo`Co0000AOoooolhool007Oooooo000Yooooo`;o0000A_oooolhool007Oooooo001aooooocSo
+o`00Moooool002gooooo0_l00012ooooocSoo`00Moooool002cooooo1?l00011ooooocSoo`00Mooo
+ool002cooooo1?l00011ooooocSoo`00Moooool002gooooo0_l00012ooooocSoo`00Moooool003;o
+oooo0_l0000mooooocSoo`00Moooool0037ooooo1?l0000looooocSoo`00Moooool0037ooooo1?l0
+000looooocSoo`00Moooool003;ooooo0_l0000mooooocSoo`00Moooool0077ooooo>?oo001goooo
+o`00>?ooool2o`0003Oooooo>?oo001gooooo`00=oooool4o`0003Oooooo=_oo001hooooo`00=ooo
+ool4o`0003Oooooo=_oo001hooooo`00>?ooool2o`0003Sooooo=_oo001hooooo`00?_ooool2o`00
+03?ooooo=?oo001iooooo`00?Oooool4o`0003;ooooo=?oo001iooooo`00?Oooool4o`0003?ooooo
+<_oo001jooooo`00?_ooool2o`0003Gooooo<Ooo001jooooo`00AOooool2o`0002kooooo<?oo001k
+ooooo`00A?ooool4o`0002kooooo;_oo001looooo`00A?ooool4o`0002kooooo;_oo001looooo`00
+AOooool2o`0000Gooooo0_l0000YooooobWoo`000_l000000ooo003oooooooooo`1kooooo`00Booo
+ool4o`0002Wooooo9ooo0004o`0007gooooo001;ooooo`Co0000:_oooolVool000Co0000OOooool0
+04cooooo0_l00006ooooo`;o00009?oooolOool000;o00001Ooo0002o`0007kooooo001Cooooo`Co
+00009OoooolLool000Co00000_oo0022ooooo`00Doooool4o`0000Gooooo0_l0000Poooooa;oo`00
+0_l00006ool000Co000000?oo`00ooooooooool0POooool005Cooooo0_l00005ooooo`Co00008?oo
+ool@ool000Co00001_oo0002o`000003ool00?oooooooooo08;ooooo001Kooooo`Co00001Oooool2
+o`0001_ooooo1ooo0002o`0000Goo`001?l00008ool008Gooooo001Looooo`;o00001Oooool4o`00
+00Kooooo0_l00007ooooo`;o00001oooool2o`0000?ooooo0ooo0004o`0000Goo`000_l00007ool0
+08Oooooo001Sooooo`Co00001Oooool4o`0000Gooooo1?l00005ooooo`Co00001Oooool4o`0000_o
+o`00R_ooool006Cooooo0_l00006ooooo`Co00001Oooool4o`0000Gooooo1?l00006ooooo`;o0000
+0_ooool5ool008oooooo001]ooooo`;o00001oooool2o`0000Oooooo0_l0002Oooooo`00oooooolQ
+ooooo`00\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.50841 .10525 m
+.50841 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+.56341 .17596 Mdot
+.58931 .16403 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000KOooool<ool008Oo
+oooo000Looooo`Co0000J_oooolBool008Cooooo000Mooooo`Co0000I_oooolGool008;ooooo000M
+ooooo`Co0000I?oooolKool0083ooooo000Mooooo`Co0000HOoooolOool007oooooo000Mooooo`Co
+0000H?oooolRool007gooooo000Nooooo`?o0000GooooolTool007cooooo000Nooooo`Co0000GOoo
+oolVool007_ooooo000Nooooo`Co0000G?oooolXool007[ooooo000Oooooo`Co0000F_oooolZool0
+07Wooooo000Pooooo`Co0000F?ooool/ool007Sooooo000Pooooo`Co0000Eoooool^ool007Oooooo
+000Qooooo`;o0000F?ooool^ool007Oooooo000Sooooo`;o0000EOooool`ool007Kooooo000Roooo
+o`Co0000Dooooolaool007Kooooo000Rooooo`Co0000Dooooolaool007Kooooo000Sooooo`;o0000
+Dooooolcool007Gooooo000Vooooo`;o0000D?oooolcool007Gooooo000Uooooo`Co0000C_oooole
+ool007Cooooo000Uooooo`Co0000C_ooooleool007Cooooo000Vooooo`;o0000Coooooleool007Co
+oooo000Yooooo`;o0000Booooolgool007?ooooo000Xooooo`Co0000B_oooolgool007?ooooo000X
+ooooo`Co0000BOoooolhool007?ooooo000Yooooo`;o0000B_ooooliool007;ooooo001eooooocWo
+o`00L_ooool002gooooo0_l00016ooooocWoo`00L_ooool002cooooo1?l00015ooooocWoo`00L_oo
+ool002cooooo1?l00015ooooocWoo`00L_ooool002gooooo0_l00016ooooocWoo`00L_ooool003;o
+oooo0_l00011ooooocWoo`00L_ooool0037ooooo1?l00010ooooocWoo`00L_ooool0037ooooo1?l0
+0010ooooocWoo`00L_ooool003;ooooo0_l00011ooooocSoo`00Loooool007Kooooo=ooo001coooo
+o`00>?ooool2o`0003cooooo=ooo001cooooo`00=oooool4o`0003cooooo=Ooo001dooooo`00=ooo
+ool4o`0003cooooo=Ooo001dooooo`00>?ooool2o`0003gooooo=Ooo001dooooo`00?_ooool2o`00
+03Sooooo<ooo001eooooo`00?Oooool4o`0003Oooooo<ooo001eooooo`00?Oooool4o`0003Oooooo
+<_oo001fooooo`00?_ooool2o`0003Wooooo<Ooo001fooooo`00AOooool2o`0003?ooooo;_oo0002
+o`0007Kooooo0014ooooo`Co0000<oooool/ool000Co0000MOooool004Cooooo1?l0000cooooobco
+o`001?l0001eooooo`00AOooool2o`0000Gooooo0_l0000^ooooobCoo`000_l00006ool000;o0000
+M_ooool004_ooooo1?l0000^ooooob;oo`001?l00004ool007Wooooo001;ooooo`Co0000;ooooolQ
+ool000Co00000ooo001jooooo`00C?ooool2o`0000Kooooo0_l0000Yoooooa[oo`000_l00005ool0
+00;o00000_oo001looooo`00Doooool4o`0002[ooooo5ooo0004o`0000Ooo`00OOooool005?ooooo
+1?l00005ooooo`;o00009?ooool>ool000;o00001_oo0004o`0000Koo`00O_ooool005Cooooo0_l0
+0005ooooo`Co00009?ooool<ool000Co00001_oo0002o`0000Goo`00P?ooool005_ooooo1?l00005
+ooooo`;o00008?ooool2ool000;o00001Ooo0004o`0000coo`00POooool005cooooo0_l00005oooo
+o`Co00001_ooool2o`0000Oooooo0_l00007ooooo`;o00001_ooool4o`0000Goo`000_l0000;ool0
+08?ooooo001Sooooo`Co00001Oooool4o`0000Gooooo1?l00005ooooo`Co00001Oooool4o`00013o
+o`00QOooool006Cooooo0_l00006ooooo`Co00001Oooool4o`0000Gooooo1?l00006ooooo`;o0000
+1oooool4ool008_ooooo001]ooooo`;o00001oooool2o`0000Oooooo0_l0002Oooooo`00oooooolQ
+ooooo`00\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.52412 .10525 m
+.52412 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+.56341 .17596 Mdot
+.58931 .16403 Mdot
+.61322 .15065 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000LOooool=ool008;o
+oooo000Looooo`Co0000KooooolAool0083ooooo000Mooooo`Co0000JooooolGool007gooooo000M
+ooooo`Co0000J?oooolKool007cooooo000Mooooo`Co0000I_oooolNool007_ooooo000Mooooo`Co
+0000I?oooolRool007Wooooo000Nooooo`?o0000HooooolUool007Oooooo000Nooooo`Co0000HOoo
+oolWool007Kooooo000Nooooo`Co0000H?oooolYool007Gooooo000Oooooo`Co0000G_ooool[ool0
+07Cooooo000Pooooo`Co0000G?ooool/ool007Cooooo000Pooooo`Co0000Foooool^ool007?ooooo
+000Qooooo`;o0000G?ooool^ool007?ooooo000Sooooo`;o0000FOooool`ool007;ooooo000Roooo
+o`Co0000F?oooolaool0077ooooo000Rooooo`Co0000Eooooolbool0077ooooo000Sooooo`;o0000
+Eoooooldool0073ooooo000Vooooo`;o0000E?ooooldool0073ooooo000Uooooo`Co0000D_oooolf
+ool006oooooo000Uooooo`Co0000D_oooolfool006oooooo000Vooooo`;o0000Dooooolfool006oo
+oooo000Yooooo`;o0000Cooooolhool006kooooo000Xooooo`Co0000C_oooolhool006kooooo000X
+ooooo`Co0000C_oooolhool006kooooo000Yooooo`;o0000Cooooolhool006kooooo001jooooocSo
+o`00K_ooool002gooooo0_l0001;ooooocSoo`00K_ooool002cooooo1?l0001:ooooocSoo`00K_oo
+ool002cooooo1?l0001:ooooocSoo`00K_ooool002gooooo0_l0001;ooooocSoo`00K_ooool003;o
+oooo0_l00016ooooocSoo`00K_ooool0037ooooo1?l00015ooooocSoo`00K_ooool0037ooooo1?l0
+0015ooooocSoo`00K_ooool003;ooooo0_l00016ooooocSoo`00K_ooool007[ooooo>?oo001^oooo
+o`00>?ooool2o`00043ooooo>?oo001^ooooo`00=oooool4o`00043ooooo=_oo001_ooooo`00=ooo
+ool4o`00043ooooo=_oo001_ooooo`00>?ooool2o`00047ooooo=_oo001_ooooo`00?_ooool2o`00
+03cooooo<_oo0002o`00073ooooo000mooooo`Co0000>ooooolaool000Co0000Koooool003gooooo
+1?l0000loooooc3oo`001?l0001_ooooo`00?_ooool2o`0003kooooo<?oo0002o`00073ooooo0015
+ooooo`;o0000=ooooolZool000;o00001?oo001booooo`00A?ooool4o`0003Oooooo:?oo0004o`00
+00;oo`00Loooool004Cooooo1?l0000gooooobSoo`001?l00002ool007?ooooo0015ooooo`;o0000
+1Oooool2o`0003;ooooo8?oo0002o`0000Koo`000_l00002ool007Cooooo001;ooooo`Co0000<_oo
+oolNool000Co00002Ooo001dooooo`00Boooool4o`0003?ooooo7Ooo0004o`0000Soo`00MOooool0
+04cooooo0_l00006ooooo`;o0000;OoooolFool000;o00001Ooo0002o`0000Ooo`00Moooool005?o
+oooo1?l0000^oooooa?oo`001?l0000;ool007Wooooo001Cooooo`Co00001Oooool2o`0002Wooooo
+2Ooo0002o`0000Koo`001?l0000:ool007[ooooo001Dooooo`;o00001Oooool4o`0002Wooooo1ooo
+0004o`0000Koo`000_l0000:ool007_ooooo001Kooooo`Co00001Oooool2o`0002;ooooo0_l00005
+ool000Co00004Ooo001looooo`00G?ooool2o`0000Gooooo1?l00006ooooo`;o00001oooool2o`00
+00Oooooo0_l00006ooooo`Co00000_ooool3ool000;o00004?oo001nooooo`00Hoooool4o`0000Go
+oooo1?l00005ooooo`Co00001Oooool4o`0000Gooooo1?l00005ooooo`ooo`00POooool006Cooooo
+0_l00006ooooo`Co00001Oooool4o`0000Gooooo1?l00006ooooo`;o00002oooool5ool008Kooooo
+001]ooooo`;o00001oooool2o`0000Oooooo0_l0002Oooooo`00oooooolQooooo`00\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.53982 .10525 m
+.53982 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+.56341 .17596 Mdot
+.58931 .16403 Mdot
+.61322 .15065 Mdot
+.63493 .13615 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000M_ooool<ool007ko
+oooo000Looooo`Co0000LooooolBool007_ooooo000Mooooo`Co0000KooooolGool007Wooooo000M
+ooooo`Co0000KOoooolKool007Oooooo000Mooooo`Co0000J_oooolOool007Kooooo000Mooooo`Co
+0000JOoooolRool007Cooooo000Nooooo`?o0000J?oooolTool007?ooooo000Nooooo`Co0000I_oo
+oolVool007;ooooo000Nooooo`Co0000IOoooolXool0077ooooo000Oooooo`Co0000HooooolZool0
+073ooooo000Pooooo`Co0000HOooool/ool006oooooo000Pooooo`Co0000H?ooool^ool006kooooo
+000Qooooo`;o0000HOooool^ool006kooooo000Sooooo`;o0000G_ooool`ool006gooooo000Roooo
+o`Co0000G?oooolaool006gooooo000Rooooo`Co0000G?oooolaool006gooooo000Sooooo`;o0000
+G?oooolcool006cooooo000Vooooo`;o0000FOoooolcool006cooooo000Uooooo`Co0000Eooooole
+ool006_ooooo000Uooooo`Co0000Eoooooleool006_ooooo000Vooooo`;o0000F?ooooleool006_o
+oooo000Yooooo`;o0000E?oooolgool006[ooooo000Xooooo`Co0000Dooooolgool006[ooooo000X
+ooooo`Co0000D_oooolhool006[ooooo000Yooooo`;o0000Dooooolhool006[ooooo001nooooocSo
+o`00J_ooool002gooooo0_l0001?ooooocSoo`00J_ooool002cooooo1?l0001>ooooocWoo`00JOoo
+ool002cooooo1?l0001>ooooocWoo`00JOooool002gooooo0_l0001?ooooocWoo`00JOooool003;o
+oooo0_l0001:ooooocSoo`00J_ooool0037ooooo1?l00019ooooocSoo`00J_ooool0037ooooo1?l0
+0019ooooocSoo`00J_ooool003;ooooo0_l0001:ooooocSoo`00J_ooool007oooooo=ooo001Zoooo
+o`00>?ooool2o`0004Gooooo=_oo0002o`0006Wooooo000gooooo`Co0000AOooooldool000Co0000
+J?ooool003Oooooo1?l00015ooooocCoo`001?l0001Xooooo`00>?ooool2o`0004Kooooo=Ooo0002
+o`0006Wooooo000nooooo`;o0000@Oooool]ool000;o00001?oo001/ooooo`00?Oooool4o`00043o
+oooo;?oo0004o`0000?oo`00K?ooool003gooooo1?l00010ooooobcoo`001?l00002ool006gooooo
+000nooooo`;o0000@_ooool/ool000;o00000ooo001]ooooo`00AOooool2o`0003cooooo9Ooo0002
+o`0000Woo`00KOooool004Cooooo1?l0000looooob?oo`001?l00007ool006kooooo0014ooooo`Co
+0000??oooolSool000Co00001ooo001^ooooo`00AOooool2o`0000Gooooo0_l0000goooooa_oo`00
+0_l00006ool000;o00001ooo001_ooooo`00Boooool4o`0003Oooooo6Ooo0004o`0000goo`00L?oo
+ool004_ooooo1?l0000hoooooaSoo`001?l0000<ool0077ooooo001<ooooo`;o00001_ooool2o`00
+03;ooooo4Ooo0002o`0000Goo`000_l0000;ool007?ooooo001Cooooo`Co0000<oooool>ool000Co
+00004?oo001dooooo`00Doooool4o`0000Gooooo0_l0000]ooooo`Goo`000_l00006ool000Co0000
+3ooo001eooooo`00E?ooool2o`0000Gooooo1?l0000]ooooo`?oo`001?l00006ool000;o00003_oo
+001gooooo`00Foooool4o`0000Gooooo0_l0000Rooooo`;o00001Oooool4o`0001Goo`00N?ooool0
+05cooooo0_l00005ooooo`Co00001_ooool2o`0000Oooooo0_l00007ooooo`;o00001_ooool4o`00
+00Gooooo0_l0000Dool007[ooooo001Sooooo`Co00001Oooool4o`0000Gooooo1?l00005ooooo`Co
+00001Oooool4o`0000Wooooo4?oo001looooo`00I?ooool2o`0000Kooooo1?l00005ooooo`Co0000
+1Oooool4o`0000Kooooo0_l0000@ooooo`Coo`00P_ooool006gooooo0_l00007ooooo`;o00001ooo
+ool2o`0009oooooo003oooooob7ooooo0000\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.55553 .10525 m
+.55553 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+.56341 .17596 Mdot
+.58931 .16403 Mdot
+.61322 .15065 Mdot
+.63493 .13615 Mdot
+.6543 .12089 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000N_ooool<ool007[o
+oooo000Looooo`Co0000MooooolBool007Oooooo000Mooooo`Co0000M?oooolGool007Cooooo000M
+ooooo`Co0000LOoooolKool007?ooooo000Mooooo`Co0000KooooolNool007;ooooo000Mooooo`Co
+0000KOoooolRool0073ooooo000Nooooo`?o0000K?oooolTool006oooooo000Nooooo`Co0000J_oo
+oolVool006kooooo000Nooooo`Co0000JOoooolXool006gooooo000Oooooo`Co0000IooooolZool0
+06cooooo000Pooooo`Co0000IOooool/ool006_ooooo000Pooooo`Co0000I?ooool^ool006[ooooo
+000Qooooo`;o0000IOooool^ool006[ooooo000Sooooo`;o0000H_ooool`ool006Wooooo000Roooo
+o`Co0000HOoooolaool006Sooooo000Rooooo`Co0000H?oooolbool006Sooooo000Sooooo`;o0000
+H?ooooldool006Oooooo000Vooooo`;o0000GOooooldool006Oooooo000Uooooo`Co0000Fooooolf
+ool006Kooooo000Uooooo`Co0000Fooooolfool006Kooooo000Vooooo`;o0000G?oooolfool006Ko
+oooo000Yooooo`;o0000F?oooolgool006Kooooo000Xooooo`Co0000Eooooolgool006Kooooo000X
+ooooo`Co0000Eooooolgool006Kooooo000Yooooo`;o0000F?oooolhool006Gooooo0023ooooocSo
+o`00IOooool002gooooo0_l0001CooooocWoo`00IOooool002cooooo1?l0001BooooocWoo`00IOoo
+ool002cooooo1?l0001BooooocWoo`00IOooool002gooooo0_l0001CooooocWoo`00IOooool003;o
+oooo0_l0001>ooooocSoo`000_l0001Tooooo`00<Oooool4o`0004kooooo=_oo0004o`0006?ooooo
+000aooooo`Co0000C_oooolfool000Co0000Hoooool003;ooooo0_l0001?ooooocOoo`000_l0001T
+ooooo`00Pooooolgool006Kooooo000hooooo`;o0000BOoooolbool000;o00000ooo001Vooooo`00
+=oooool4o`0004Wooooo<?oo0004o`0000;oo`00I_ooool003Oooooo1?l00019oooooc3oo`001?l0
+0002ool006Kooooo000hooooo`;o0000B_oooolaool000;o00000ooo001Vooooo`00?_ooool2o`00
+04Gooooo:Ooo0002o`0000Woo`00Ioooool003gooooo1?l00014ooooobSoo`001?l00008ool006Oo
+oooo000mooooo`Co0000AOoooolWool000Co00001ooo001Xooooo`00?_ooool2o`0004Oooooo9ooo
+0002o`0000Soo`00J?ooool004Gooooo0_l00010ooooob7oo`000_l0000=ool006Wooooo0014oooo
+o`Co0000@?oooolOool000Co00002ooo001Zooooo`00A?ooool4o`00043ooooo7ooo0004o`0000_o
+o`00J_ooool004Gooooo0_l00005ooooo`;o0000>ooooolGool000;o00001_oo0002o`0000_oo`00
+Joooool004_ooooo1?l0000koooooaGoo`001?l0000Aool006cooooo001;ooooo`Co0000??oooolD
+ool000Co00004?oo001]ooooo`00C?ooool2o`0000Kooooo0_l0000fooooo`goo`000_l00005ool0
+00;o00003ooo001_ooooo`00Doooool4o`0003Oooooo2_oo0004o`0001Coo`00L?ooool005?ooooo
+1?l00005ooooo`;o0000<_ooool2o`0000Koo`001?l0000Cool0077ooooo001Dooooo`;o00001Ooo
+ool4o`00033ooooo1?l00006ool000;o00004ooo001booooo`00Foooool4o`0000Gooooo0_l0000R
+ooooo`;o00001Oooool4o`0001[oo`00Loooool005cooooo0_l00005ooooo`Co00001_ooool2o`00
+00Oooooo0_l00007ooooo`;o00001_ooool4o`0000Gooooo0_l00004oooooaGoo`00MOooool006?o
+oooo1?l00005ooooo`Co00001Oooool4o`0000Gooooo1?l00005ooooo`Co00003Oooool@ool007So
+oooo001Tooooo`;o00001_ooool4o`0000Gooooo1?l00005ooooo`Co00001_ooool2o`0001Cooooo
+1Ooo001mooooo`00KOooool2o`0000Oooooo0_l00007ooooo`;o0000Woooool00?oooooo8Oooool0
+0001\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.57124 .10525 m
+.57124 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+.56341 .17596 Mdot
+.58931 .16403 Mdot
+.61322 .15065 Mdot
+.63493 .13615 Mdot
+.6543 .12089 Mdot
+.67124 .10525 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000Ooooool<ool007Go
+oooo000Looooo`Co0000O?oooolBool007;ooooo000Mooooo`Co0000N?oooolGool0073ooooo000M
+ooooo`Co0000M_oooolKool006kooooo000Mooooo`Co0000LooooolOool006gooooo000Mooooo`Co
+0000LOoooolSool006_ooooo000Nooooo`?o0000L?oooolUool006[ooooo000Nooooo`Co0000K_oo
+oolWool006Wooooo000Nooooo`Co0000KOoooolYool006Sooooo000Oooooo`Co0000Joooool[ool0
+06Oooooo000Pooooo`Co0000J_ooool/ool006Kooooo000Pooooo`Co0000JOooool^ool006Gooooo
+000Qooooo`;o0000J_ooool^ool006Gooooo000Sooooo`;o0000Ioooool`ool006Cooooo000Roooo
+o`Co0000IOoooolaool006Cooooo000Rooooo`Co0000IOoooolaool006Cooooo000Sooooo`;o0000
+IOoooolcool006?ooooo000Vooooo`;o0000H_oooolcool006?ooooo000Uooooo`Co0000H?oooole
+ool006;ooooo000Uooooo`Co0000H?ooooleool006;ooooo000Vooooo`;o0000HOooooleool006;o
+oooo000Yooooo`;o0000GOoooolgool0067ooooo000Xooooo`Co0000G?oooolgool0067ooooo000X
+ooooo`Co0000Fooooolhool0067ooooo000Yooooo`;o0000G?oooolhool0067ooooo0027ooooocSo
+o`00HOooool002gooooo0_l0001HooooocSoo`000_l0001Oooooo`00;?ooool4o`0005Oooooo=ooo
+0004o`0005kooooo000/ooooo`Co0000Eooooolgool000Co0000G_ooool002gooooo0_l0001Hoooo
+ocSoo`000_l0001Oooooo`00<_ooool2o`0005?ooooo<ooo0002o`0000?oo`00HOooool0037ooooo
+1?l0001Boooooc;oo`001?l00002ool0067ooooo000aooooo`Co0000D_oooolbool000Co00000_oo
+001Qooooo`00<_ooool2o`0005?ooooo<ooo0002o`0000?oo`00HOooool008Sooooo=ooo001Qoooo
+o`00>?ooool2o`0004kooooo;Ooo0002o`0000Soo`00HOooool003Oooooo1?l0001>ooooob_oo`00
+1?l00006ool006;ooooo000gooooo`Co0000C_ooool[ool000Co00001_oo001Rooooo`00>?ooool2
+o`0004oooooo;?oo0002o`0000Ooo`00H_ooool003kooooo0_l0001:ooooobCoo`000_l0000=ool0
+06?ooooo000mooooo`Co0000BOoooolSool000Co00003?oo001Sooooo`00?Oooool4o`0004Wooooo
+8ooo0004o`0000_oo`00I?ooool003kooooo0_l0001;ooooob?oo`000_l0000<ool006Cooooo0015
+ooooo`;o0000AOoooolLool000;o00004_oo001Tooooo`00A?ooool4o`0004Gooooo6_oo0004o`00
+013oo`00IOooool004Cooooo1?l00015oooooa[oo`001?l0000@ool006Gooooo0015ooooo`;o0000
+1Oooool2o`00043ooooo4_oo0002o`0000Koo`000_l0000@ool006Kooooo001;ooooo`Co0000?ooo
+oolAool000Co00005_oo001Wooooo`00Boooool4o`00043ooooo4?oo0004o`0001Goo`00J?ooool0
+04cooooo0_l00006ooooo`;o0000>_ooool9ool000;o00001Ooo0002o`0001Coo`00J_ooool005?o
+oooo1?l0000looooo`Goo`001?l0000Iool006_ooooo001Cooooo`Co00001Oooool2o`0003;ooooo
+0_l00002ooooo`Coo`001?l0000Hool006cooooo001Dooooo`;o00001Oooool4o`00033ooooo1?l0
+0002ooooo`Coo`000_l0000Gool006kooooo001Kooooo`Co00001Oooool2o`0002;ooooo0_l00005
+ooooo`Co00001OoooolIool006oooooo001Looooo`;o00001Oooool4o`0000Kooooo0_l00007oooo
+o`;o00001oooool2o`0000Kooooo1?l00005ooooo`;o00002?oooolEool0077ooooo001Sooooo`Co
+00001Oooool4o`0000Gooooo1?l00005ooooo`Co00001Oooool4o`0001;ooooo4?oo001cooooo`00
+I?ooool2o`0000Kooooo1?l00005ooooo`Co00001Oooool4o`0000Kooooo0_l0000Hooooo`Goo`00
+NOooool006gooooo0_l00007ooooo`;o00001oooool2o`0009oooooo003oooooob7ooooo0000\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.58695 .10525 m
+.58695 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+.56341 .17596 Mdot
+.58931 .16403 Mdot
+.61322 .15065 Mdot
+.63493 .13615 Mdot
+.6543 .12089 Mdot
+.67124 .10525 Mdot
+.68572 .08961 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000Poooool<ool0077o
+oooo000Looooo`Co0000P?oooolBool006kooooo000Mooooo`Co0000OOoooolGool006_ooooo000M
+ooooo`Co0000N_oooolKool006[ooooo000Mooooo`Co0000MooooolOool006Wooooo000Mooooo`Co
+0000M_oooolRool006Oooooo000Nooooo`?o0000MOoooolTool006Kooooo000Nooooo`Co0000Looo
+oolVool006Gooooo000Nooooo`Co0000L_oooolXool006Cooooo000Oooooo`Co0000L?oooolZool0
+06?ooooo000Pooooo`Co0000K_ooool/ool006;ooooo000Pooooo`Co0000KOooool^ool0067ooooo
+000Qooooo`;o0000K_ooool^ool0067ooooo000Sooooo`;o0000Joooool`ool0063ooooo000Roooo
+o`Co0000JOoooolaool0063ooooo000Rooooo`Co0000JOoooolbool005oooooo000Sooooo`;o0000
+JOooooldool005kooooo000Vooooo`;o0000I_ooooldool005kooooo000Uooooo`Co0000I?oooolf
+ool005gooooo000Uooooo`Co0000I?oooolfool005gooooo000Vooooo`;o0000IOoooolfool005go
+oooo000Yooooo`;o0000HOoooolgool000;o0000Foooool002Sooooo1?l0001PooooocKoo`001?l0
+001Jooooo`00:?ooool4o`00063ooooo=_oo0004o`0005[ooooo000Yooooo`;o0000HOoooolgool0
+00;o0000Foooool008cooooo>?oo001Looooo`00;Oooool2o`0005cooooo=?oo0002o`0000?oo`00
+G?ooool002cooooo1?l0001Koooooc?oo`001?l00002ool005cooooo000/ooooo`Co0000Fooooolc
+ool000Co00000_oo001Looooo`00;Oooool2o`0005cooooo=?oo0002o`0000?oo`00G?ooool003;o
+oooo0_l0001Gooooobooo`000_l00008ool005cooooo000aooooo`Co0000Eoooool]ool000Co0000
+1ooo001Looooo`00<Oooool4o`0005Oooooo;Ooo0004o`0000Ooo`00G?ooool003;ooooo0_l0001H
+ooooobkoo`000_l00007ool005gooooo002<ooooocOoo`00GOooool003Sooooo0_l0001BooooobWo
+o`000_l0000<ool005gooooo000gooooo`Co0000D_oooolWool000Co00002ooo001Mooooo`00=ooo
+ool4o`0005;ooooo9ooo0004o`0000_oo`00GOooool003Sooooo0_l0001CooooobSoo`000_l0000<
+ool005gooooo000nooooo`;o0000C_oooolPool000;o00004_oo001Nooooo`00?Oooool4o`0004go
+oooo7ooo0004o`00017oo`00G_ooool003gooooo1?l0001=oooooaooo`001?l0000@ool005oooooo
+000nooooo`;o0000CooooolOool000;o00004?oo001Pooooo`00AOooool2o`0004Wooooo6?oo0002
+o`0001Koo`00H?ooool004Cooooo1?l00019oooooaKoo`001?l0000Dool0067ooooo0014ooooo`Co
+0000BOoooolFool000Co00005?oo001Qooooo`00AOooool2o`0000Gooooo0_l00014ooooo`koo`00
+0_l00006ool000;o00005?oo001Rooooo`00Boooool4o`0004Cooooo3?oo0004o`0001[oo`00Hooo
+ool004_ooooo1?l00015ooooo`_oo`001?l0000Iool006Cooooo001<ooooo`;o00001_ooool2o`00
+03oooooo1?oo0002o`0000Goo`000_l0000Hool006Kooooo001Cooooo`Co0000@?ooool00ooo003o
+0000o`000002o`0001goo`00Ioooool005?ooooo1?l00005ooooo`;o0000<_ooool2o`0000Kooooo
+1?l0000Lool006Sooooo001Dooooo`;o00001Oooool4o`00033ooooo1?l00006ooooo`;o00007?oo
+001Yooooo`00Foooool4o`0000Gooooo0_l0000Rooooo`;o00001Oooool4o`0000Wooooo6_oo001Z
+ooooo`00G?ooool2o`0000Gooooo1?l00006ooooo`;o00001oooool2o`0000Oooooo0_l00006oooo
+o`Co00001Oooool2o`0000gooooo5Ooo001/ooooo`00Hoooool4o`0000Gooooo1?l00005ooooo`Co
+00001Oooool4o`0000Gooooo1?l0000Foooooa3oo`00Koooool006Cooooo0_l00006ooooo`Co0000
+1Oooool4o`0000Gooooo1?l00006ooooo`;o00007Oooool5ool007Cooooo001]ooooo`;o00001ooo
+ool2o`0000Oooooo0_l0002Oooooo`00oooooolQooooo`00\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.60265 .10525 m
+.60265 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+.56341 .17596 Mdot
+.58931 .16403 Mdot
+.61322 .15065 Mdot
+.63493 .13615 Mdot
+.6543 .12089 Mdot
+.67124 .10525 Mdot
+.68572 .08961 Mdot
+.69776 .07435 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000R?ooool<ool006co
+oooo000Looooo`Co0000QOoooolAool006[ooooo000Mooooo`Co0000POoooolGool006Oooooo000M
+ooooo`Co0000O_oooolKool006Kooooo000Mooooo`Co0000O?oooolNool006Gooooo000Mooooo`Co
+0000N_oooolSool006;ooooo000Nooooo`?o0000NOoooolUool0067ooooo000Nooooo`Co0000Mooo
+oolWool0063ooooo000Nooooo`Co0000M_oooolYool005oooooo000Oooooo`Co0000M?ooool[ool0
+05kooooo000Pooooo`Co0000L_ooool/ool005kooooo000Pooooo`Co0000LOooool^ool005gooooo
+000Qooooo`;o0000L_ooool^ool005gooooo000Sooooo`;o0000Koooool`ool005cooooo000Roooo
+o`Co0000K_oooolaool005_ooooo000Rooooo`Co0000K_oooolaool005_ooooo000Sooooo`;o0000
+K_oooolcool005[ooooo000Vooooo`;o0000Jooooolcool000;o0000F?ooool002Gooooo1?l0001Y
+oooooc?oo`001?l0001Gooooo`009Oooool4o`0006Sooooo=?oo0004o`0005Oooooo000Vooooo`;o
+0000JOooooleool000;o0000F?ooool002Wooooo0_l0001Voooooc;oo`000_l00003ool005Sooooo
+000Xooooo`Co0000IOoooolaool000Co00000_oo001Hooooo`00:?ooool4o`0006Cooooo<_oo0004
+o`0000;oo`00F?ooool002Wooooo0_l0001Uoooooc?oo`000_l00003ool005Sooooo002@ooooocSo
+o`00F?ooool002gooooo0_l0001Qooooobooo`000_l00007ool005Sooooo000/ooooo`Co0000H?oo
+ool^ool000Co00001_oo001Hooooo`00;?ooool4o`00063ooooo;_oo0004o`0000Koo`00F?ooool0
+02gooooo0_l0001Qooooobooo`000_l00007ool005Sooooo000booooo`;o0000G?oooolZool000;o
+00003?oo001Hooooo`00<Oooool4o`0005_ooooo:Ooo0004o`0000_oo`00F?ooool0037ooooo1?l0
+001KooooobWoo`001?l0000;ool005Sooooo000booooo`;o0000G?oooolZool000;o00003?oo001H
+ooooo`00TOoooolgool005Sooooo000hooooo`;o0000EooooolTool000;o00004Ooo001Hooooo`00
+=oooool4o`0005Kooooo8ooo0004o`0000ooo`00FOooool003Oooooo1?l0001Fooooob?oo`001?l0
+000?ool005Wooooo000hooooo`;o0000EooooolTool000;o00004?oo001Iooooo`00?_ooool2o`00
+05;ooooo7?oo0002o`0001Koo`00F_ooool003gooooo1?l0001Boooooa[oo`001?l0000Eool005[o
+oooo000mooooo`Co0000D_oooolJool000Co00005?oo001Kooooo`00?_ooool2o`0005Cooooo6_oo
+0002o`0001Goo`00Foooool004Gooooo0_l0001=oooooaCoo`000_l0000Jool005cooooo0014oooo
+o`Co0000COoooolBool000Co00006?oo001Mooooo`00A?ooool4o`0004gooooo4_oo0004o`0001So
+o`00GOooool004Gooooo0_l00005ooooo`;o0000B?ooool:ool000;o00001_oo0002o`0001Soo`00
+G_ooool004_ooooo1?l00018ooooo`Soo`001?l0000Oool005kooooo001;ooooo`Co0000BOooool7
+ool000Co00007_oo001Oooooo`00C?ooool2o`0000Kooooo0_l00013ooooo`;o00001Ooo0002o`00
+01goo`00HOooool005?ooooo1?l00011ooooo`Co00008Ooo001Sooooo`00Doooool4o`0000Gooooo
+0_l0000booooo`;o00001_ooool4o`000003oooooooo003oo`0001goo`00I?ooool005Cooooo0_l0
+0005ooooo`Co0000<?ooool4o`0000Kooooo0_l00003oooooagoo`00IOooool005_ooooo1?l00005
+ooooo`;o00008_ooool2o`0000Gooooo1?l0000=oooooa[oo`00I_ooool005cooooo0_l00005oooo
+o`Co00001_ooool2o`0000Oooooo0_l00007ooooo`;o00001_ooool4o`0000Gooooo0_l0000Aoooo
+oaGoo`00J?ooool006?ooooo1?l00005ooooo`Co00001Oooool4o`0000Gooooo1?l00005ooooo`Co
+00006oooool?ool006_ooooo001Tooooo`;o00001_ooool4o`0000Gooooo1?l00005ooooo`Co0000
+1_ooool2o`00027ooooo1Ooo001`ooooo`00KOooool2o`0000Oooooo0_l00007ooooo`;o0000Wooo
+ool00?oooooo8Oooool00001\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.61836 .10525 m
+.61836 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+.56341 .17596 Mdot
+.58931 .16403 Mdot
+.61322 .15065 Mdot
+.63493 .13615 Mdot
+.6543 .12089 Mdot
+.67124 .10525 Mdot
+.68572 .08961 Mdot
+.69776 .07435 Mdot
+.70746 .05985 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000S?ooool<ool006So
+oooo000Looooo`Co0000ROoooolBool006Gooooo000Mooooo`Co0000QOoooolGool006?ooooo000M
+ooooo`Co0000PooooolKool0067ooooo000Mooooo`Co0000P?oooolOool0063ooooo000Mooooo`Co
+0000OooooolRool005kooooo000Nooooo`?o0000O_oooolTool005gooooo000Nooooo`Co0000O?oo
+oolVool005cooooo000Nooooo`Co0000NooooolXool005_ooooo000Oooooo`Co0000NOoooolZool0
+05[ooooo000Pooooo`Co0000Moooool/ool005Wooooo000Pooooo`Co0000M_ooool^ool005Sooooo
+000Qooooo`;o0000Moooool^ool005Sooooo000Sooooo`;o0000M?ooool`ool000;o0000EOooool0
+02;ooooo1?l0001boooooc3oo`001?l0001Dooooo`008_ooool4o`0007;ooooo<?oo0004o`0005Co
+oooo000Sooooo`;o0000L_oooolbool000;o0000EOooool002Kooooo0_l0001_ooooobooo`000_l0
+0003ool005Gooooo000Uooooo`Co0000KOooool_ool000Co00000ooo001Dooooo`009Oooool4o`00
+06gooooo;ooo0004o`0000?oo`00E?ooool002Kooooo0_l0001^oooooc3oo`000_l00004ool005Co
+oooo000Yooooo`;o0000J_ooool^ool000;o00001ooo001Dooooo`00:?ooool4o`0006Wooooo;Ooo
+0004o`0000Koo`00E?ooool002Sooooo1?l0001Yooooobgoo`001?l00006ool005Cooooo000Yoooo
+o`;o0000J_ooool^ool000;o00002?oo001Cooooo`00UOoooolhool005?ooooo000]ooooo`;o0000
+IOooool[ool000;o00003?oo001Cooooo`00;?ooool4o`0006Cooooo:_oo0004o`0000_oo`00Dooo
+ool002cooooo1?l0001Tooooob[oo`001?l0000;ool005?ooooo000]ooooo`;o0000IOooool[ool0
+00;o00003?oo001Cooooo`00<_ooool2o`00063ooooo9_oo0002o`00017oo`00Doooool0037ooooo
+1?l0001PooooobCoo`001?l0000@ool005?ooooo000aooooo`Co0000H?oooolTool000Co00004?oo
+001Cooooo`00<_ooool2o`00067ooooo9Ooo0002o`00013oo`00E?ooool009Gooooo=ooo001Doooo
+o`00>?ooool2o`0005_ooooo8?oo0002o`0001Goo`00E?ooool003Oooooo1?l0001Koooooakoo`00
+1?l0000Dool005Cooooo000gooooo`Co0000FooooolNool000Co00005?oo001Dooooo`00>?ooool2
+o`0005cooooo7ooo0002o`0001Goo`00E?ooool003kooooo0_l0001GoooooaOoo`000_l0000Kool0
+05Gooooo000mooooo`Co0000E_oooolFool000Co00006_oo001Eooooo`00?Oooool4o`0005Kooooo
+5_oo0004o`0001Woo`00E_ooool003kooooo0_l0001HoooooaKoo`000_l0000Iool005Oooooo0015
+ooooo`;o0000D_ooool?ool000;o00007ooo001Gooooo`00A?ooool4o`0005;ooooo3Ooo0004o`00
+01goo`00F?ooool004Cooooo1?l0001Booooo`goo`001?l0000Mool005Sooooo0015ooooo`;o0000
+1Oooool2o`0004gooooo1Ooo0002o`0000Koo`000_l0000Mool005Wooooo001;ooooo`Co0000COoo
+ool3ool000Co00008ooo001Jooooo`00Boooool4o`0004kooooo0_oo0004o`0002;oo`00Foooool0
+04cooooo0_l00006ooooo`;o0000@oooool2o`0000?ooooo0_oo0002o`00027oo`00GOooool005?o
+oooo1?l00011ooooo`Co00001?oooolRool005kooooo001Cooooo`Co00001Oooool2o`0003;ooooo
+0_l00006ooooo`Co00001OoooolPool005oooooo001Dooooo`;o00001Oooool4o`00033ooooo1?l0
+0006ooooo`;o00001ooooolMool0067ooooo001Kooooo`Co00001Oooool2o`0002;ooooo0_l00005
+ooooo`Co00004_oooolIool006;ooooo001Looooo`;o00001Oooool4o`0000Kooooo0_l00007oooo
+o`;o00001oooool2o`0000Kooooo1?l00005ooooo`;o00005OoooolEool006Cooooo001Sooooo`Co
+00001Oooool4o`0000Gooooo1?l00005ooooo`Co00001Oooool4o`0001oooooo4?oo001Vooooo`00
+I?ooool2o`0000Kooooo1?l00005ooooo`Co00001Oooool4o`0000Kooooo0_l0000Vooooo`Coo`00
+K?ooool006gooooo0_l00007ooooo`;o00001oooool2o`0009oooooo003oooooob7ooooo0000\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.63407 .10525 m
+.63407 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+.56341 .17596 Mdot
+.58931 .16403 Mdot
+.61322 .15065 Mdot
+.63493 .13615 Mdot
+.6543 .12089 Mdot
+.67124 .10525 Mdot
+.68572 .08961 Mdot
+.69776 .07435 Mdot
+.70746 .05985 Mdot
+.71497 .04647 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000T?ooool=ool006?o
+oooo000Looooo`Co0000S_oooolAool0067ooooo000Mooooo`Co0000R_oooolGool005kooooo000M
+ooooo`Co0000QooooolKool005gooooo000Mooooo`Co0000QOoooolNool005cooooo000Mooooo`Co
+0000PooooolSool005Wooooo000Nooooo`?o0000P_oooolUool005Sooooo000Nooooo`Co0000P?oo
+oolWool005Oooooo000Nooooo`Co0000OooooolYool005Kooooo000Oooooo`Co0000OOooool[ool0
+00;o0000Doooool0023ooooo1?l0001kooooob_oo`001?l0001Booooo`008?ooool4o`0007[ooooo
+;?oo0004o`0005;ooooo000Qooooo`;o0000Noooool]ool000;o0000Doooool002?ooooo0_l0001h
+ooooobcoo`000_l00002ool005?ooooo000Rooooo`Co0000Moooool[ool000Co00000_oo001Boooo
+o`008_ooool4o`0007Kooooo;?oo0004o`0000;oo`00D_ooool002?ooooo0_l0001fooooobkoo`00
+0_l00004ool0057ooooo000Vooooo`;o0000Loooool[ool000;o00001ooo001Aooooo`009Oooool4
+o`00077ooooo:ooo0004o`0000Ooo`00D?ooool002Gooooo1?l0001aooooob_oo`001?l00007ool0
+053ooooo000Vooooo`;o0000L_ooool/ool000;o00002?oo001@ooooo`00:Oooool2o`0006oooooo
+:Ooo0002o`0000coo`00Coooool002Sooooo1?l0001^ooooobSoo`001?l0000;ool004oooooo000X
+ooooo`Co0000KOoooolYool000Co00002ooo001?ooooo`00:Oooool2o`0006kooooo:_oo0002o`00
+00coo`00Coooool009Wooooo>?oo001?ooooo`00;Oooool2o`0006[ooooo9_oo0002o`00013oo`00
+Coooool002cooooo1?l0001YooooobGoo`001?l0000?ool004oooooo000/ooooo`Co0000JOoooolU
+ool000Co00003ooo001?ooooo`00;Oooool2o`0006[ooooo9_oo0002o`00013oo`00Coooool003;o
+oooo0_l0001Uooooob7oo`000_l0000Eool004oooooo000aooooo`Co0000I?oooolPool000Co0000
+5?oo001?ooooo`00<Oooool4o`0006Cooooo8?oo0004o`0001Coo`00Coooool003;ooooo0_l0001U
+ooooob7oo`000_l0000Eool004oooooo002JooooocOoo`00Coooool003Sooooo0_l0001Poooooa_o
+o`000_l0000Jool004oooooo000gooooo`Co0000GooooolJool000Co00006?oo001@ooooo`00=ooo
+ool4o`0005oooooo6_oo0004o`0001Soo`00D?ooool003Sooooo0_l0001Poooooa_oo`000_l0000I
+ool0053ooooo000nooooo`;o0000FooooolCool000;o00007ooo001Aooooo`00?Oooool4o`0005[o
+oooo4_oo0004o`0001koo`00DOooool003gooooo1?l0001Koooooa7oo`001?l0000Mool005;ooooo
+000nooooo`;o0000GOoooolAool000;o00007_oo001Booooo`00AOooool2o`0005Kooooo2ooo0002
+o`0002?oo`00Doooool004Cooooo1?l0001Fooooo`Woo`001?l0000Qool005Cooooo0014ooooo`Co
+0000E_ooool9ool000Co00008Ooo001Dooooo`00AOooool2o`0000Gooooo0_l0001Aooooo`03ool0
+0?l0003o000000Koo`000_l0000Qool005Gooooo001;ooooo`Co0000D?ooool4o`0002Soo`00EOoo
+ool004_ooooo1?l0001@ooooo`Co00009ooo001Fooooo`00C?ooool2o`0000Kooooo0_l00013oooo
+o`;o00001Oooool2o`0002Koo`00F?ooool005?ooooo1?l00011ooooo`Co00002?oooolRool005[o
+oooo001Cooooo`Co00001Oooool2o`0003;ooooo0_l00006ooooo`Co00002_oooolOool005_ooooo
+001Dooooo`;o00001Oooool4o`00033ooooo1?l00006ooooo`;o00003?oooolMool005cooooo001K
+ooooo`Co00001Oooool2o`0002;ooooo0_l00005ooooo`Co00005_oooolJool005gooooo001Loooo
+o`;o00001Oooool4o`0000Kooooo0_l00007ooooo`;o00001oooool2o`0000Kooooo1?l00005oooo
+o`;o00006_oooolEool005oooooo001Sooooo`Co00001Oooool4o`0000Gooooo1?l00005ooooo`Co
+00001Oooool4o`0002Cooooo3ooo001Rooooo`00I?ooool2o`0000Kooooo1?l00005ooooo`Co0000
+1Oooool4o`0000Kooooo0_l0000Zooooo`Goo`00Ioooool006gooooo0_l00007ooooo`;o00001ooo
+ool2o`0009oooooo003oooooob7ooooo0000\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.64978 .10525 m
+.64978 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+.56341 .17596 Mdot
+.58931 .16403 Mdot
+.61322 .15065 Mdot
+.63493 .13615 Mdot
+.6543 .12089 Mdot
+.67124 .10525 Mdot
+.68572 .08961 Mdot
+.69776 .07435 Mdot
+.70746 .05985 Mdot
+.71497 .04647 Mdot
+.72049 .03454 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000UOooool<ool005oo
+oooo000Looooo`Co0000T_oooolBool005cooooo000Mooooo`Co0000S_oooolGool005[ooooo000M
+ooooo`Co0000S?oooolKool005Sooooo000Mooooo`Co0000ROoooolOool005Oooooo000Mooooo`Co
+0000R?oooolRool005Gooooo000Nooooo`?o0000QooooolTool00003ooooool0003o0000057ooooo
+000Nooooo`Co0000QOoooolUool000Co0000D?ooool001kooooo1?l00024ooooobKoo`001?l0001@
+ooooo`007oooool4o`0008;ooooo9_oo0004o`00057ooooo000Pooooo`Co0000P?oooolVool000Co
+00000_oo001@ooooo`008?ooool4o`0007oooooo9ooo0004o`0000?oo`00Coooool0027ooooo0_l0
+0020ooooobSoo`000_l00004ool004oooooo000Sooooo`;o0000OOoooolWool000;o00001ooo001>
+ooooo`008_ooool4o`0007_ooooo9ooo0004o`0000Koo`00C_ooool002;ooooo1?l0001kooooobOo
+o`001?l00006ool004kooooo000Sooooo`;o0000NooooolYool000;o00002?oo001=ooooo`009_oo
+ool2o`0007Sooooo9_oo0002o`0000_oo`00COooool002Gooooo1?l0001fooooobKoo`001?l0000;
+ool004cooooo000Uooooo`Co0000M_oooolVool000Co00002ooo001<ooooo`009_ooool2o`0007Oo
+oooo9ooo0002o`0000coo`00C?ooool002Wooooo0_l0001cooooobGoo`000_l0000@ool004_ooooo
+000Xooooo`Co0000L_oooolTool000Co00003ooo001;ooooo`00:?ooool4o`00077ooooo9Ooo0004
+o`0000ooo`00Boooool002Wooooo0_l0001booooobKoo`000_l0000Aool004[ooooo002MooooocWo
+o`00B_ooool002gooooo0_l0001^ooooob;oo`000_l0000Eool004[ooooo000/ooooo`Co0000KOoo
+oolQool000Co00005?oo001:ooooo`00;?ooool4o`0006gooooo8Ooo0004o`0001Coo`00B_ooool0
+02gooooo0_l0001^ooooob;oo`000_l0000Eool004[ooooo000booooo`;o0000JOoooolMool000;o
+00006_oo001:ooooo`00<Oooool4o`0006Sooooo7?oo0004o`0001Woo`00B_ooool0037ooooo1?l0
+001Xoooooacoo`001?l0000Iool004[ooooo000booooo`;o0000JOoooolMool000;o00006Ooo001;
+ooooo`00W_oooolgool004_ooooo000hooooo`;o0000I?oooolGool000;o00007_oo001;ooooo`00
+=oooool4o`0006Cooooo5Ooo0004o`0001coo`00C?ooool003Oooooo1?l0001ToooooaGoo`001?l0
+000Lool004cooooo000hooooo`;o0000IOoooolFool000;o00007Ooo001<ooooo`00?_ooool2o`00
+063ooooo3_oo0002o`0002?oo`00COooool003gooooo1?l0001Oooooo`goo`001?l0000Rool004go
+oooo000mooooo`Co0000Goooool=ool000Co00008Ooo001>ooooo`00?_ooool2o`00067ooooo3Ooo
+0002o`0002;oo`00C_ooool004Gooooo0_l0001Kooooo`Koo`000_l0000Xool004kooooo0014oooo
+o`Co0000Foooool4ool000Co00009_oo001?ooooo`00A?ooool4o`0005_ooooo1?oo0004o`0002Ko
+o`00Coooool004Gooooo0_l00005ooooo`;o0000D_ooool2o`0000;ooooo1?oo0002o`0002Koo`00
+D?ooool004_ooooo1?l0001@ooooo`Co00000_oooolZool0057ooooo001;ooooo`Co0000D?ooool4
+o`0000?ooooo:?oo001Booooo`00C?ooool2o`0000Kooooo0_l00013ooooo`;o00001Oooool2o`00
+00Gooooo9Ooo001Dooooo`00Doooool4o`00047ooooo1?l0000=ooooob;oo`00EOooool005?ooooo
+1?l00005ooooo`;o0000<_ooool2o`0000Kooooo1?l0000>ooooob3oo`00E_ooool005Cooooo0_l0
+0005ooooo`Co0000<?ooool4o`0000Kooooo0_l0000@oooooagoo`00F?ooool005_ooooo1?l00005
+ooooo`;o00008_ooool2o`0000Gooooo1?l0000KoooooaWoo`00FOooool005cooooo0_l00005oooo
+o`Co00001_ooool2o`0000Oooooo0_l00007ooooo`;o00001_ooool4o`0000Gooooo0_l0000Noooo
+oaGoo`00Foooool006?ooooo1?l00005ooooo`Co00001Oooool4o`0000Gooooo1?l00005ooooo`Co
+0000:?ooool@ool005gooooo001Tooooo`;o00001_ooool4o`0000Gooooo1?l00005ooooo`Co0000
+1_ooool2o`0002oooooo1?oo001Sooooo`00KOooool2o`0000Oooooo0_l00007ooooo`;o0000Wooo
+ool00?oooooo8Oooool00001\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.66549 .10525 m
+.66549 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+.56341 .17596 Mdot
+.58931 .16403 Mdot
+.61322 .15065 Mdot
+.63493 .13615 Mdot
+.6543 .12089 Mdot
+.67124 .10525 Mdot
+.68572 .08961 Mdot
+.69776 .07435 Mdot
+.70746 .05985 Mdot
+.71497 .04647 Mdot
+.72049 .03454 Mdot
+.72427 .02435 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000VOooool=ool005[o
+oooo000Looooo`Co0000UooooolAool005Sooooo000Mooooo`Co0000TooooolGool005Gooooo000M
+ooooo`Co0000T?oooolKool000;ooooo0_l0001@ooooo`007Oooool4o`0008kooooo7_oo0004o`00
+04oooooo000Mooooo`Co0000S?oooolPool000Co0000Coooool001kooooo0ol0002;ooooob7oo`00
+0ol000000ooo003oooooooooo`1=ooooo`007_ooool4o`0008Wooooo8Ooo0004o`0000;oo`00C_oo
+ool001kooooo1?l00028ooooob;oo`001?l00003ool004gooooo000Oooooo`Co0000Q_oooolRool0
+00Co00001Ooo001<ooooo`008?ooool4o`0008Cooooo8_oo0004o`0000Koo`00C?ooool0023ooooo
+1?l00023ooooob?oo`001?l00007ool004_ooooo000Qooooo`;o0000Q?oooolTool000;o00002?oo
+001;ooooo`008oooool2o`00087ooooo8ooo0002o`0000_oo`00B_ooool002;ooooo1?l00020oooo
+ob;oo`001?l0000;ool004Wooooo000Rooooo`Co0000OooooolSool000Co00002ooo0019ooooo`00
+8oooool2o`0007oooooo9Ooo0002o`0000goo`00B?ooool002Kooooo0_l0001looooob;oo`000_l0
+000@ool004Sooooo000Uooooo`Co0000N_oooolRool000Co00004?oo0017ooooo`009Oooool4o`00
+07[ooooo8_oo0004o`00013oo`00Aoooool002Kooooo0_l0001kooooob?oo`000_l0000Aool004Oo
+oooo000Yooooo`;o0000MooooolQool000;o00005Ooo0016ooooo`00:?ooool4o`0007Kooooo8?oo
+0004o`0001Coo`00A_ooool002Sooooo1?l0001fooooob3oo`001?l0000Dool004Kooooo000Yoooo
+o`;o0000MooooolQool000;o00005Ooo0016ooooo`00X_oooolhool004Kooooo000]ooooo`;o0000
+LooooolMool000;o00006Ooo0016ooooo`00;?ooool4o`0007;ooooo7?oo0004o`0001Soo`00A_oo
+ool002cooooo1?l0001boooooacoo`001?l0000Hool004Kooooo000]ooooo`;o0000LooooolMool0
+00;o00006Ooo0016ooooo`00<_ooool2o`0006kooooo6?oo0002o`0001koo`00A_ooool0037ooooo
+1?l0001]oooooaOoo`001?l0000Mool004Kooooo000aooooo`Co0000KOoooolGool000Co00007Ooo
+0016ooooo`00<_ooool2o`0006kooooo6?oo0002o`0001koo`00A_ooool00:;ooooo>?oo0016oooo
+o`00>?ooool2o`0006Sooooo4ooo0002o`0002?oo`00A_ooool003Oooooo1?l0001Xoooooa7oo`00
+1?l0000Qool004Oooooo000gooooo`Co0000J?oooolAool000Co00008Ooo0017ooooo`00>?ooool2
+o`0006Wooooo4_oo0002o`0002;oo`00Aoooool003kooooo0_l0001Tooooo`[oo`000_l0000Xool0
+04Sooooo000mooooo`Co0000Hoooool9ool000Co00009ooo0018ooooo`00?Oooool4o`0006Cooooo
+2?oo0004o`0002Koo`00BOooool003kooooo0_l0001Vooooo`Soo`000_l0000Wool004Wooooo0015
+ooooo`;o0000Goooool2ool000;o0000;?oo001:ooooo`00A?ooool4o`0005oooooo1?l0000Zool0
+04_ooooo0014ooooo`Co0000Goooool4o`0002[oo`00Boooool004Gooooo0_l00005ooooo`;o0000
+D_ooool2o`0000Kooooo0_l0000Zool004cooooo001;ooooo`Co0000D?ooool4o`0000Kooooo:ooo
+001<ooooo`00Boooool4o`00053ooooo1?l00007ooooobWoo`00COooool004cooooo0_l00006oooo
+o`;o0000@oooool2o`0000Gooooo0_l00009ooooobKoo`00Coooool005?ooooo1?l00011ooooo`Co
+00004OoooolRool0057ooooo001Cooooo`Co00001Oooool2o`0003;ooooo0_l00006ooooo`Co0000
+4ooooolOool005;ooooo001Dooooo`;o00001Oooool4o`00033ooooo1?l00006ooooo`;o00005Ooo
+oolMool005?ooooo001Kooooo`Co00001Oooool2o`0002;ooooo0_l00005ooooo`Co00007ooooolJ
+ool005Cooooo001Looooo`;o00001Oooool4o`0000Kooooo0_l00007ooooo`;o00001oooool2o`00
+00Kooooo1?l00005ooooo`;o00008ooooolEool005Kooooo001Sooooo`Co00001Oooool4o`0000Go
+oooo1?l00005ooooo`Co00001Oooool4o`0002gooooo3ooo001Iooooo`00I?ooool2o`0000Kooooo
+1?l00005ooooo`Co00001Oooool4o`0000Kooooo0_l0000cooooo`Goo`00G_ooool006gooooo0_l0
+0007ooooo`;o00001oooool2o`0009oooooo003oooooob7ooooo0000\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.68119 .10525 m
+.68119 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+.56341 .17596 Mdot
+.58931 .16403 Mdot
+.61322 .15065 Mdot
+.63493 .13615 Mdot
+.6543 .12089 Mdot
+.67124 .10525 Mdot
+.68572 .08961 Mdot
+.69776 .07435 Mdot
+.70746 .05985 Mdot
+.71497 .04647 Mdot
+.72049 .03454 Mdot
+.72427 .02435 Mdot
+.72659 .01615 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0003oooooo`7ooooo000Looooo`Co0000W_ooool<ool005Ko
+oooo000Looooo`Co0000VooooolBool000;ooooo0_l0001?ooooo`007Oooool4o`0009Oooooo5_oo
+0004o`0004kooooo000Mooooo`Co0000UOoooolHool000Co0000C_ooool001gooooo1?l0002Boooo
+oa[oo`001?l000000ooo003oooooooooo`1<ooooo`007Oooool4o`00097ooooo6ooo0004o`0000?o
+o`00C?ooool001kooooo0ol0002@oooooacoo`000ol00005ool004_ooooo000Nooooo`Co0000S_oo
+oolLool000Co00001_oo001:ooooo`007_ooool4o`0008gooooo7Ooo0004o`0000Ooo`00BOooool0
+01oooooo1?l0002;oooooagoo`001?l00009ool004Sooooo000Pooooo`Co0000ROoooolMool000Co
+00002ooo0017ooooo`008?ooool4o`0008Sooooo7_oo0004o`0000coo`00A_ooool0027ooooo0_l0
+0029oooooaooo`000_l0000=ool004Kooooo000Sooooo`;o0000Q_oooolNool000;o00004?oo0015
+ooooo`008_ooool4o`0008Cooooo7_oo0004o`0000ooo`00AOooool002;ooooo1?l00024oooooako
+o`001?l0000?ool004Gooooo000Sooooo`;o0000Q?oooolPool000;o00004Ooo0014ooooo`009_oo
+ool2o`00087ooooo7Ooo0002o`0001Coo`00A?ooool002Gooooo1?l0001ooooooagoo`001?l0000D
+ool004?ooooo000Uooooo`Co0000OooooolMool000Co00005?oo0013ooooo`009_ooool2o`00083o
+oooo7_oo0002o`0001Goo`00@oooool002Wooooo0_l0001loooooacoo`000_l0000Iool004;ooooo
+000Xooooo`Co0000NooooolKool000Co00006?oo0012ooooo`00:?ooool4o`0007[ooooo7?oo0004
+o`0001Soo`00@_ooool002Wooooo0_l0001koooooagoo`000_l0000Iool004;ooooo002VooooocSo
+o`00@_ooool002gooooo0_l0001goooooaWoo`000_l0000Mool004;ooooo000/ooooo`Co0000M_oo
+oolHool000Co00007Ooo0011ooooo`00;?ooool4o`0007Kooooo6?oo0004o`0001goo`00@Oooool0
+02gooooo0_l0001goooooaWoo`000_l0000Nool0047ooooo000booooo`;o0000L_oooolDool000;o
+00008_oo0012ooooo`00<Oooool4o`00077ooooo4ooo0004o`00027oo`00@_ooool0037ooooo1?l0
+001aoooooa?oo`001?l0000Qool004;ooooo000booooo`;o0000L_oooolDool000;o00008_oo0012
+ooooo`00Yooooolgool004;ooooo000hooooo`;o0000KOooool>ool000;o00009ooo0012ooooo`00
+=oooool4o`0006gooooo3?oo0004o`0002Goo`00@oooool003Oooooo1?l0001]ooooo`coo`001?l0
+000Uool004?ooooo000hooooo`;o0000K_ooool=ool000;o00009_oo0013ooooo`00?_ooool2o`00
+06Wooooo1Ooo0002o`0002coo`00A?ooool003gooooo1?l0001Xooooo`Coo`001?l0000[ool004Co
+oooo000mooooo`Co0000J?ooool4ool000Co0000:_oo0015ooooo`00?_ooool2o`0006[ooooo1?oo
+0002o`0002_oo`00AOooool004Gooooo0_l0001Qooooo`;o000000?oooooool00?oo0000;_oo0015
+ooooo`00A?ooool4o`0005oooooo1?l000000oooooooo`00ool0000/ool004Kooooo0014ooooo`Co
+0000Goooool4o`000003oooooooo003oo`0002coo`00A_ooool004Gooooo0_l00005ooooo`;o0000
+D_ooool2o`0000Kooooo0_l00003ooooobcoo`00Aoooool004_ooooo1?l0001@ooooo`Co00002ooo
+oolZool004Sooooo001;ooooo`Co0000D?ooool4o`0000cooooo:?oo0019ooooo`00C?ooool2o`00
+00Kooooo0_l00013ooooo`;o00001Oooool2o`0000kooooo9Ooo001;ooooo`00Doooool4o`00047o
+oooo1?l0000Fooooob;oo`00C?ooool005?ooooo1?l00005ooooo`;o0000<_ooool2o`0000Kooooo
+1?l0000Gooooob3oo`00COooool005Cooooo0_l00005ooooo`Co0000<?ooool4o`0000Kooooo0_l0
+000Ioooooagoo`00Coooool005_ooooo1?l00005ooooo`;o00008_ooool2o`0000Gooooo1?l0000T
+oooooaWoo`00D?ooool005cooooo0_l00005ooooo`Co00001_ooool2o`0000Oooooo0_l00007oooo
+o`;o00001_ooool4o`0000Gooooo0_l0000WoooooaGoo`00D_ooool006?ooooo1?l00005ooooo`Co
+00001Oooool4o`0000Gooooo1?l00005ooooo`Co0000<Oooool@ool005Cooooo001Tooooo`;o0000
+1_ooool4o`0000Gooooo1?l00005ooooo`Co00001_ooool2o`0003Sooooo1?oo001Jooooo`00KOoo
+ool2o`0000Oooooo0_l00007ooooo`;o0000Woooool00?oooooo8Oooool00001\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.6969 .10525 m
+.6969 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+.56341 .17596 Mdot
+.58931 .16403 Mdot
+.61322 .15065 Mdot
+.63493 .13615 Mdot
+.6543 .12089 Mdot
+.67124 .10525 Mdot
+.68572 .08961 Mdot
+.69776 .07435 Mdot
+.70746 .05985 Mdot
+.71497 .04647 Mdot
+.72049 .03454 Mdot
+.72427 .02435 Mdot
+.72659 .01615 Mdot
+.7278 .01014 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000?oooooo0_ooool001cooooo1?l0002_ooooo`;o0000Coooool001cooooo1?l0002Rooooo`co
+o`001?l0001>ooooo`007?ooool4o`0009oooooo3ooo0004o`0004kooooo000Mooooo`Co0000W?oo
+oolAool000Co00000_oo001<ooooo`007Oooool4o`0009Wooooo5?oo0004o`0000?oo`00Boooool0
+01gooooo1?l0002GoooooaGoo`001?l00005ool004[ooooo000Mooooo`Co0000UOoooolGool000Co
+00001ooo0018ooooo`007_ooool3o`0009Cooooo6?oo0003o`0000[oo`00A_ooool001kooooo1?l0
+002BoooooaSoo`001?l0000;ool004Gooooo000Nooooo`Co0000TOoooolIool000Co00002ooo0015
+ooooo`007oooool4o`0008oooooo6Ooo0004o`0000goo`00A?ooool0023ooooo1?l0002=oooooaWo
+o`001?l0000?ool004?ooooo000Pooooo`Co0000S?oooolJool000Co00004?oo0012ooooo`008Ooo
+ool2o`0008gooooo6ooo0002o`00017oo`00@_ooool002?ooooo0_l0002:oooooa[oo`000_l0000D
+ool0047ooooo000Rooooo`Co0000ROoooolIool000Co00005?oo0010ooooo`008_ooool4o`0008So
+oooo6_oo0004o`0001Coo`00@?ooool002?ooooo0_l00028oooooacoo`000_l0000Fool003oooooo
+000Vooooo`;o0000QOoooolIool000;o00006Ooo000oooooo`009Oooool4o`0008?ooooo6Ooo0004
+o`0001Woo`00?_ooool002Gooooo1?l00023oooooaWoo`001?l0000Iool003kooooo000Vooooo`;o
+0000Q?oooolJool000;o00006_oo000nooooo`00:Oooool2o`00083ooooo6?oo0002o`0001goo`00
+?_ooool002Sooooo1?l0001ooooooaOoo`001?l0000Lool003kooooo000Xooooo`Co0000OooooolG
+ool000Co00007?oo000nooooo`00:Oooool2o`00083ooooo6?oo0002o`0001koo`00?Oooool00:_o
+oooo>?oo000mooooo`00;Oooool2o`0007_ooooo5Ooo0002o`0002;oo`00?Oooool002cooooo1?l0
+001joooooaCoo`001?l0000Qool003gooooo000/ooooo`Co0000N_oooolDool000Co00008Ooo000m
+ooooo`00;Oooool2o`0007_ooooo5Ooo0002o`0002;oo`00?Oooool003;ooooo0_l0001foooooa3o
+o`000_l0000Wool003gooooo000aooooo`Co0000M_ooool>ool000Co00009_oo000mooooo`00<Ooo
+ool4o`0007Kooooo3_oo0004o`0002Koo`00?Oooool003;ooooo0_l0001gooooo`ooo`000_l0000V
+ool003kooooo002[ooooocOoo`00?_ooool003Sooooo0_l0001aooooo`[oo`000_l0000[ool003ko
+oooo000gooooo`Co0000LOooool8ool000Co0000:_oo000nooooo`00=oooool4o`00077ooooo2?oo
+0004o`0002[oo`00?_ooool003Sooooo0_l0001booooo`Woo`000_l0000[ool003kooooo000noooo
+o`;o0000KOooool00ooo003o0000o`00000aool003oooooo000mooooo`Co0000K?ooool4o`00033o
+o`00?oooool003gooooo1?l0001/ooooo`Co0000;ooo0010ooooo`00?_ooool2o`0006kooooo0_l0
+000`ool0043ooooo0015ooooo`;o0000HOooool2o`0000Gooooo<?oo0011ooooo`00A?ooool4o`00
+05oooooo1?l00005ooooobkoo`00@_ooool004Cooooo1?l0001Oooooo`Co00001Oooool^ool004;o
+oooo0015ooooo`;o00001Oooool2o`0005;ooooo0_l00006ooooo`;o00001oooool/ool004?ooooo
+001;ooooo`Co0000D?ooool4o`0000oooooo:_oo0014ooooo`00Boooool4o`00053ooooo1?l0000@
+ooooobWoo`00A?ooool004cooooo0_l00006ooooo`;o0000@oooool2o`0000Gooooo0_l0000Boooo
+obKoo`00A_ooool005?ooooo1?l00011ooooo`Co00006_oooolRool004Sooooo001Cooooo`Co0000
+1Oooool2o`0003;ooooo0_l00006ooooo`Co00007?oooolOool004Wooooo001Dooooo`;o00001Ooo
+ool4o`00033ooooo1?l00006ooooo`;o00007_oooolMool004[ooooo001Kooooo`Co00001Oooool2
+o`0002;ooooo0_l00005ooooo`Co0000:?oooolJool004_ooooo001Looooo`;o00001Oooool4o`00
+00Kooooo0_l00007ooooo`;o00001oooool2o`0000Kooooo1?l00005ooooo`;o0000;?oooolEool0
+04gooooo001Sooooo`Co00001Oooool4o`0000Gooooo1?l00005ooooo`Co00001Oooool4o`0003Go
+oooo4?oo001@ooooo`00I?ooool2o`0000Kooooo1?l00005ooooo`Co00001Oooool4o`0000Kooooo
+0_l0000looooo`Goo`00EOooool006gooooo0_l00007ooooo`;o00001oooool2o`0009oooooo003o
+ooooob7ooooo0000\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.71261 .10525 m
+.71261 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+.56341 .17596 Mdot
+.58931 .16403 Mdot
+.61322 .15065 Mdot
+.63493 .13615 Mdot
+.6543 .12089 Mdot
+.67124 .10525 Mdot
+.68572 .08961 Mdot
+.69776 .07435 Mdot
+.70746 .05985 Mdot
+.71497 .04647 Mdot
+.72049 .03454 Mdot
+.72427 .02435 Mdot
+.72659 .01615 Mdot
+.7278 .01014 Mdot
+.72825 .00648 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000;3ooooo0_l0001?ooooo`007?ooool4o`000:kooooo1?l0001>ooooo`007?ooool4o`000:Oo
+oooo1ooo0004o`000003ool00?oooooooooo04_ooooo000Looooo`Co0000Y?ooool:ool000Co0000
+1?oo001:ooooo`007Oooool4o`000:3ooooo3Ooo0004o`0000Koo`00B?ooool001gooooo1?l0002N
+ooooo`ooo`001?l00008ool004Kooooo000Mooooo`Co0000VooooolAool000Co00002_oo0015oooo
+o`007Oooool4o`0009Wooooo4ooo0004o`0000coo`00@oooool001kooooo0ol0002HoooooaCoo`00
+0ol0000>ool004;ooooo000Nooooo`Co0000U_oooolDool000Co00003ooo0011ooooo`007_ooool4
+o`0009Gooooo5Ooo0004o`00013oo`00@?ooool001oooooo1?l0002CoooooaGoo`001?l0000Bool0
+03oooooo000Pooooo`Co0000T_oooolDool000Co00005?oo000nooooo`008?ooool4o`00097ooooo
+5Ooo0004o`0001Goo`00?Oooool0027ooooo0_l0002BoooooaKoo`000_l0000Fool003gooooo000S
+ooooo`;o0000SooooolEool000;o00006Ooo000looooo`008_ooool4o`0008gooooo5Ooo0004o`00
+01Soo`00??ooool002;ooooo1?l0002=oooooaGoo`001?l0000Hool003cooooo000Sooooo`;o0000
+SOoooolGool000;o00006_oo000kooooo`009_ooool2o`0008[ooooo5?oo0002o`0001goo`00>ooo
+ool002Gooooo1?l00028oooooaCoo`001?l0000Mool003[ooooo000Uooooo`Co0000R?oooolDool0
+00Co00007Ooo000jooooo`009_ooool2o`0008Wooooo5Ooo0002o`0001koo`00>_ooool002Wooooo
+0_l00025oooooa?oo`000_l0000Rool003Wooooo000Xooooo`Co0000Q?oooolBool000Co00008Ooo
+000iooooo`00:?ooool4o`0008?ooooo4ooo0004o`00027oo`00>Oooool002Wooooo0_l00024oooo
+oaCoo`000_l0000Rool003Wooooo002_ooooocSoo`00>Oooool002gooooo0_l00020oooooa3oo`00
+0_l0000Vool003Wooooo000/ooooo`Co0000Ooooool?ool000Co00009_oo000hooooo`00;?ooool4
+o`0007oooooo3ooo0004o`0002Koo`00>?ooool002gooooo0_l00020oooooa3oo`000_l0000Wool0
+03Sooooo000booooo`;o0000Noooool;ool000;o0000:ooo000iooooo`00<Oooool4o`0007[ooooo
+2_oo0004o`0002[oo`00>Oooool0037ooooo1?l0001jooooo`[oo`001?l0000Zool003Wooooo000b
+ooooo`;o0000Noooool;ool000;o0000:ooo000iooooo`00/?oooolgool003Wooooo000hooooo`;o
+0000M_ooool5ool000;o0000<?oo000iooooo`00=oooool4o`0007Kooooo0ooo0004o`0002koo`00
+>_ooool003Oooooo1?l0001fooooo`?oo`001?l0000^ool003[ooooo000hooooo`;o0000Moooool4
+ool000;o0000;ooo000jooooo`00?_ooool2o`0006kooooo0_l00002oooooc?oo`00>oooool003go
+oooo1?l0001/ooooo`Co000000?oooooool00?oo0000<Ooo000kooooo`00?Oooool4o`0006cooooo
+1?l000000oooooooo`00ool0000`ool003cooooo000nooooo`;o0000K_ooool2o`0000?ooooo<Ooo
+000looooo`00AOooool2o`00067ooooo0_l0000:oooooc3oo`00??ooool004Cooooo1?l0001Ooooo
+o`Co00002_ooool^ool003gooooo0014ooooo`Co0000Goooool4o`0000[ooooo;_oo000mooooo`00
+AOooool2o`0000Gooooo0_l0001Booooo`;o00001_ooool2o`0000cooooo;?oo000nooooo`00Booo
+ool4o`00053ooooo1?l0000Cooooob_oo`00?oooool004_ooooo1?l0001@ooooo`Co00005?oooolY
+ool0043ooooo001<ooooo`;o00001_ooool2o`0004?ooooo0_l00005ooooo`;o00005_oooolVool0
+04;ooooo001Cooooo`Co0000@Oooool4o`0001oooooo8_oo0013ooooo`00Doooool4o`0000Gooooo
+0_l0000booooo`;o00001_ooool4o`00023ooooo8?oo0014ooooo`00E?ooool2o`0000Gooooo1?l0
+000`ooooo`Co00001_ooool2o`0002;ooooo7Ooo0016ooooo`00Foooool4o`0000Gooooo0_l0000R
+ooooo`;o00001Oooool4o`0002gooooo6Ooo0017ooooo`00G?ooool2o`0000Gooooo1?l00006oooo
+o`;o00001oooool2o`0000Oooooo0_l00006ooooo`Co00001Oooool2o`00033ooooo5Ooo0019oooo
+o`00Hoooool4o`0000Gooooo1?l00005ooooo`Co00001Oooool4o`0000Gooooo1?l0000joooooa3o
+o`00Boooool006Cooooo0_l00006ooooo`Co00001Oooool4o`0000Gooooo1?l00006ooooo`;o0000
+@?ooool5ool0057ooooo001]ooooo`;o00001oooool2o`0000Oooooo0_l0002Oooooo`00oooooolQ
+ooooo`00\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .21525 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.1 0.1 0.00525 0.1 [
+[ 0 0 0 0 ]
+[ 1 .21525 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 0 m
+1 0 L
+1 .21525 L
+0 .21525 L
+closepath
+clip
+newpath
+1 0 0 r
+.72832 .10525 m
+.72832 .10525 .1 0 365.73 arc
+F
+0 g
+.015 w
+.1 .00525 Mdot
+.10006 .00648 Mdot
+.10051 .01014 Mdot
+.10172 .01615 Mdot
+.10405 .02435 Mdot
+.10783 .03454 Mdot
+.11335 .04647 Mdot
+.12086 .05985 Mdot
+.13056 .07435 Mdot
+.1426 .08961 Mdot
+.15708 .10525 Mdot
+.17402 .12089 Mdot
+.19339 .13615 Mdot
+.2151 .15065 Mdot
+.23901 .16403 Mdot
+.26491 .17596 Mdot
+.29255 .18615 Mdot
+.32164 .19435 Mdot
+.35184 .20036 Mdot
+.38281 .20402 Mdot
+.41416 .20525 Mdot
+.44551 .20402 Mdot
+.47648 .20036 Mdot
+.50668 .19435 Mdot
+.53577 .18615 Mdot
+.56341 .17596 Mdot
+.58931 .16403 Mdot
+.61322 .15065 Mdot
+.63493 .13615 Mdot
+.6543 .12089 Mdot
+.67124 .10525 Mdot
+.68572 .08961 Mdot
+.69776 .07435 Mdot
+.70746 .05985 Mdot
+.71497 .04647 Mdot
+.72049 .03454 Mdot
+.72427 .02435 Mdot
+.72659 .01615 Mdot
+.7278 .01014 Mdot
+.72825 .00648 Mdot
+.72832 .00525 Mdot
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  ImageSize->{288, 61.9375},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000?B000`400?l00000o`00003o7Oooool2
+o`000;3ooooo0_l0001?ooooo`007?ooool4o`000:kooooo1?l0001>ooooo`007?ooool4o`000:_o
+oooo0ooo0004o`0000Goo`00BOooool001cooooo1?l0002Xooooo`Koo`001?l00008ool004Kooooo
+000Mooooo`Co0000YOooool8ool000Co00002ooo0013ooooo`007Oooool4o`000:;ooooo2ooo0004
+o`0000coo`00@_ooool001gooooo1?l0002Oooooo`goo`001?l0000>ool0047ooooo000Mooooo`Co
+0000W_ooool>ool000Co00004?oo000oooooo`007_ooool3o`0009gooooo3ooo0003o`0001;oo`00
+?_ooool001kooooo1?l0002Kooooo`ooo`001?l0000Cool003gooooo000Nooooo`Co0000V_ooool@
+ool000Co00005?oo000looooo`007oooool4o`0009Sooooo4?oo0004o`0001Koo`00>oooool0023o
+oooo1?l0002Foooooa3oo`001?l0000Hool003[ooooo000Pooooo`Co0000UOoooolAool000Co0000
+6Ooo000iooooo`008Oooool2o`0009Kooooo4_oo0002o`0001[oo`00>Oooool002?ooooo0_l0002C
+oooooa7oo`000_l0000Mool003Sooooo000Rooooo`Co0000TOoooolAool000Co00007Ooo000goooo
+o`008_ooool4o`00097ooooo4Ooo0004o`0001goo`00=oooool002?ooooo0_l0002Aoooooa?oo`00
+0_l0000Oool003Kooooo000Vooooo`;o0000S_ooool@ool000;o00008_oo000fooooo`009Oooool4
+o`0008cooooo4?oo0004o`0002;oo`00=Oooool002Gooooo1?l0002<oooooa3oo`001?l0000Rool0
+03Gooooo000Vooooo`;o0000SOoooolAool000;o00008ooo000eooooo`00:Oooool2o`0008Wooooo
+3ooo0002o`0002Koo`00=Oooool002Sooooo1?l00028ooooo`koo`001?l0000Uool003Gooooo000X
+ooooo`Co0000R?ooool>ool000Co00009Ooo000eooooo`00:Oooool2o`0008Wooooo3ooo0002o`00
+02Ooo`00=?ooool00;Cooooo>?oo000dooooo`00;Oooool2o`0008Cooooo3?oo0002o`0002_oo`00
+=?ooool002cooooo1?l00023ooooo`_oo`001?l0000Zool003Cooooo000/ooooo`Co0000Poooool;
+ool000Co0000:_oo000dooooo`00;Oooool2o`0008Cooooo3?oo0002o`0002_oo`00=?ooool003;o
+oooo0_l0001oooooo`Ooo`000_l0000`ool003Cooooo000aooooo`Co0000Ooooool5ool000Co0000
+;ooo000dooooo`00<Oooool4o`0007oooooo1Ooo0004o`0002ooo`00=?ooool003;ooooo0_l00020
+ooooo`Koo`000_l0000_ool003Gooooo002dooooocOoo`00=Oooool003Sooooo0_l0001jooooo`03
+ool00?l0003o000003Coo`00=Oooool003Oooooo1?l0001iooooo`Co0000<ooo000eooooo`00=ooo
+ool4o`0007Wooooo1?l0000cool003Gooooo000hooooo`;o0000Noooool2o`0003Coo`00=Oooool0
+03kooooo0_l0001^ooooo`;o00001_ooooldool003Kooooo000mooooo`Co0000K?ooool4o`0000Go
+oooo=?oo000fooooo`00?Oooool4o`0006cooooo1?l00005oooooc?oo`00=oooool003kooooo0_l0
+001^ooooo`;o00001ooooolbool003Oooooo0015ooooo`;o0000HOooool2o`0000kooooo<?oo000h
+ooooo`00A?ooool4o`0005oooooo1?l0000>ooooobkoo`00>Oooool004Cooooo1?l0001Oooooo`Co
+00003_ooool^ool003Wooooo0015ooooo`;o00001Oooool2o`0005;ooooo0_l00006ooooo`;o0000
+4?ooool/ool003[ooooo001;ooooo`Co0000D?ooool4o`0001Sooooo:_oo000kooooo`00Boooool4
+o`00053ooooo1?l0000IooooobSoo`00??ooool004cooooo0_l00006ooooo`;o0000@oooool2o`00
+00Gooooo0_l0000KooooobGoo`00?_ooool005?ooooo1?l00011ooooo`Co00008ooooolRool003oo
+oooo001Cooooo`Co00001Oooool2o`0003;ooooo0_l00006ooooo`Co00009?oooolPool0043ooooo
+001Dooooo`;o00001Oooool4o`00033ooooo1?l00006ooooo`;o00009_oooolNool0047ooooo001K
+ooooo`Co00001Oooool2o`0002;ooooo0_l00005ooooo`Co0000<OoooolJool004;ooooo001Loooo
+o`;o00001Oooool4o`0000Kooooo0_l00007ooooo`;o00001oooool2o`0000Kooooo1?l00005oooo
+o`;o0000=OoooolEool004Cooooo001Sooooo`Co00001Oooool4o`0000Gooooo1?l00005ooooo`Co
+00001Oooool4o`0003kooooo4?oo0017ooooo`00I?ooool2o`0000Kooooo1?l00005ooooo`Co0000
+1Oooool4o`0000Kooooo0_l00015ooooo`Goo`00C?ooool006gooooo0_l00007ooooo`;o00001ooo
+ool2o`0009oooooo003oooooob7ooooo0000\
+\>"],
+  ImageRangeCache->{{{0, 287}, {60.9375, 0}} -> {-1.06886, -0.0525, \
+0.0353231, 0.0353231}}]
+}, Closed]]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Macintosh",
+ScreenRectangle->{{0, 1024}, {0, 704}},
+WindowSize->{998, 636},
+WindowMargins->{{1, Automatic}, {0, Automatic}},
+FontSize->36
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 35, 0, 88, "Title"],
+Cell[1814, 55, 48, 0, 54, "Text"],
+
+Cell[CellGroupData[{
+Cell[1887, 59, 73, 1, 50, "Input"],
+Cell[1963, 62, 74, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2074, 68, 73, 1, 50, "Input"],
+Cell[2150, 71, 74, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2261, 77, 80, 1, 95, "Input"],
+Cell[2344, 80, 910, 13, 995, "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[3291, 98, 141, 3, 137, "Input"],
+Cell[3435, 103, 453, 6, 455, "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[3925, 114, 60, 1, 47, "Input"],
+Cell[3988, 117, 453, 6, 320, "Output"]
+}, Open  ]],
+Cell[4456, 126, 34, 0, 54, "Text"],
+
+Cell[CellGroupData[{
+Cell[4515, 130, 39, 1, 50, "Input"],
+Cell[4557, 133, 283, 4, 21, "Message"]
+}, Open  ]],
+Cell[4855, 140, 44, 0, 54, "Text"],
+
+Cell[CellGroupData[{
+Cell[4924, 144, 47, 1, 50, "Input"],
+Cell[4974, 147, 52, 1, 50, "Output"]
+}, Open  ]],
+Cell[5041, 151, 42, 4, 134, "Text"],
+
+Cell[CellGroupData[{
+Cell[5108, 159, 45, 1, 50, "Input"],
+Cell[5156, 162, 41, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5234, 168, 44, 1, 50, "Input"],
+Cell[5281, 171, 41, 1, 50, "Output"]
+}, Open  ]],
+Cell[5337, 175, 62, 4, 134, "Text"],
+
+Cell[CellGroupData[{
+Cell[5424, 183, 54, 1, 50, "Input"],
+Cell[5481, 186, 56, 1, 50, "Output"]
+}, Open  ]],
+Cell[5552, 190, 70, 4, 134, "Text"],
+
+Cell[CellGroupData[{
+Cell[5647, 198, 55, 1, 50, "Input"],
+Cell[5705, 201, 52, 1, 50, "Output"]
+}, Open  ]],
+Cell[5772, 205, 88, 6, 214, "Text"],
+
+Cell[CellGroupData[{
+Cell[5885, 215, 64, 1, 50, "Input"],
+Cell[5952, 218, 52, 1, 50, "Output"]
+}, Open  ]],
+Cell[6019, 222, 16, 0, 54, "Text"],
+Cell[6038, 224, 75, 3, 94, "Text"],
+
+Cell[CellGroupData[{
+Cell[6138, 231, 64, 1, 50, "Input"],
+Cell[6205, 234, 51, 1, 50, "Output"]
+}, Open  ]],
+Cell[6271, 238, 91, 4, 174, "Text"],
+
+Cell[CellGroupData[{
+Cell[6387, 246, 54, 1, 50, "Input"],
+Cell[6444, 249, 51, 1, 50, "Output"]
+}, Open  ]],
+Cell[6510, 253, 72, 5, 174, "Text"],
+
+Cell[CellGroupData[{
+Cell[6607, 262, 76, 1, 95, "Input"],
+Cell[6686, 265, 65, 1, 50, "Output"]
+}, Open  ]],
+Cell[6766, 269, 27, 5, 174, "Text"],
+Cell[6796, 276, 117, 3, 94, "Text"],
+
+Cell[CellGroupData[{
+Cell[6938, 283, 84, 1, 95, "Input"],
+Cell[7025, 286, 73, 1, 50, "Output"]
+}, Open  ]],
+Cell[7113, 290, 112, 5, 174, "Text"],
+
+Cell[CellGroupData[{
+Cell[7250, 299, 91, 1, 95, "Input"],
+Cell[7344, 302, 85, 1, 95, "Output"]
+}, Open  ]],
+Cell[7444, 306, 151, 6, 214, "Text"],
+
+Cell[CellGroupData[{
+Cell[7620, 316, 105, 2, 95, "Input"],
+Cell[7728, 320, 82, 1, 95, "Output"]
+}, Open  ]],
+Cell[7825, 324, 136, 6, 214, "Text"],
+
+Cell[CellGroupData[{
+Cell[7986, 334, 468, 9, 602, "Input"],
+
+Cell[CellGroupData[{
+Cell[8479, 347, 2462, 70, 70, 654, 43, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[10944, 419, 2416, 70, 70, 681, 44, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[13363, 491, 2443, 71, 70, 700, 45, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[15809, 564, 2486, 72, 70, 719, 46, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[18298, 638, 2526, 74, 70, 738, 47, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[20827, 714, 2601, 75, 70, 757, 48, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[23431, 791, 2661, 77, 70, 776, 49, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[26095, 870, 2712, 78, 70, 795, 50, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[28810, 950, 2784, 80, 70, 814, 51, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[31597, 1032, 2859, 82, 70, 832, 52, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[34459, 1116, 2930, 83, 70, 851, 53, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[37392, 1201, 3002, 85, 70, 870, 54, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[40397, 1288, 3076, 87, 70, 887, 55, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[43476, 1377, 3146, 88, 70, 905, 56, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[46625, 1467, 3236, 90, 70, 926, 57, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[49864, 1559, 3308, 92, 70, 945, 58, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[53175, 1653, 3420, 94, 70, 964, 59, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[56598, 1749, 3467, 95, 70, 983, 60, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[60068, 1846, 3575, 97, 70, 1002, 61, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[63646, 1945, 3615, 99, 70, 1021, 62, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[67264, 2046, 3658, 100, 70, 1040, 63, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[70925, 2148, 3754, 102, 70, 1059, 64, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[74682, 2252, 3813, 103, 70, 1078, 65, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[78498, 2357, 3877, 105, 70, 1097, 66, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[82378, 2464, 3932, 106, 70, 1116, 67, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[86313, 2572, 4055, 109, 70, 1133, 68, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[90371, 2683, 4076, 110, 70, 1154, 69, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[94450, 2795, 4155, 111, 70, 1173, 70, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[98608, 2908, 4223, 113, 70, 1192, 71, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[102834, 3023, 4290, 115, 70, 1210, 72, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[107127, 3140, 4381, 116, 70, 1229, 73, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[111511, 3258, 4453, 118, 70, 1248, 74, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[115967, 3378, 4529, 120, 70, 1267, 75, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[120499, 3500, 4600, 121, 70, 1286, 76, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[125102, 3623, 4660, 123, 70, 1305, 77, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[129765, 3748, 4748, 125, 70, 1324, 78, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[134516, 3875, 4799, 126, 70, 1343, 79, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[139318, 4003, 4907, 128, 70, 1362, 80, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[144228, 4133, 4875, 129, 70, 1378, 81, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[149106, 4264, 4969, 131, 70, 1399, 82, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[154078, 4397, 4935, 131, 70, 1418, 83, "GraphicsData", "PostScript", \
+"Graphics"]
+}, Closed]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

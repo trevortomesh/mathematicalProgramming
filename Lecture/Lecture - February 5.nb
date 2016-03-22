@@ -1,0 +1,657 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      8427,        426]*)
+(*NotebookOutlinePosition[      9077,        449]*)
+(*  CellTagsIndexPosition[      9033,        445]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Lecture - February 5",
+  FontColor->RGBColor[0, 1, 0]]], "Title"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(MyTree = {a, {b, {c, {d, e}}}, {f}, {i, {g, {h}}, {k}}}\)], "Input"],
+
+Cell[BoxData[
+    \({a, {b, {c, {d, e}}}, {f}, {i, {g, {h}}, {k}}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(MyTree[\([1]\)]\)], "Input"],
+
+Cell[BoxData[
+    \(a\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(MyTree[\([2]\)]\)], "Input"],
+
+Cell[BoxData[
+    \({b, {c, {d, e}}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(MyTree[\([3]\)]\)], "Input"],
+
+Cell[BoxData[
+    \({f}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(MyTree[\([2, 1]\)]\)], "Input"],
+
+Cell[BoxData[
+    \(b\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(MyTree[\([2, 2, 2, 2]\)]\)], "Input"],
+
+Cell[BoxData[
+    \(e\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\((a + b\ c + d\^\(3\ e\))\)[\([3, 2, 2]\)]\)], "Input"],
+
+Cell[BoxData[
+    \(e\)], "Output"]
+}, Open  ]],
+
+Cell["Some more list commands", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(List1 = {a, b, c, d, e, f, g, h}\)], "Input"],
+
+Cell[BoxData[
+    \({a, b, c, d, e, f, g, h}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(List2 = {i, j, k}\)], "Input"],
+
+Cell[BoxData[
+    \({i, j, k}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Append[List2, m]\)], "Input"],
+
+Cell[BoxData[
+    \({i, j, k, m}\)], "Output"]
+}, Open  ]],
+
+Cell["Note: This didn't (permanently) change List2", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(List2 = Append[List2, m]\)], "Input"],
+
+Cell[BoxData[
+    \({i, j, k, m}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(List2\)], "Input"],
+
+Cell[BoxData[
+    \({i, j, k, m}\)], "Output"]
+}, Open  ]],
+
+Cell["Note: This did change List2.", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Join[List1, List2]\)], "Input"],
+
+Cell[BoxData[
+    \({a, b, c, d, e, f, g, h, i, j, k, m}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(List1\)], "Input"],
+
+Cell[BoxData[
+    \({a, b, c, d, e, f, g, h}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Take[List1, {3, 6}]\)], "Input"],
+
+Cell[BoxData[
+    \({c, d, e, f}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Take[List1, 5]\)], "Input"],
+
+Cell[BoxData[
+    \({a, b, c, d, e}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Take[List1, {5}]\)], "Input"],
+
+Cell[BoxData[
+    \({e}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Take[List1, \(-3\)]\)], "Input"],
+
+Cell[BoxData[
+    \({f, g, h}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Drop[List1, {2, 4}]\)], "Input"],
+
+Cell[BoxData[
+    \({a, e, f, g, h}\)], "Output"]
+}, Open  ]],
+
+Cell["The Table command...", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[2  n + 3, {n, 1, 5}]\)], "Input"],
+
+Cell[BoxData[
+    \({5, 7, 9, 11, 13}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ColumnForm[Table[2  n + 3, {n, 1, 5}]]\)], "Input"],
+
+Cell[BoxData[
+    InterpretationBox[GridBox[{
+          {"5"},
+          {"7"},
+          {"9"},
+          {"11"},
+          {"13"}
+          },
+        GridBaseline->{Baseline, {1, 1}},
+        ColumnAlignments->{Left}],
+      ColumnForm[ {5, 7, 9, 11, 13}],
+      Editable->False]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[2  n + 3, {n, 3, 10, 2}]\)], "Input"],
+
+Cell[BoxData[
+    \({9, 13, 17, 21}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(List3 = {a, b, c, d}\)], "Input"],
+
+Cell[BoxData[
+    \({a, b, c, d}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(List4 = {1, 2, 3, 4}\)], "Input"],
+
+Cell[BoxData[
+    \({1, 2, 3, 4}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Thread[{List3, List4}]\)], "Input"],
+
+Cell[BoxData[
+    \({{a, 1}, {b, 2}, {c, 3}, {d, 4}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(List5 = Join[List1, List2]\)], "Input"],
+
+Cell[BoxData[
+    \({a, b, c, d, e, f, g, h, i, j, k, m}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Partition[List5, 2]\)], "Input"],
+
+Cell[BoxData[
+    \({{a, b}, {c, d}, {e, f}, {g, h}, {i, j}, {k, m}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Partition[List5, 3]\)], "Input"],
+
+Cell[BoxData[
+    \({{a, b, c}, {d, e, f}, {g, h, i}, {j, k, m}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Partition[List5, 2, 1]\)], "Input"],
+
+Cell[BoxData[
+    \({{a, b}, {b, c}, {c, d}, {d, e}, {e, f}, {f, g}, {g, h}, {h, i}, {i, 
+        j}, {j, k}, {k, m}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Partition[List5, 2, 5]\)], "Input"],
+
+Cell[BoxData[
+    \({{a, b}, {f, g}, {k, m}}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(<< Miscellaneous`Calendar`\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(EasterSunday[2009]\)], "Input"],
+
+Cell[BoxData[
+    \({2009, 4, 12}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(Easters = Table[EasterSunday[n], {n, 2009, 2300}];\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[Easters, {year_, 4, 6}]\)], "Input"],
+
+Cell[BoxData[
+    \({{2042, 4, 6}, {2053, 4, 6}, {2064, 4, 6}, {2110, 4, 6}, {2121, 4, 
+        6}, {2132, 4, 6}, {2194, 4, 6}, {2200, 4, 6}, {2262, 4, 6}, {2273, 4, 
+        6}, {2284, 4, 6}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Table[\(3  i + 1\)\/2\^i, {i, 1, 10}]\)], "Input"],
+
+Cell[BoxData[
+    \({2, 7\/4, 5\/4, 13\/16, 1\/2, 19\/64, 11\/64, 25\/256, 7\/128, 
+      31\/1024}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(3  Range[1, 10] + 1\)\/2\^Range[1, 10]\)], "Input"],
+
+Cell[BoxData[
+    \({2, 7\/4, 5\/4, 13\/16, 1\/2, 19\/64, 11\/64, 25\/256, 7\/128, 
+      31\/1024}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(2\^{a, b, c}\)], "Input"],
+
+Cell[BoxData[
+    \({2\^a, 2\^b, 2\^c}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({a, b, c}\/{1, 2, 3}\)], "Input"],
+
+Cell[BoxData[
+    \({a, b\/2, c\/3}\)], "Output"]
+}, Open  ]],
+
+Cell["Final example for today", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{a\^c, b\^b, x\^y, y\^y, z\^a}, same_\^same_]\)], "Input"],
+
+Cell[BoxData[
+    \({b\^b, y\^y}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Giving these blanks a common name forcing them to match the same \
+expression.\
+\>", "Text"]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 728}},
+WindowSize->{1033, 658},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FontSize->24
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 89, 1, 88, "Title"],
+
+Cell[CellGroupData[{
+Cell[1890, 58, 88, 1, 39, "Input"],
+Cell[1981, 61, 80, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2098, 67, 48, 1, 39, "Input"],
+Cell[2149, 70, 35, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2221, 76, 48, 1, 39, "Input"],
+Cell[2272, 79, 50, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2359, 85, 48, 1, 39, "Input"],
+Cell[2410, 88, 37, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2484, 94, 51, 1, 39, "Input"],
+Cell[2538, 97, 35, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2610, 103, 57, 1, 39, "Input"],
+Cell[2670, 106, 35, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2742, 112, 76, 1, 40, "Input"],
+Cell[2821, 115, 35, 1, 39, "Output"]
+}, Open  ]],
+Cell[2871, 119, 39, 0, 45, "Text"],
+
+Cell[CellGroupData[{
+Cell[2935, 123, 65, 1, 39, "Input"],
+Cell[3003, 126, 58, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3098, 132, 50, 1, 39, "Input"],
+Cell[3151, 135, 43, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3231, 141, 49, 1, 39, "Input"],
+Cell[3283, 144, 46, 1, 39, "Output"]
+}, Open  ]],
+Cell[3344, 148, 60, 0, 45, "Text"],
+
+Cell[CellGroupData[{
+Cell[3429, 152, 57, 1, 39, "Input"],
+Cell[3489, 155, 46, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3572, 161, 38, 1, 39, "Input"],
+Cell[3613, 164, 46, 1, 39, "Output"]
+}, Open  ]],
+Cell[3674, 168, 44, 0, 45, "Text"],
+
+Cell[CellGroupData[{
+Cell[3743, 172, 51, 1, 39, "Input"],
+Cell[3797, 175, 70, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3904, 181, 38, 1, 39, "Input"],
+Cell[3945, 184, 58, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4040, 190, 52, 1, 39, "Input"],
+Cell[4095, 193, 46, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4178, 199, 47, 1, 39, "Input"],
+Cell[4228, 202, 49, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4314, 208, 49, 1, 39, "Input"],
+Cell[4366, 211, 37, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4440, 217, 52, 1, 39, "Input"],
+Cell[4495, 220, 43, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4575, 226, 52, 1, 39, "Input"],
+Cell[4630, 229, 49, 1, 39, "Output"]
+}, Open  ]],
+Cell[4694, 233, 36, 0, 45, "Text"],
+
+Cell[CellGroupData[{
+Cell[4755, 237, 59, 1, 39, "Input"],
+Cell[4817, 240, 51, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4905, 246, 71, 1, 39, "Input"],
+Cell[4979, 249, 294, 11, 158, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5310, 265, 63, 1, 39, "Input"],
+Cell[5376, 268, 49, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5462, 274, 53, 1, 39, "Input"],
+Cell[5518, 277, 46, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5601, 283, 53, 1, 39, "Input"],
+Cell[5657, 286, 46, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5740, 292, 55, 1, 39, "Input"],
+Cell[5798, 295, 66, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5901, 301, 59, 1, 39, "Input"],
+Cell[5963, 304, 70, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6070, 310, 52, 1, 39, "Input"],
+Cell[6125, 313, 82, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6244, 319, 52, 1, 39, "Input"],
+Cell[6299, 322, 78, 1, 39, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6414, 328, 55, 1, 39, "Input"],
+Cell[6472, 331, 131, 2, 70, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6640, 338, 55, 1, 39, "Input"],
+Cell[6698, 341, 58, 1, 39, "Output"]
+}, Open  ]],
+Cell[6771, 345, 59, 1, 39, "Input"],
+
+Cell[CellGroupData[{
+Cell[6855, 350, 51, 1, 39, "Input"],
+Cell[6909, 353, 47, 1, 39, "Output"]
+}, Open  ]],
+Cell[6971, 357, 87, 1, 39, "Input"],
+
+Cell[CellGroupData[{
+Cell[7083, 362, 62, 1, 39, "Input"],
+Cell[7148, 365, 206, 3, 101, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7391, 373, 70, 1, 69, "Input"],
+Cell[7464, 376, 113, 2, 64, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7614, 383, 73, 1, 66, "Input"],
+Cell[7690, 386, 113, 2, 64, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7840, 393, 45, 1, 41, "Input"],
+Cell[7888, 396, 52, 1, 40, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7977, 402, 53, 1, 70, "Input"],
+Cell[8033, 405, 49, 1, 64, "Output"]
+}, Open  ]],
+Cell[8097, 409, 39, 0, 45, "Text"],
+
+Cell[CellGroupData[{
+Cell[8161, 413, 84, 1, 41, "Input"],
+Cell[8248, 416, 46, 1, 40, "Output"]
+}, Open  ]],
+Cell[8309, 420, 102, 3, 45, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

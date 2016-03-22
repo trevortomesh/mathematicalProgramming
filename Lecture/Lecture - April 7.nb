@@ -1,0 +1,306 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      4618,        203]*)
+(*NotebookOutlinePosition[      5270,        226]*)
+(*  CellTagsIndexPosition[      5226,        222]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["Lecture - April 7", "Text",
+  FontColor->RGBColor[1, 0, 0]],
+
+Cell[TextData[{
+  "A poster is to have an area of 180 ",
+  Cell[BoxData[
+      \(TraditionalForm\`in\^2\)]],
+  " with 1-inch margins at the bottom and sides and a 2-inch margin at the \
+top. What dimensions will give the largest printed area?"
+}], "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(PA = \((w - 2)\) \((h - 3)\)\)], "Input"],
+
+Cell[BoxData[
+    \(\((\(-3\) + h)\)\ \((\(-2\) + w)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TA = w\ h \[Equal] 180\)], "Input"],
+
+Cell[BoxData[
+    \(h\ w \[Equal] 180\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Geth = \(Solve[TA, h]\)[\([1, 1]\)]\)], "Input"],
+
+Cell[BoxData[
+    \(h \[Rule] 180\/w\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(PA = PA /. Geth\)], "Input"],
+
+Cell[BoxData[
+    \(\((\(-3\) + 180\/w)\)\ \((\(-2\) + w)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(DPA = D[PA, w]\)], "Input"],
+
+Cell[BoxData[
+    \(\(-3\) - \(180\ \((\(-2\) + w)\)\)\/w\^2 + 180\/w\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Getw = \(Solve[DPA \[Equal] 0, w]\)[\([2, 1]\)]\)], "Input"],
+
+Cell[BoxData[
+    \(w \[Rule] 2\ \@30\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Geth /. Getw\)], "Input"],
+
+Cell[BoxData[
+    \(h \[Rule] 3\ \@30\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(FinalAnswer = \(PA /. Geth\) /. Getw\)], "Input"],
+
+Cell[BoxData[
+    \(\((\(-2\) + 2\ \@30)\)\ \((\(-3\) + 3\ \@30)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Expand[Simplify[FinalAnswer]]\)], "Input"],
+
+Cell[BoxData[
+    \(186 - 12\ \@30\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+
+\
+\>", "Text"],
+
+Cell[BoxData[
+    \(LinTrans[MyMatrix_, 
+        InputVertices_] := \[IndentingNewLine]\((\(OutputVertices = 
+            Cases[InputVertices, 
+              x_ \[RuleDelayed] MyMatrix . x];\))\)\)], "Input"],
+
+Cell["\<\
+
+\
+\>", "Text"],
+
+Cell[BoxData[
+    \(LinTrans[{{1, 1}, {2, 0}}, {{0, 0}, {1, 0}, {1, 1}, {0, 1}}]\)], "Input"],
+
+Cell["\<\
+
+
+
+Warm up!!!!\
+\>", "Text"],
+
+Cell[BoxData[
+    \(\(A = {{1, 1}, {2, 0}};\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{{0, 0}, {1, 0}, {1, 1}, {0, 1}}, 
+      x_ \[RuleDelayed] A . x]\)], "Input"],
+
+Cell[BoxData[
+    \({{0, 0}, {1, 2}, {2, 2}, {1, 0}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(A . # &\) /@ {{0, 0}, {1, 0}, {1, 1}, {0, 1}}\)], "Input"],
+
+Cell[BoxData[
+    \({{0, 0}, {1, 2}, {2, 2}, {1, 0}}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(f[x_] := A . x\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f /@ {{0, 0}, {1, 0}, {1, 1}, {0, 1}}\)], "Input"],
+
+Cell[BoxData[
+    \({{0, 0}, {1, 2}, {2, 2}, {1, 0}}\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 728}},
+WindowSize->{1243, 706},
+WindowMargins->{{Automatic, -3}, {Automatic, 30}},
+FontSize->36
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 65, 1, 54, "Text"],
+Cell[1822, 54, 255, 6, 136, "Text"],
+
+Cell[CellGroupData[{
+Cell[2102, 64, 61, 1, 50, "Input"],
+Cell[2166, 67, 68, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2271, 73, 55, 1, 50, "Input"],
+Cell[2329, 76, 51, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2417, 82, 68, 1, 50, "Input"],
+Cell[2488, 85, 50, 1, 83, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2575, 91, 48, 1, 50, "Input"],
+Cell[2626, 94, 73, 1, 83, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2736, 100, 47, 1, 50, "Input"],
+Cell[2786, 103, 83, 1, 84, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2906, 109, 80, 1, 50, "Input"],
+Cell[2989, 112, 51, 1, 58, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3077, 118, 45, 1, 50, "Input"],
+Cell[3125, 121, 51, 1, 58, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3213, 127, 69, 1, 50, "Input"],
+Cell[3285, 130, 80, 1, 64, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3402, 136, 62, 1, 50, "Input"],
+Cell[3467, 139, 48, 1, 58, "Output"]
+}, Open  ]],
+Cell[3530, 143, 25, 3, 94, "Text"],
+Cell[3558, 148, 208, 4, 140, "Input"],
+Cell[3769, 154, 25, 3, 94, "Text"],
+Cell[3797, 159, 93, 1, 95, "Input"],
+Cell[3893, 162, 38, 5, 174, "Text"],
+Cell[3934, 169, 58, 1, 50, "Input"],
+
+Cell[CellGroupData[{
+Cell[4017, 174, 104, 2, 50, "Input"],
+Cell[4124, 178, 66, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4227, 184, 80, 1, 50, "Input"],
+Cell[4310, 187, 66, 1, 50, "Output"]
+}, Open  ]],
+Cell[4391, 191, 47, 1, 50, "Input"],
+
+Cell[CellGroupData[{
+Cell[4463, 196, 70, 1, 50, "Input"],
+Cell[4536, 199, 66, 1, 50, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

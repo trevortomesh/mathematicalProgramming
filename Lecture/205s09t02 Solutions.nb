@@ -1,0 +1,336 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      7052,        267]*)
+(*NotebookOutlinePosition[      7743,        291]*)
+(*  CellTagsIndexPosition[      7699,        287]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["\<\
+Math 205
+Spring 2008-09
+Test 2
+Solutions
+
+1.\t\t\t\t\t\t\t\
+\>", "Text"],
+
+Cell[TextData[{
+  Cell[BoxData[
+      \(TraditionalForm\`\[Placeholder]\_1 = t\)],
+    FontSize->24],
+  StyleBox["\n\n",
+    FontSize->24],
+  Cell[BoxData[
+      \(TraditionalForm\`\[Placeholder]\_2 = t\)],
+    FontSize->24],
+  StyleBox["\n\n",
+    FontSize->24],
+  Cell[BoxData[
+      \(TraditionalForm\`\[Placeholder]\_3 = t + 2  Cos[t]\)],
+    FontSize->24],
+  StyleBox["\n\n",
+    FontSize->24],
+  Cell[BoxData[
+      \(TraditionalForm\`\[Placeholder]\_4 = t + 2  Sin[t]\)],
+    FontSize->24]
+}], "Text",
+  FontSize->48],
+
+Cell["\<\
+
+
+2. (    )
+a)\
+\>", "Text"],
+
+Cell[BoxData[
+    \(Distribute[{{a, b, c}, {1, 2, 3}}, List]\)], "Input"],
+
+Cell["b)", "Text"],
+
+Cell[BoxData[
+    \({1, 2, 3, Sequence[4, 5], 6}\)], "Input"],
+
+Cell["c)", "Text"],
+
+Cell[BoxData[
+    \(Fold[Plus, 0, {a, b, c, d, e}]\)], "Input"],
+
+Cell["\<\
+
+ 3.
+\
+\>", "Text"],
+
+Cell[BoxData[
+    \(Do[ParametricPlot[{Cos[t], Sin[t]}, {t, 0, a}, 
+        PlotStyle \[Rule] {RGBColor[0, 0, 1], AbsoluteThickness[2]}, 
+        AspectRatio \[Rule] 1, PlotRange \[Rule] {{\(-1\), 1}, {\(-1\), 1}}, 
+        Ticks \[Rule] {{\(-1\), 1}, {\(-1\), 1}}, 
+        TextStyle \[Rule] \(FontSize \[Rule] 18\)], {a, 0.0001, 
+        2  \[Pi] + 0.0001, \[Pi]\/6}]\)], "Input"],
+
+Cell["\<\
+
+ 4.
+ \
+\>", "Text"],
+
+Cell[BoxData[
+    \(Plot[\@x, {x, 0, 4}, PlotStyle \[Rule] GrayLevel[0], 
+      Prolog \[Rule] {RGBColor[1, 0, 0], Disk[{1, 1}, 1]}, 
+      Epilog \[Rule] {RGBColor[0, 0, 1], Disk[{1, 1}, 0.5]}, 
+      PlotRange \[Rule] {{0, 4}, {0, 2}}, 
+      AspectRatio \[Rule] Automatic]\)], "Input"],
+
+Cell["5.", "Text"],
+
+Cell[BoxData[{
+    \(f[x_, y_] := \@x + y\), "\[IndentingNewLine]", 
+    \(FoldList[f, a, {b, c, d, e}]\)}], "Input"],
+
+Cell["\<\
+6.
+a)\
+\>", "Text"],
+
+Cell[BoxData[
+    \(Subdivide[T[A_, B_, C_]] := {T[A, \(A + B\)\/2, \(A + C\)\/2], 
+        T[\(A + B\)\/2, B, \(B + C\)\/2], 
+        R[\(A + B\)\/2, \(B + C\)\/2, C, \(A + C\)\/2]}\)], "Input"],
+
+Cell["\<\
+or you can use
+ \
+\>", "Text"],
+
+Cell[BoxData[
+    \(Sequence[T[A, \(A + B\)\/2, \(A + C\)\/2], 
+      T[\(A + B\)\/2, B, \(B + C\)\/2], 
+      R[\(A + B\)\/2, \(B + C\)\/2, C, \(A + C\)\/2]]\)], "Input"],
+
+Cell["\<\
+
+ b)
+ \
+\>", "Text"],
+
+Cell[BoxData[
+    \(Subdivide[R[vertices___]] := R[vertices]\)], "Input"],
+
+Cell["\<\
+
+ c)
+ \
+\>", "Text"],
+
+Cell[BoxData[
+    \(Cases[CurrentGeneration, 
+      T[vertices___] \[Rule] Polygon[{vertices}]]\)], "Input"],
+
+Cell["\<\
+
+ d)
+ \
+\>", "Text"],
+
+Cell[BoxData[
+    \(Cases[CurrentGeneration, 
+      R[first_, rest___] \[Rule] Line[{first, rest, first}]]\)], "Input"],
+
+Cell["\<\
+
+ 
+ Part II
+ 
+ 1.
+ 
+ 2.
+ \
+\>", "Text"],
+
+Cell[BoxData[
+    \(MakeLine[{a_, b_}, m_, L_] := 
+      Line[{{a, b} - \(L {1, m}\)\/\@\(1 + m\^2\), {a, 
+              b} + \(L {1, m}\)\/\@\(1 + m\^2\)}]\)], "Input"],
+
+Cell[BoxData[
+    \(TangentLine[Fn_, {var_, a_, b_}, x0_, L_, 
+        MyOptions___] := \[IndentingNewLine]\((f[x_] := 
+          Fn /. var \[Rule] x; \[IndentingNewLine]Plot[f[x], {x, a, b}, 
+          Epilog \[Rule] {RGBColor[1, 0, 0], 
+              MakeLine[{x0, f[x0]}, \(f'\)[x0], L]}, MyOptions])\)\)], "Input"],
+
+Cell["\<\
+ 
+3. 
+\
+\>", "Text"],
+
+Cell[BoxData[
+    \(\(GetPts = \(NSolve[{a\^2 + b\^2 \[Equal] 4, 
+              c\^2 + d\^2 \[Equal] 4, \(b - d\)\/\(a - c\) \[Equal] 
+                1\/2, \((a - c)\)\^2 + \((b - d)\)\^2 \[Equal] 3\^2}, {a, b, 
+              c, d}]\)[\([{2, 3}]\)];\)\)], "Input"],
+
+Cell[BoxData[
+    \(Show[
+      Graphics[{RGBColor[1, 0, 0], Circle[{0, 0}, 2], RGBColor[0, 1, 0], 
+          PointSize[0.02], Point[{a, b}] /. GetPts, RGBColor[0, 0, 1], 
+          Line[{{a, b}, {c, d}}] /. GetPts}], 
+      PlotRange \[Rule] 1.2 {{\(-2\), 2}, {\(-2\), 2}}, 
+      AspectRatio \[Rule] 1, Axes \[Rule] True]\)], "Input"],
+
+Cell["\<\
+
+
+4.\
+\>", "Text"],
+
+Cell[BoxData[
+    \(Subdivide[T[A_, B_, C_]] := 
+      Sequence[T[A, \(A + B\)\/2, \(A + C\)\/2], 
+        T[\(A + B\)\/2, B, \(B + C\)\/2], 
+        R[\(A + B\)\/2, \(B + C\)\/2, C, \(A + C\)\/2]]\)], "Input"],
+
+Cell[BoxData[
+    \(Subdivide[R[vertices___]] := R[vertices]\)], "Input"],
+
+Cell[BoxData[{
+    \(\(CurrentGeneration = {T[{\(-1\), 0}, {1, 0}, {0, \@2}]};\)\), "\n", 
+    \(\(ReadyToPlotTriangles = 
+        Cases[CurrentGeneration, 
+          T[vertices___] \[Rule] Polygon[{vertices}]];\)\), "\n", 
+    \(\(ReadyToPlotRhombuses = 
+        Cases[CurrentGeneration, 
+          R[first_, rest___] \[Rule] Line[{first, rest, first}]];\)\), "\n", 
+    \(\(Show[
+        Graphics[{GrayLevel[0.75], ReadyToPlotTriangles, GrayLevel[0], 
+            ReadyToPlotRhombuses}], 
+        PlotRange \[Rule] {{\(-1\), 1}, {0, \@2}}, 
+        AspectRatio \[Rule] Automatic];\)\), "\n", 
+    \(Do[CurrentGeneration = 
+        Subdivide /@ 
+          CurrentGeneration; \[IndentingNewLine]ReadyToPlotTriangles = 
+        Cases[CurrentGeneration, T[vertices___] \[Rule] Polygon[{vertices}]]; 
+      ReadyToPlotRhombuses = 
+        Cases[CurrentGeneration, 
+          R[first_, rest___] \[Rule] Line[{first, rest, first}]]; 
+      Show[Graphics[{GrayLevel[0.75], ReadyToPlotTriangles, GrayLevel[0], 
+            ReadyToPlotRhombuses}], 
+        PlotRange \[Rule] {{\(-1\), 1}, {0, \@2}}, 
+        AspectRatio \[Rule] Automatic], {7}]\)}], "Input"]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 717}},
+WindowSize->{878, 697},
+WindowMargins->{{100, Automatic}, {Automatic, 1}},
+PrintingCopies->1,
+PrintingPageRange->{4, 8}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 82, 7, 128, "Text"],
+Cell[1839, 60, 524, 20, 215, "Text"],
+Cell[2366, 82, 38, 5, 90, "Text"],
+Cell[2407, 89, 73, 1, 30, "Input"],
+Cell[2483, 92, 18, 0, 33, "Text"],
+Cell[2504, 94, 61, 1, 30, "Input"],
+Cell[2568, 97, 18, 0, 33, "Text"],
+Cell[2589, 99, 63, 1, 30, "Input"],
+Cell[2655, 102, 29, 4, 71, "Text"],
+Cell[2687, 108, 382, 6, 82, "Input"],
+Cell[3072, 116, 30, 4, 71, "Text"],
+Cell[3105, 122, 288, 5, 54, "Input"],
+Cell[3396, 129, 18, 0, 33, "Text"],
+Cell[3417, 131, 117, 2, 52, "Input"],
+Cell[3537, 135, 29, 3, 52, "Text"],
+Cell[3569, 140, 195, 3, 42, "Input"],
+Cell[3767, 145, 40, 3, 52, "Text"],
+Cell[3810, 150, 171, 3, 42, "Input"],
+Cell[3984, 155, 30, 4, 71, "Text"],
+Cell[4017, 161, 73, 1, 30, "Input"],
+Cell[4093, 164, 30, 4, 71, "Text"],
+Cell[4126, 170, 108, 2, 30, "Input"],
+Cell[4237, 174, 30, 4, 71, "Text"],
+Cell[4270, 180, 119, 2, 30, "Input"],
+Cell[4392, 184, 49, 9, 166, "Text"],
+Cell[4444, 195, 169, 3, 48, "Input"],
+Cell[4616, 200, 318, 5, 70, "Input"],
+Cell[4937, 207, 30, 4, 71, "Text"],
+Cell[4970, 213, 265, 4, 42, "Input"],
+Cell[5238, 219, 336, 6, 70, "Input"],
+Cell[5577, 227, 28, 4, 71, "Text"],
+Cell[5608, 233, 210, 4, 42, "Input"],
+Cell[5821, 239, 73, 1, 30, "Input"],
+Cell[5897, 242, 1151, 23, 222, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

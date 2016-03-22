@@ -1,0 +1,780 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     15253,        604]*)
+(*NotebookOutlinePosition[     15973,        629]*)
+(*  CellTagsIndexPosition[     15929,        625]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[TextData[{
+  "I made a couple of comments below, otherwise everything is okay - ",
+  Cell[BoxData[
+      \(TraditionalForm\`10\/10\)]]
+}], "Text",
+  FontColor->RGBColor[1, 0, 0]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Assignment #2\t\tTrevor Tomesh",
+  FontColor->RGBColor[1, 0, 0]]], "Title",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell["Due: February 5", "Subtitle"],
+
+Cell[TextData[{
+  "#1\t",
+  StyleBox["Use a replacement statement",
+    FontColor->RGBColor[1, 0, 0]],
+  " to substitute 5 in for ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\)]],
+  " in ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^2 + 5\)]],
+  "\n\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(x\^2 + 5 /. x \[Rule] 5\)], "Input"],
+
+Cell[BoxData[
+    \(30\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "\n#2\t",
+  StyleBox["Use a replacement statement",
+    FontColor->RGBColor[1, 0, 0]],
+  " to substitute ",
+  Cell[BoxData[
+      \(TraditionalForm\`y\^2 + 3  y + 2\)]],
+  " in for ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\)]],
+  " in ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^3 + \(x\^2\) y\^2 + 3  x\)]],
+  "\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(x\^3 + \(x\^2\) y\^2 + 3  x /. x \[Rule] y\^2 + 3  y + 2\)], "Input"],
+
+Cell[BoxData[
+    \(3\ \((2 + 3\ y + y\^2)\) + 
+      y\^2\ \((2 + 3\ y + y\^2)\)\^2 + \((2 + 3\ y + y\^2)\)\^3\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "\n\n#3\t",
+  StyleBox["Use a replacement statement",
+    FontColor->RGBColor[1, 0, 0]],
+  " to substitute  3 and 7 in for ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\)]],
+  " and ",
+  Cell[BoxData[
+      \(TraditionalForm\`y\)]],
+  ", respectively, in ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^3 + \(x\^2\) y\^2 + 3  x\)]],
+  "\n\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(x\^3 + x\^2*y\^2 + 3  x /. {x \[Rule] 3, y \[Rule] 7}\)], "Input"],
+
+Cell[BoxData[
+    \(477\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "\n#4\t",
+  StyleBox["Use a replacement statement",
+    FontColor->RGBColor[1, 0, 0]],
+  " to substitute  Hi for ",
+  Cell[BoxData[
+      \(TraditionalForm\`z\)]],
+  " in ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^2 + y\^2 + z\^2 == 1\)]],
+  "\n\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(x\^2 + y\^2 + z\^2 \[Equal] 1 /. z \[Rule] Hi\)], "Input"],
+
+Cell[BoxData[
+    \(Hi\^2 + x\^2 + y\^2 \[Equal] 1\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "\n#5\tReplace each Sin term in ",
+  Cell[BoxData[
+      \(TraditionalForm\`Sin[x] + Sin[y\^2] + Sin[3]\)]],
+  " with 7 using a single replacement statement. ",
+  StyleBox["Your output should be 21.",
+    FontColor->RGBColor[1, 0, 0]],
+  "\n\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Sin[x] + Sin[y\^2] + Sin[3] /. Sin[_] \[Rule] 7\)], "Input"],
+
+Cell[BoxData[
+    \(21\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "\n#6\tReplace every Sin term with its corresponding argument in ",
+  Cell[BoxData[
+      \(TraditionalForm\`Sin[x] + Sin[y\^2] + Sin[3]\)]],
+  " . ",
+  StyleBox["Your output should be ",
+    FontColor->RGBColor[1, 0, 0]],
+  Cell[BoxData[
+      FormBox[
+        StyleBox[\(3 + x + y\^2\),
+          FontColor->RGBColor[1, 0, 0]], TraditionalForm]]],
+  "\n\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Sin[x] + Sin[y\^2] + Sin[3] /. {Sin[x_] \[Rule] x\ }\)], "Input"],
+
+Cell[BoxData[
+    \(3 + x + y\^2\)], "Output"]
+}, Open  ]],
+
+Cell["You don't need the {}'s in the expression above:", "Text",
+  FontColor->RGBColor[1, 0, 0]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Sin[x] + Sin[y\^2] + Sin[3] /. Sin[x_] \[Rule] x\)], "Input",
+  FontColor->RGBColor[1, 0, 0]],
+
+Cell[BoxData[
+    \(3 + x + y\^2\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "\n#7\tReplace the specific term Sin[x] in ",
+  Cell[BoxData[
+      \(TraditionalForm\`Sin[x] + Sin[y\^2] + Sin[3]\)]],
+  " with z. ",
+  StyleBox["Your output should be ",
+    FontColor->RGBColor[1, 0, 0]],
+  Cell[BoxData[
+      \(TraditionalForm\`z + Sin[3] + Sin[y\^2]\)],
+    FontColor->RGBColor[1, 0, 0]],
+  Cell[BoxData[
+      FormBox[
+        StyleBox[".",
+          FontColor->RGBColor[1, 0, 0]], TraditionalForm]],
+    FontColor->RGBColor[1, 0, 0]],
+  "\n\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Sin[x] + Sin[y\^2] + Sin[3] /. Sin[x] \[Rule] \ z\)], "Input"],
+
+Cell[BoxData[
+    \(z + Sin[3] + Sin[y\^2]\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "\n#8\tReplace every monomial  in ",
+  Cell[BoxData[
+      \(TraditionalForm\`Sin[x] + 7 + a\^3 + a\^2 + c\^\(-4\)\)]],
+  " with z. ",
+  StyleBox["Your output should be ",
+    FontColor->RGBColor[1, 0, 0]],
+  Cell[BoxData[
+      FormBox[
+        StyleBox[\(\(+7\) + 3  z + Sin[x]\),
+          FontColor->RGBColor[1, 0, 0]], TraditionalForm]]],
+  StyleBox[".",
+    FontColor->RGBColor[1, 0, 0]],
+  "\n\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell["Again, you don't need the brackets:", "Text",
+  FontColor->RGBColor[1, 0, 0]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Sin[x] + 7 + a\^3 + a\^2 + c\^\(-4\) /. {_\^_ \[Rule] \ z}\)], "Input"],
+
+Cell[BoxData[
+    \(7 + 3\ z + Sin[x]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Sin[x] + 7 + a\^3 + a\^2 + c\^\(-4\) /. _\^_ \[Rule] z\)], "Input",
+  FontColor->RGBColor[1, 0, 0]],
+
+Cell[BoxData[
+    \(7 + 3\ z + Sin[x]\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "\n#9\tReplace every cube in ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^3 + x\^5 + y\^3 + y\^2 + \((x + 2)\)\^3\)]],
+  " with ",
+  Cell[BoxData[
+      \(TraditionalForm\`a\)]],
+  ". ",
+  StyleBox["Your output should be ",
+    FontColor->RGBColor[1, 0, 0]],
+  Cell[BoxData[
+      \(TraditionalForm\`3  a + x\^5 + y\^2\)], "Text",
+    FontColor->RGBColor[1, 0, 0]],
+  StyleBox["\n",
+    FontColor->RGBColor[1, 0, 0]],
+  "\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TraditionalForm\`x\^3 + x\^5 + y\^3 + 
+        y\^2 + \((x + 2)\)\^3 /. _\^3 \[Rule] \ a\)], "Input",
+  FormatType->StandardForm],
+
+Cell[BoxData[
+    \(3\ a + x\^5 + y\^2\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input"],
+
+Cell[TextData[{
+  "\n#10\tTry to replace every cube in ",
+  Cell[BoxData[
+      FormBox[
+        RowBox[{
+          FormBox[\(x\^3 + x\^5 + y\^3 + y\^2 + \((x + 2)\)\^3\),
+            "TraditionalForm"], "+", \(5\^3\)}], TraditionalForm]]],
+  " with c. What goes wrong?\n\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    FormBox[
+      RowBox[{
+        RowBox[{
+          FormBox[\(x\^3 + x\^5 + y\^3 + y\^2 + \((x + 2)\)\^3\),
+            "TraditionalForm"], "+", \(5\^3\)}], "/.", \(_\^3 \[Rule] z\)}], 
+      TraditionalForm]], "Input",
+  FormatType->StandardForm],
+
+Cell[BoxData[
+    \(125 + x\^5 + y\^2 + 3\ z\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["It tries to evaluate the expression before replacing ", "Subsubsection"],
+
+Cell[TextData[{
+  "\n#11\tReplace every cube in ",
+  Cell[BoxData[
+      FormBox[
+        RowBox[{
+          FormBox[\(x\^3 + x\^5 + y\^3 + y\^2 + \((x + 2)\)\^3\),
+            "TraditionalForm"], "+", \(5\^3\)}], TraditionalForm]]],
+  " with c. (Hint: Read about the Unevaluated command.)\n\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"Unevaluated", "[", 
+        FormBox[
+          RowBox[{
+            FormBox[\(x\^3 + x\^5 + y\^3 + y\^2 + \((x + 2)\)\^3\),
+              "TraditionalForm"], "+", \(5\^3\)}],
+          "TraditionalForm"], "]"}], "/.", \(_\^3 \[Rule] \ c\)}]], "Input"],
+
+Cell[BoxData[
+    \(4\ c + x\^5 + y\^2\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "\n#12\tReplace every monomial, ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^n\)]],
+  " in ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^3 + y\^2 + z\^\(-4\)\)]],
+  " with its corresponding exponent ",
+  Cell[BoxData[
+      \(TraditionalForm\`n\)]],
+  ". (That is, replace ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^3\)]],
+  " with 3, ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^2\)]],
+  " with 2, etc.) ",
+  StyleBox["Your output should be 3+2+(-4), which ",
+    FontColor->RGBColor[1, 0, 0]],
+  StyleBox["Mathematica",
+    FontSlant->"Italic",
+    FontColor->RGBColor[1, 0, 0]],
+  " ",
+  StyleBox["will evaluate to 1.",
+    FontColor->RGBColor[1, 0, 0]],
+  "\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TraditionalForm\`x\^3 + y\^2 + 
+        z\^\(-4\) /. {_\^n_ \[Rule] n}\)], "Input",
+  FormatType->StandardForm],
+
+Cell[BoxData[
+    \(1\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "Subsubsection"],
+
+Cell[TextData[{
+  "\n#13\tReplace every monomial of the form ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^n\)]],
+  " in ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^3 + y\^a + z\^\(-2\)\)]],
+  " with the corresponding value of ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\/n\)]],
+  " for that monomial. ",
+  StyleBox["Your output should be ",
+    FontColor->RGBColor[1, 0, 0]],
+  Cell[BoxData[
+      \(TraditionalForm\`x\/3 + y\/a - z\/2\)],
+    FontColor->RGBColor[1, 0, 0]],
+  "\n\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\(x\^3 + y\^a + 
+        z\^\(-2\)\)\(/.\)\({x_\^n_ \[Rule] x\/n}\)\(\ \ \)\)\)], "Input"],
+
+Cell[BoxData[
+    \(x\/3 + y\/a - z\/2\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "\n#14\tReplace every just the monomials ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^n\)]],
+  " whose base's are x in ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^3 + x\^4 + y\^a + z\^\(-2\)\)]],
+  "with the corresponding value of Sin[n] . ",
+  StyleBox["Your output should be ",
+    FontColor->RGBColor[1, 0, 0]],
+  Cell[BoxData[
+      \(TraditionalForm\`y\^a + 1\/z\^2 + Sin[3] + Sin[4]\)]],
+  "\n\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TraditionalForm\`\(\(x\^3 + x\^4 + y\^a + 
+        z\^\(-2\)\)\(/.\)\({x\^n_ \[Rule] Sin[n]}\)\(\ \)\)\)], "Input",
+  FormatType->StandardForm],
+
+Cell[BoxData[
+    \(y\^a + 1\/z\^2 + Sin[3] + Sin[4]\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "\n#15\tTry to replace every term of the form ",
+  Cell[BoxData[
+      \(TraditionalForm\`Sin[x + y]\)]],
+  " with ",
+  Cell[BoxData[
+      \(TraditionalForm\`Hi\)]],
+  " in ",
+  Cell[BoxData[
+      \(TraditionalForm\`Sin[a + b] + Sin[2\ z] + Sin[Hi + x\^2] + 
+        Sin[3 + \((c + d)\)] + Sin[d]\)]],
+  " using the pattern Sin[_+_]. (Don't use the pattern Sin[a_+b_] or some \
+equivalent.) ",
+  StyleBox["The output you are trying to produce is 3Hi+Sin[2 z]+Sin[d]. Are \
+you successful?",
+    FontColor->RGBColor[1, 0, 0]],
+  "\n\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TraditionalForm\`Sin[a + b] + Sin[2\ z] + Sin[Hi + x\^2] + 
+        Sin[3 + \((c + d)\)] + Sin[d] /. {Sin[_ + _] \[Rule] Hi}\)], "Input",
+  FormatType->StandardForm],
+
+Cell[BoxData[
+    \(Hi + Sin[a + b] + Sin[d] + Sin[3 + c + d] + Sin[Hi + x\^2]\)], "Output"]
+}, Open  ]],
+
+Cell["\"Are you successful?\" (respond)", "Text",
+  FontColor->RGBColor[1, 0, 0]],
+
+Cell["\<\
+
+#16\tNow attempt to do #15 again, but this time after you read about the \
+HoldPattern command.
+\
+\>", "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TraditionalForm\`Sin[a + b] + Sin[2\ z] + Sin[Hi + x\^2] + 
+        Sin[3 + \((c + d)\)] + 
+        Sin[d] /. {HoldPattern[Sin[_ + _]] \[Rule] Hi}\)], "Input",
+  FormatType->StandardForm],
+
+Cell[BoxData[
+    \(3\ Hi + Sin[d] + Sin[2\ z]\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "\n\n#17\tTry to account for what you observed when you first did #15.  \
+(Hint: Evaluate ",
+  Cell[BoxData[
+      \(TraditionalForm\`_ + _\)]],
+  ")\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(_ + _\)], "Input"],
+
+Cell[BoxData[
+    \(2\ _\)], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+  StyleBox["Mathematica",
+    FontSlant->"Italic"],
+  " tries to evaluate the form \"_+_\" as 2_ unless you tell it to hold off \
+on the evaluation."
+}], "Subsubsection"],
+
+Cell[TextData[{
+  "\n#18\tReplace every term of the form ",
+  Cell[BoxData[
+      \(TraditionalForm\`Sin[x + y]\)]],
+  " with ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^y\)]],
+  " in ",
+  Cell[BoxData[
+      \(TraditionalForm\`Sin[a + b] + Sin[2\ z] + Sin[Hi + x\^2] + 
+        Sin[3 + \((c + d)\)] + Sin[d]\)]],
+  ". (That is, replace ",
+  Cell[BoxData[
+      \(TraditionalForm\`Sin[a + b]\)]],
+  " by ",
+  Cell[BoxData[
+      \(TraditionalForm\`a\^b\)]],
+  ", ",
+  Cell[BoxData[
+      FormBox[
+        RowBox[{\(Sin[Hi + x\^2]\), Cell[""]}], TraditionalForm]]],
+  "by ",
+  Cell[BoxData[
+      \(TraditionalForm\`Hi\^\(x\^2\)\)]],
+  ", etc.) If you used the HoldPattern command to do this, see what happens \
+when you evaluate your expression without the HoldPattern command.\n\n"
+}], "Text",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TraditionalForm\`Sin[a + b] + Sin[2\ z] + Sin[Hi + x\^2] + 
+        Sin[3 + \((c + d)\)] + 
+        Sin[d] /. {Sin[x_ + y_] \[Rule] x\^y}\)], "Input",
+  FormatType->StandardForm],
+
+Cell[BoxData[
+    \(3\^\(c + d\) + a\^b + Hi\^\(x\^2\) + Sin[d] + Sin[2\ z]\)], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 685}},
+WindowSize->{913, 651},
+WindowMargins->{{55, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+FontSize->24
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 183, 5, 46, "Text"],
+
+Cell[CellGroupData[{
+Cell[1962, 60, 131, 2, 95, "Title"],
+Cell[2096, 64, 35, 0, 51, "Subtitle"],
+Cell[2134, 66, 298, 12, 107, "Text"],
+
+Cell[CellGroupData[{
+Cell[2457, 82, 56, 1, 42, "Input"],
+Cell[2516, 85, 36, 1, 41, "Output"]
+}, Open  ]],
+Cell[2567, 89, 384, 15, 134, "Text"],
+
+Cell[CellGroupData[{
+Cell[2976, 108, 89, 1, 42, "Input"],
+Cell[3068, 111, 125, 2, 47, "Output"]
+}, Open  ]],
+Cell[3208, 116, 402, 15, 200, "Text"],
+
+Cell[CellGroupData[{
+Cell[3635, 135, 86, 1, 42, "Input"],
+Cell[3724, 138, 37, 1, 41, "Output"]
+}, Open  ]],
+Cell[3776, 142, 314, 12, 138, "Text"],
+
+Cell[CellGroupData[{
+Cell[4115, 158, 78, 1, 42, "Input"],
+Cell[4196, 161, 64, 1, 43, "Output"]
+}, Open  ]],
+Cell[4275, 165, 306, 9, 169, "Text"],
+
+Cell[CellGroupData[{
+Cell[4606, 178, 80, 1, 42, "Input"],
+Cell[4689, 181, 36, 1, 41, "Output"]
+}, Open  ]],
+Cell[4740, 185, 420, 13, 169, "Text"],
+
+Cell[CellGroupData[{
+Cell[5185, 202, 85, 1, 42, "Input"],
+Cell[5273, 205, 46, 1, 42, "Output"]
+}, Open  ]],
+Cell[5334, 209, 96, 1, 45, "Text"],
+
+Cell[CellGroupData[{
+Cell[5455, 214, 113, 2, 42, "Input"],
+Cell[5571, 218, 46, 1, 42, "Output"]
+}, Open  ]],
+Cell[5632, 222, 528, 17, 169, "Text"],
+
+Cell[CellGroupData[{
+Cell[6185, 243, 82, 1, 42, "Input"],
+Cell[6270, 246, 56, 1, 42, "Output"]
+}, Open  ]],
+Cell[6341, 250, 465, 15, 169, "Text"],
+Cell[6809, 267, 83, 1, 45, "Text"],
+
+Cell[CellGroupData[{
+Cell[6917, 272, 91, 1, 42, "Input"],
+Cell[7011, 275, 51, 1, 41, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7099, 281, 119, 2, 42, "Input"],
+Cell[7221, 285, 51, 1, 41, "Output"]
+}, Open  ]],
+Cell[7287, 289, 488, 17, 169, "Text"],
+
+Cell[CellGroupData[{
+Cell[7800, 310, 149, 3, 40, "Input"],
+Cell[7952, 315, 52, 1, 42, "Output"]
+}, Open  ]],
+Cell[8019, 319, 26, 0, 41, "Input"],
+Cell[8048, 321, 318, 9, 169, "Text"],
+
+Cell[CellGroupData[{
+Cell[8391, 334, 264, 7, 40, "Input"],
+Cell[8658, 343, 58, 1, 42, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8753, 349, 78, 0, 40, "Subsubsection"],
+Cell[8834, 351, 338, 9, 169, "Text"],
+
+Cell[CellGroupData[{
+Cell[9197, 364, 293, 7, 42, "Input"],
+Cell[9493, 373, 52, 1, 42, "Output"]
+}, Open  ]],
+Cell[9560, 377, 735, 27, 169, "Text"],
+
+Cell[CellGroupData[{
+Cell[10320, 408, 131, 3, 40, "Input"],
+Cell[10454, 413, 35, 1, 41, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10538, 420, 25, 0, 40, "Subsubsection"],
+Cell[10566, 422, 534, 18, 170, "Text"],
+
+Cell[CellGroupData[{
+Cell[11125, 444, 112, 2, 62, "Input"],
+Cell[11240, 448, 52, 1, 55, "Output"]
+}, Open  ]],
+Cell[11307, 452, 469, 14, 199, "Text"],
+
+Cell[CellGroupData[{
+Cell[11801, 470, 163, 3, 40, "Input"],
+Cell[11967, 475, 66, 1, 59, "Output"]
+}, Open  ]],
+Cell[12048, 479, 598, 18, 231, "Text"],
+
+Cell[CellGroupData[{
+Cell[12671, 501, 185, 3, 73, "Input"],
+Cell[12859, 506, 92, 1, 42, "Output"]
+}, Open  ]],
+Cell[12966, 510, 81, 1, 45, "Text"],
+Cell[13050, 513, 153, 6, 138, "Text"],
+
+Cell[CellGroupData[{
+Cell[13228, 523, 207, 4, 73, "Input"],
+Cell[13438, 529, 60, 1, 41, "Output"]
+}, Open  ]],
+Cell[13513, 533, 214, 7, 169, "Text"],
+
+Cell[CellGroupData[{
+Cell[13752, 544, 38, 1, 41, "Input"],
+Cell[13793, 547, 38, 1, 41, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[13880, 554, 186, 5, 70, "Subsubsection"],
+Cell[14069, 561, 829, 27, 266, "Text"],
+
+Cell[CellGroupData[{
+Cell[14923, 592, 198, 4, 73, "Input"],
+Cell[15124, 598, 89, 1, 46, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

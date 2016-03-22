@@ -1,0 +1,189 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      3178,        124]*)
+(*NotebookOutlinePosition[      3829,        147]*)
+(*  CellTagsIndexPosition[      3785,        143]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[StyleBox["Lecture - March 3",
+  FontColor->RGBColor[0, 1, 0]]], "Title"],
+
+Cell[BoxData[
+    \(\(PascalPts = 
+        Flatten[Table[{\(-\(i\/2\)\) + j, \(-i\)}, {i, 0, 10}, {j, 0, i}], 
+          1];\)\)], "Input"],
+
+Cell["Now draw the boxes:", "Text"],
+
+Cell[BoxData[
+    \(\(Cases[
+        PascalPts, {x_, y_} \[Rule] Line[{{x, y}, {x + 1, y}}]];\)\)], "Input"],
+
+Cell["\<\
+Conditional Branching
+
+One Approach\
+\>", "Text"],
+
+Cell[BoxData[
+    \(ColorFn[t_] := 
+      Piecewise[{{RGBColor[0, 1, 0], 
+            0 \[LessEqual] t \[LessEqual] 4}, {RGBColor[1, 1, 0], 
+            4 < t \[LessEqual] 6}, {RGBColor[1, 0, 0], 
+            6 < t \[LessEqual] 10}}]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ColorFn[3.5]\)], "Input"],
+
+Cell[BoxData[
+    \(RGBColor[0, 1, 0]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ColorFn[6.2]\)], "Input"],
+
+Cell[BoxData[
+    \(RGBColor[1, 0, 0]\)], "Output"]
+}, Open  ]],
+
+Cell["Another Approach:", "Text"],
+
+Cell[BoxData[
+    \(f[t_] := 
+      t /. {x_ /; 0 \[LessEqual] x < 4 -> "\<A\>", 
+          x_ /; 4 \[LessEqual] x < 6 -> "\<B\>", _ -> "\<C\>"}\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f[8]\)], "Input"],
+
+Cell[BoxData[
+    \("C"\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f[4.5]\)], "Input"],
+
+Cell[BoxData[
+    \("B"\)], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 729}},
+WindowSize->{987, 659},
+WindowMargins->{{-16, Automatic}, {Automatic, 0}},
+FontSize->36
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 86, 1, 88, "Title"],
+Cell[1865, 56, 139, 3, 211, "Input"],
+Cell[2007, 61, 35, 0, 54, "Text"],
+Cell[2045, 63, 108, 2, 95, "Input"],
+Cell[2156, 67, 59, 4, 134, "Text"],
+Cell[2218, 73, 246, 5, 185, "Input"],
+
+Cell[CellGroupData[{
+Cell[2489, 82, 45, 1, 50, "Input"],
+Cell[2537, 85, 51, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2625, 91, 45, 1, 50, "Input"],
+Cell[2673, 94, 51, 1, 50, "Output"]
+}, Open  ]],
+Cell[2739, 98, 33, 0, 54, "Text"],
+Cell[2775, 100, 157, 3, 140, "Input"],
+
+Cell[CellGroupData[{
+Cell[2957, 107, 37, 1, 50, "Input"],
+Cell[2997, 110, 37, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3071, 116, 39, 1, 50, "Input"],
+Cell[3113, 119, 37, 1, 50, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

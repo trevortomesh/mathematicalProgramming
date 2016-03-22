@@ -1,0 +1,522 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      7856,        346]*)
+(*NotebookOutlinePosition[      8929,        382]*)
+(*  CellTagsIndexPosition[      8801,        375]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell["Lecture - April 9", "Text",
+  FontColor->RGBColor[1, 0, 0]],
+
+Cell[TextData[{
+  "A poster is to have an area of 180 ",
+  Cell[BoxData[
+      \(TraditionalForm\`in\^2\)]],
+  " with 1-inch margins at the bottom and sides and a 2-inch margin at the \
+top. What dimensions will give the largest printed area?"
+}], "Text"],
+
+Cell["\<\
+
+We re-did this problem using the Maximize command.
+
+
+\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(PaperProblem = 
+      Maximize[{\((w - 2)\) \((h - 3)\), w\ h \[Equal] 180, w > 0, 
+          h > 0}, {w, h}]\)], "Input"],
+
+Cell[BoxData[
+    \({\(-6\)\ \((\(-31\) + 
+            2\ \@30)\), {w \[Rule] \(\(-6\) + 6\ \@30 - 6\ \((\(-31\) + 2\ \
+\@30)\)\)\/\(\(-3\) + 3\ \@30\), h \[Rule] 3\ \@30}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(FullSimplify[PaperProblem]\)], "Input"],
+
+Cell[BoxData[
+    \({186 - 12\ \@30, {w \[Rule] 2\ \@30, h \[Rule] 3\ \@30}}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "New ",
+  StyleBox["Mathematica",
+    FontSlant->"Italic"],
+  " commands - Nest and Fold"
+}], "Text"],
+
+Cell["\<\
+
+
+
+\
+\>", "Text"],
+
+Cell[BoxData[
+    \(f[x_] := 1\/\(1 + x\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f[a]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/\(1 + a\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f[f[a]]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/\(1 + 1\/\(1 + a\)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f[f[f[f[f[a]]]]]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/\(1 + 1\/\(1 + 1\/\(1 + 1\/\(1 + 1\/\(1 + a\)\)\)\)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Nest[f, a, 7]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/\(1 + 1\/\(1 + 1\/\(1 + 1\/\(1 + 1\/\(1 + 1\/\(1 + 1\/\(1 + \
+a\)\)\)\)\)\)\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Nest[f, x, 6]\)], "Input"],
+
+Cell[BoxData[
+    \(1\/\(1 + 1\/\(1 + 1\/\(1 + 1\/\(1 + 1\/\(1 + 1\/\(1 + x\)\)\)\)\)\)\)], \
+"Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Nest[f, 1, 7]\)], "Input"],
+
+Cell[BoxData[
+    \(21\/34\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(NestList[f, 1, 7]\)], "Input"],
+
+Cell[BoxData[
+    \({1, 1\/2, 2\/3, 3\/5, 5\/8, 8\/13, 13\/21, 21\/34}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(?g\)\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(Information::"notfound"\), \(\(:\)\(\ \)\), "\<\"Symbol \
+\\!\\(\\\"g\\\"\\) not found. \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::notfound\\\"]\\)\"\>"}]], "Message"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(NestList[g, a, 5]\)], "Input"],
+
+Cell[BoxData[
+    \({a, g[a], g[g[a]], g[g[g[a]]], g[g[g[g[a]]]], 
+      g[g[g[g[g[a]]]]]}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Nest[g, a, 5]\)], "Input"],
+
+Cell[BoxData[
+    \(g[g[g[g[g[a]]]]]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(NestList[f, a, 5]\)], "Input"],
+
+Cell[BoxData[
+    \({a, 1\/\(1 + a\), 1\/\(1 + 1\/\(1 + a\)\), 
+      1\/\(1 + 1\/\(1 + 1\/\(1 + a\)\)\), 
+      1\/\(1 + 1\/\(1 + 1\/\(1 + 1\/\(1 + a\)\)\)\), 
+      1\/\(1 + 1\/\(1 + 1\/\(1 + 1\/\(1 + 1\/\(1 + a\)\)\)\)\)}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Principal deposited into an account earning 1% interest, compounded \
+quarterly.
+
+\
+\>", "Text"],
+
+Cell[BoxData[
+    \(Int[x_] := 1.01  x\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(NestList[Int, 200, 6]\)], "Input"],
+
+Cell[BoxData[
+    \({200, 202.`, 204.02`, 206.0602`, 208.120802`, 210.20201002`, 
+      212.3040301202`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Nest[Int, 200, 6]\)], "Input"],
+
+Cell[BoxData[
+    \(212.3040301202`\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Same situation, but now we make quarterly deposits of $40, $85, $70, etc.
+\
+\>", "Text"],
+
+Cell[BoxData[
+    \(Int[principal_, deposit_] := principal\ 1.01\  + deposit\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(FoldList[Int, 200, {40, 85, 70, 35, 20}]\)], "Input"],
+
+Cell[BoxData[
+    \({200, 242.`, 329.42`, 402.7142`, 441.74134200000003`, 
+      466.15875542000003`}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Fold[Int, 200, {40, 85, 70, 35, 20}]\)], "Input"],
+
+Cell[BoxData[
+    \(466.15875542000003`\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Fold[Int, P, {d\_1, d\_2, d\_3, d\_4, d\_5}]\)], "Input"],
+
+Cell[BoxData[
+    \(1.01`\ \((1.01`\ \((1.01`\ \((1.01`\ \((1.01`\ P + d\_1)\) + d\_2)\) + 
+                  d\_3)\) + d\_4)\) + d\_5\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(?Int\)\)], "Input"],
+
+Cell["Global`Int", "Print",
+  CellTags->"Info3448265607-4786009"],
+
+Cell[BoxData[
+    InterpretationBox[GridBox[{
+          {GridBox[{
+                {\(Int[x_] := 1.01`\ x\)},
+                {" "},
+                {\(Int[principal_, deposit_] := principal\ 1.01` + deposit\)}
+                },
+              GridBaseline->{Baseline, {1, 1}},
+              ColumnWidths->0.999,
+              ColumnAlignments->{Left}]}
+          },
+        GridBaseline->{Baseline, {1, 1}},
+        ColumnAlignments->{Left}],
+      Definition[ "Int"],
+      Editable->False]], "Print",
+  CellTags->"Info3448265607-4786009"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Fold[g, x, {a, b, c, d, e}]\)], "Input"],
+
+Cell[BoxData[
+    \(g[g[g[g[g[x, a], b], c], d], e]\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(?g\)\)], "Input"],
+
+Cell["Global`g", "Print",
+  CellTags->"Info3448265612-5008908"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Fold[Plus, x, {a, b, c, d, e, f}]\)], "Input"],
+
+Cell[BoxData[
+    \(a + b + c + d + e + f + x\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(FoldList[Plus, x, {a, b, c, d, e, f}]\)], "Input"],
+
+Cell[BoxData[
+    \({x, a + x, a + b + x, a + b + c + x, a + b + c + d + x, 
+      a + b + c + d + e + x, a + b + c + d + e + f + x}\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 729}},
+WindowSize->{1243, 706},
+WindowMargins->{{14, Automatic}, {-1, Automatic}},
+ShowSelection->True,
+FontSize->36
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "Info3448265607-4786009"->{
+    Cell[6503, 288, 65, 1, 46, "Print",
+      CellTags->"Info3448265607-4786009"],
+    Cell[6571, 291, 541, 15, 139, "Print",
+      CellTags->"Info3448265607-4786009"]},
+  "Info3448265612-5008908"->{
+    Cell[7356, 323, 63, 1, 46, "Print",
+      CellTags->"Info3448265612-5008908"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"Info3448265607-4786009", 8492, 363},
+  {"Info3448265612-5008908", 8692, 368}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 65, 1, 54, "Text"],
+Cell[1822, 54, 255, 6, 136, "Text"],
+Cell[2080, 62, 78, 6, 214, "Text"],
+
+Cell[CellGroupData[{
+Cell[2183, 72, 142, 3, 140, "Input"],
+Cell[2328, 77, 186, 3, 187, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[2551, 85, 59, 1, 50, "Input"],
+Cell[2613, 88, 90, 1, 64, "Output"]
+}, Open  ]],
+Cell[2718, 92, 119, 5, 54, "Text"],
+Cell[2840, 99, 27, 5, 174, "Text"],
+Cell[2870, 106, 54, 1, 97, "Input"],
+
+Cell[CellGroupData[{
+Cell[2949, 111, 37, 1, 50, "Input"],
+Cell[2989, 114, 46, 1, 83, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3072, 120, 40, 1, 50, "Input"],
+Cell[3115, 123, 57, 1, 100, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3209, 129, 49, 1, 50, "Input"],
+Cell[3261, 132, 90, 1, 127, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3388, 138, 46, 1, 50, "Input"],
+Cell[3437, 141, 114, 2, 147, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3588, 148, 46, 1, 50, "Input"],
+Cell[3637, 151, 103, 2, 137, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3777, 158, 46, 1, 50, "Input"],
+Cell[3826, 161, 40, 1, 83, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3903, 167, 50, 1, 50, "Input"],
+Cell[3956, 170, 84, 1, 83, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4077, 176, 39, 1, 50, "Input"],
+Cell[4119, 179, 283, 4, 21, "Message"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4439, 188, 50, 1, 50, "Input"],
+Cell[4492, 191, 104, 2, 95, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4633, 198, 46, 1, 50, "Input"],
+Cell[4682, 201, 50, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[4769, 207, 50, 1, 50, "Input"],
+Cell[4822, 210, 238, 4, 236, "Output"]
+}, Open  ]],
+Cell[5075, 217, 106, 5, 134, "Text"],
+Cell[5184, 224, 51, 1, 50, "Input"],
+
+Cell[CellGroupData[{
+Cell[5260, 229, 54, 1, 50, "Input"],
+Cell[5317, 232, 118, 2, 95, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5472, 239, 50, 1, 50, "Input"],
+Cell[5525, 242, 49, 1, 50, "Output"]
+}, Open  ]],
+Cell[5589, 246, 98, 3, 94, "Text"],
+Cell[5690, 251, 89, 1, 50, "Input"],
+
+Cell[CellGroupData[{
+Cell[5804, 256, 73, 1, 50, "Input"],
+Cell[5880, 259, 115, 2, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6032, 266, 69, 1, 50, "Input"],
+Cell[6104, 269, 53, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6194, 275, 77, 1, 50, "Input"],
+Cell[6274, 278, 148, 2, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6459, 285, 41, 1, 50, "Input"],
+Cell[6503, 288, 65, 1, 46, "Print",
+  CellTags->"Info3448265607-4786009"],
+Cell[6571, 291, 541, 15, 139, "Print",
+  CellTags->"Info3448265607-4786009"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7149, 311, 60, 1, 50, "Input"],
+Cell[7212, 314, 65, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7314, 320, 39, 1, 50, "Input"],
+Cell[7356, 323, 63, 1, 46, "Print",
+  CellTags->"Info3448265612-5008908"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7456, 329, 66, 1, 50, "Input"],
+Cell[7525, 332, 59, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[7621, 338, 70, 1, 50, "Input"],
+Cell[7694, 341, 146, 2, 95, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

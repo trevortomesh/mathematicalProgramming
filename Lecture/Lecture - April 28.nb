@@ -1,0 +1,558 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     21237,        437]*)
+(*NotebookOutlinePosition[     22151,        469]*)
+(*  CellTagsIndexPosition[     22063,        463]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Lecture - April 28", "Title"],
+
+Cell["\<\
+Producing all words consisting of x's and y's of a prescribed \
+length...\
+\>", "Text"],
+
+Cell[BoxData[
+    \(Branch[string_] := {string <> "\<x\>", string <> "\<y\>"}\)], "Input"],
+
+Cell["\<\
+
+
+For Matt:\
+\>", "Text"],
+
+Cell[BoxData[
+    \( (*Branch[string_] := {StringJoin[string, "\<x\>"], 
+          StringJoin[sting, "\<y\>"]}*) \)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Branch["\<xxy\>"]\)], "Input"],
+
+Cell[BoxData[
+    \({"xxyx", "xxyy"}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+
+
+\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(?Branch\)\)], "Input"],
+
+Cell["Global`Branch", "Print",
+  CellTags->"Info3449905758-9830492"],
+
+Cell[BoxData[
+    InterpretationBox[GridBox[{
+          {GridBox[{
+                {\(Branch[string_] := {string <> "x", string <> "y"}\)}
+                },
+              GridBaseline->{Baseline, {1, 1}},
+              ColumnWidths->0.999,
+              ColumnAlignments->{Left}]}
+          },
+        GridBaseline->{Baseline, {1, 1}},
+        ColumnAlignments->{Left}],
+      Definition[ "Branch"],
+      Editable->False]], "Print",
+  CellTags->"Info3449905758-9830492"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(CurrentGeneration = {"\<\>"};\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CurrentGeneration = Branch /@ CurrentGeneration\)], "Input"],
+
+Cell[BoxData[
+    \({{"x", "y"}}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CurrentGeneration = Branch /@ Flatten[CurrentGeneration, 1]\)], "Input"],
+
+Cell[BoxData[
+    \({{"xx", "xy"}, {"yx", "yy"}}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+REDO using Sequence command
+
+
+\
+\>", "Text"],
+
+Cell[BoxData[
+    \(Branch[string_] := 
+      Sequence[string <> "\<x\>", string <> "\<y\>"]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(CurrentGeneration = {"\<\>"};\)\), "\[IndentingNewLine]", 
+    \(CurrentGeneration = Branch /@ CurrentGeneration\)}], "Input"],
+
+Cell[BoxData[
+    \({"x", "y"}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(Do[CurrentGeneration = Branch /@ CurrentGeneration, {9}]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(CurrentGeneration\)], "Input"],
+
+Cell[BoxData[
+    \({"xxxxxxxxxx", "xxxxxxxxxy", "xxxxxxxxyx", "xxxxxxxxyy", "xxxxxxxyxx", 
+      "xxxxxxxyxy", "xxxxxxxyyx", "xxxxxxxyyy", "xxxxxxyxxx", "xxxxxxyxxy", 
+      "xxxxxxyxyx", "xxxxxxyxyy", "xxxxxxyyxx", "xxxxxxyyxy", "xxxxxxyyyx", 
+      "xxxxxxyyyy", "xxxxxyxxxx", "xxxxxyxxxy", "xxxxxyxxyx", "xxxxxyxxyy", 
+      "xxxxxyxyxx", "xxxxxyxyxy", "xxxxxyxyyx", "xxxxxyxyyy", "xxxxxyyxxx", 
+      "xxxxxyyxxy", "xxxxxyyxyx", "xxxxxyyxyy", "xxxxxyyyxx", "xxxxxyyyxy", 
+      "xxxxxyyyyx", "xxxxxyyyyy", "xxxxyxxxxx", "xxxxyxxxxy", "xxxxyxxxyx", 
+      "xxxxyxxxyy", "xxxxyxxyxx", "xxxxyxxyxy", "xxxxyxxyyx", "xxxxyxxyyy", 
+      "xxxxyxyxxx", "xxxxyxyxxy", "xxxxyxyxyx", "xxxxyxyxyy", "xxxxyxyyxx", 
+      "xxxxyxyyxy", "xxxxyxyyyx", "xxxxyxyyyy", "xxxxyyxxxx", "xxxxyyxxxy", 
+      "xxxxyyxxyx", "xxxxyyxxyy", "xxxxyyxyxx", "xxxxyyxyxy", "xxxxyyxyyx", 
+      "xxxxyyxyyy", "xxxxyyyxxx", "xxxxyyyxxy", "xxxxyyyxyx", "xxxxyyyxyy", 
+      "xxxxyyyyxx", "xxxxyyyyxy", "xxxxyyyyyx", "xxxxyyyyyy", "xxxyxxxxxx", 
+      "xxxyxxxxxy", "xxxyxxxxyx", "xxxyxxxxyy", "xxxyxxxyxx", "xxxyxxxyxy", 
+      "xxxyxxxyyx", "xxxyxxxyyy", "xxxyxxyxxx", "xxxyxxyxxy", "xxxyxxyxyx", 
+      "xxxyxxyxyy", "xxxyxxyyxx", "xxxyxxyyxy", "xxxyxxyyyx", "xxxyxxyyyy", 
+      "xxxyxyxxxx", "xxxyxyxxxy", "xxxyxyxxyx", "xxxyxyxxyy", "xxxyxyxyxx", 
+      "xxxyxyxyxy", "xxxyxyxyyx", "xxxyxyxyyy", "xxxyxyyxxx", "xxxyxyyxxy", 
+      "xxxyxyyxyx", "xxxyxyyxyy", "xxxyxyyyxx", "xxxyxyyyxy", "xxxyxyyyyx", 
+      "xxxyxyyyyy", "xxxyyxxxxx", "xxxyyxxxxy", "xxxyyxxxyx", "xxxyyxxxyy", 
+      "xxxyyxxyxx", "xxxyyxxyxy", "xxxyyxxyyx", "xxxyyxxyyy", "xxxyyxyxxx", 
+      "xxxyyxyxxy", "xxxyyxyxyx", "xxxyyxyxyy", "xxxyyxyyxx", "xxxyyxyyxy", 
+      "xxxyyxyyyx", "xxxyyxyyyy", "xxxyyyxxxx", "xxxyyyxxxy", "xxxyyyxxyx", 
+      "xxxyyyxxyy", "xxxyyyxyxx", "xxxyyyxyxy", "xxxyyyxyyx", "xxxyyyxyyy", 
+      "xxxyyyyxxx", "xxxyyyyxxy", "xxxyyyyxyx", "xxxyyyyxyy", "xxxyyyyyxx", 
+      "xxxyyyyyxy", "xxxyyyyyyx", "xxxyyyyyyy", "xxyxxxxxxx", "xxyxxxxxxy", 
+      "xxyxxxxxyx", "xxyxxxxxyy", "xxyxxxxyxx", "xxyxxxxyxy", "xxyxxxxyyx", 
+      "xxyxxxxyyy", "xxyxxxyxxx", "xxyxxxyxxy", "xxyxxxyxyx", "xxyxxxyxyy", 
+      "xxyxxxyyxx", "xxyxxxyyxy", "xxyxxxyyyx", "xxyxxxyyyy", "xxyxxyxxxx", 
+      "xxyxxyxxxy", "xxyxxyxxyx", "xxyxxyxxyy", "xxyxxyxyxx", "xxyxxyxyxy", 
+      "xxyxxyxyyx", "xxyxxyxyyy", "xxyxxyyxxx", "xxyxxyyxxy", "xxyxxyyxyx", 
+      "xxyxxyyxyy", "xxyxxyyyxx", "xxyxxyyyxy", "xxyxxyyyyx", "xxyxxyyyyy", 
+      "xxyxyxxxxx", "xxyxyxxxxy", "xxyxyxxxyx", "xxyxyxxxyy", "xxyxyxxyxx", 
+      "xxyxyxxyxy", "xxyxyxxyyx", "xxyxyxxyyy", "xxyxyxyxxx", "xxyxyxyxxy", 
+      "xxyxyxyxyx", "xxyxyxyxyy", "xxyxyxyyxx", "xxyxyxyyxy", "xxyxyxyyyx", 
+      "xxyxyxyyyy", "xxyxyyxxxx", "xxyxyyxxxy", "xxyxyyxxyx", "xxyxyyxxyy", 
+      "xxyxyyxyxx", "xxyxyyxyxy", "xxyxyyxyyx", "xxyxyyxyyy", "xxyxyyyxxx", 
+      "xxyxyyyxxy", "xxyxyyyxyx", "xxyxyyyxyy", "xxyxyyyyxx", "xxyxyyyyxy", 
+      "xxyxyyyyyx", "xxyxyyyyyy", "xxyyxxxxxx", "xxyyxxxxxy", "xxyyxxxxyx", 
+      "xxyyxxxxyy", "xxyyxxxyxx", "xxyyxxxyxy", "xxyyxxxyyx", "xxyyxxxyyy", 
+      "xxyyxxyxxx", "xxyyxxyxxy", "xxyyxxyxyx", "xxyyxxyxyy", "xxyyxxyyxx", 
+      "xxyyxxyyxy", "xxyyxxyyyx", "xxyyxxyyyy", "xxyyxyxxxx", "xxyyxyxxxy", 
+      "xxyyxyxxyx", "xxyyxyxxyy", "xxyyxyxyxx", "xxyyxyxyxy", "xxyyxyxyyx", 
+      "xxyyxyxyyy", "xxyyxyyxxx", "xxyyxyyxxy", "xxyyxyyxyx", "xxyyxyyxyy", 
+      "xxyyxyyyxx", "xxyyxyyyxy", "xxyyxyyyyx", "xxyyxyyyyy", "xxyyyxxxxx", 
+      "xxyyyxxxxy", "xxyyyxxxyx", "xxyyyxxxyy", "xxyyyxxyxx", "xxyyyxxyxy", 
+      "xxyyyxxyyx", "xxyyyxxyyy", "xxyyyxyxxx", "xxyyyxyxxy", "xxyyyxyxyx", 
+      "xxyyyxyxyy", "xxyyyxyyxx", "xxyyyxyyxy", "xxyyyxyyyx", "xxyyyxyyyy", 
+      "xxyyyyxxxx", "xxyyyyxxxy", "xxyyyyxxyx", "xxyyyyxxyy", "xxyyyyxyxx", 
+      "xxyyyyxyxy", "xxyyyyxyyx", "xxyyyyxyyy", "xxyyyyyxxx", "xxyyyyyxxy", 
+      "xxyyyyyxyx", "xxyyyyyxyy", "xxyyyyyyxx", "xxyyyyyyxy", "xxyyyyyyyx", 
+      "xxyyyyyyyy", "xyxxxxxxxx", "xyxxxxxxxy", "xyxxxxxxyx", "xyxxxxxxyy", 
+      "xyxxxxxyxx", "xyxxxxxyxy", "xyxxxxxyyx", "xyxxxxxyyy", "xyxxxxyxxx", 
+      "xyxxxxyxxy", "xyxxxxyxyx", "xyxxxxyxyy", "xyxxxxyyxx", "xyxxxxyyxy", 
+      "xyxxxxyyyx", "xyxxxxyyyy", "xyxxxyxxxx", "xyxxxyxxxy", "xyxxxyxxyx", 
+      "xyxxxyxxyy", "xyxxxyxyxx", "xyxxxyxyxy", "xyxxxyxyyx", "xyxxxyxyyy", 
+      "xyxxxyyxxx", "xyxxxyyxxy", "xyxxxyyxyx", "xyxxxyyxyy", "xyxxxyyyxx", 
+      "xyxxxyyyxy", "xyxxxyyyyx", "xyxxxyyyyy", "xyxxyxxxxx", "xyxxyxxxxy", 
+      "xyxxyxxxyx", "xyxxyxxxyy", "xyxxyxxyxx", "xyxxyxxyxy", "xyxxyxxyyx", 
+      "xyxxyxxyyy", "xyxxyxyxxx", "xyxxyxyxxy", "xyxxyxyxyx", "xyxxyxyxyy", 
+      "xyxxyxyyxx", "xyxxyxyyxy", "xyxxyxyyyx", "xyxxyxyyyy", "xyxxyyxxxx", 
+      "xyxxyyxxxy", "xyxxyyxxyx", "xyxxyyxxyy", "xyxxyyxyxx", "xyxxyyxyxy", 
+      "xyxxyyxyyx", "xyxxyyxyyy", "xyxxyyyxxx", "xyxxyyyxxy", "xyxxyyyxyx", 
+      "xyxxyyyxyy", "xyxxyyyyxx", "xyxxyyyyxy", "xyxxyyyyyx", "xyxxyyyyyy", 
+      "xyxyxxxxxx", "xyxyxxxxxy", "xyxyxxxxyx", "xyxyxxxxyy", "xyxyxxxyxx", 
+      "xyxyxxxyxy", "xyxyxxxyyx", "xyxyxxxyyy", "xyxyxxyxxx", "xyxyxxyxxy", 
+      "xyxyxxyxyx", "xyxyxxyxyy", "xyxyxxyyxx", "xyxyxxyyxy", "xyxyxxyyyx", 
+      "xyxyxxyyyy", "xyxyxyxxxx", "xyxyxyxxxy", "xyxyxyxxyx", "xyxyxyxxyy", 
+      "xyxyxyxyxx", "xyxyxyxyxy", "xyxyxyxyyx", "xyxyxyxyyy", "xyxyxyyxxx", 
+      "xyxyxyyxxy", "xyxyxyyxyx", "xyxyxyyxyy", "xyxyxyyyxx", "xyxyxyyyxy", 
+      "xyxyxyyyyx", "xyxyxyyyyy", "xyxyyxxxxx", "xyxyyxxxxy", "xyxyyxxxyx", 
+      "xyxyyxxxyy", "xyxyyxxyxx", "xyxyyxxyxy", "xyxyyxxyyx", "xyxyyxxyyy", 
+      "xyxyyxyxxx", "xyxyyxyxxy", "xyxyyxyxyx", "xyxyyxyxyy", "xyxyyxyyxx", 
+      "xyxyyxyyxy", "xyxyyxyyyx", "xyxyyxyyyy", "xyxyyyxxxx", "xyxyyyxxxy", 
+      "xyxyyyxxyx", "xyxyyyxxyy", "xyxyyyxyxx", "xyxyyyxyxy", "xyxyyyxyyx", 
+      "xyxyyyxyyy", "xyxyyyyxxx", "xyxyyyyxxy", "xyxyyyyxyx", "xyxyyyyxyy", 
+      "xyxyyyyyxx", "xyxyyyyyxy", "xyxyyyyyyx", "xyxyyyyyyy", "xyyxxxxxxx", 
+      "xyyxxxxxxy", "xyyxxxxxyx", "xyyxxxxxyy", "xyyxxxxyxx", "xyyxxxxyxy", 
+      "xyyxxxxyyx", "xyyxxxxyyy", "xyyxxxyxxx", "xyyxxxyxxy", "xyyxxxyxyx", 
+      "xyyxxxyxyy", "xyyxxxyyxx", "xyyxxxyyxy", "xyyxxxyyyx", "xyyxxxyyyy", 
+      "xyyxxyxxxx", "xyyxxyxxxy", "xyyxxyxxyx", "xyyxxyxxyy", "xyyxxyxyxx", 
+      "xyyxxyxyxy", "xyyxxyxyyx", "xyyxxyxyyy", "xyyxxyyxxx", "xyyxxyyxxy", 
+      "xyyxxyyxyx", "xyyxxyyxyy", "xyyxxyyyxx", "xyyxxyyyxy", "xyyxxyyyyx", 
+      "xyyxxyyyyy", "xyyxyxxxxx", "xyyxyxxxxy", "xyyxyxxxyx", "xyyxyxxxyy", 
+      "xyyxyxxyxx", "xyyxyxxyxy", "xyyxyxxyyx", "xyyxyxxyyy", "xyyxyxyxxx", 
+      "xyyxyxyxxy", "xyyxyxyxyx", "xyyxyxyxyy", "xyyxyxyyxx", "xyyxyxyyxy", 
+      "xyyxyxyyyx", "xyyxyxyyyy", "xyyxyyxxxx", "xyyxyyxxxy", "xyyxyyxxyx", 
+      "xyyxyyxxyy", "xyyxyyxyxx", "xyyxyyxyxy", "xyyxyyxyyx", "xyyxyyxyyy", 
+      "xyyxyyyxxx", "xyyxyyyxxy", "xyyxyyyxyx", "xyyxyyyxyy", "xyyxyyyyxx", 
+      "xyyxyyyyxy", "xyyxyyyyyx", "xyyxyyyyyy", "xyyyxxxxxx", "xyyyxxxxxy", 
+      "xyyyxxxxyx", "xyyyxxxxyy", "xyyyxxxyxx", "xyyyxxxyxy", "xyyyxxxyyx", 
+      "xyyyxxxyyy", "xyyyxxyxxx", "xyyyxxyxxy", "xyyyxxyxyx", "xyyyxxyxyy", 
+      "xyyyxxyyxx", "xyyyxxyyxy", "xyyyxxyyyx", "xyyyxxyyyy", "xyyyxyxxxx", 
+      "xyyyxyxxxy", "xyyyxyxxyx", "xyyyxyxxyy", "xyyyxyxyxx", "xyyyxyxyxy", 
+      "xyyyxyxyyx", "xyyyxyxyyy", "xyyyxyyxxx", "xyyyxyyxxy", "xyyyxyyxyx", 
+      "xyyyxyyxyy", "xyyyxyyyxx", "xyyyxyyyxy", "xyyyxyyyyx", "xyyyxyyyyy", 
+      "xyyyyxxxxx", "xyyyyxxxxy", "xyyyyxxxyx", "xyyyyxxxyy", "xyyyyxxyxx", 
+      "xyyyyxxyxy", "xyyyyxxyyx", "xyyyyxxyyy", "xyyyyxyxxx", "xyyyyxyxxy", 
+      "xyyyyxyxyx", "xyyyyxyxyy", "xyyyyxyyxx", "xyyyyxyyxy", "xyyyyxyyyx", 
+      "xyyyyxyyyy", "xyyyyyxxxx", "xyyyyyxxxy", "xyyyyyxxyx", "xyyyyyxxyy", 
+      "xyyyyyxyxx", "xyyyyyxyxy", "xyyyyyxyyx", "xyyyyyxyyy", "xyyyyyyxxx", 
+      "xyyyyyyxxy", "xyyyyyyxyx", "xyyyyyyxyy", "xyyyyyyyxx", "xyyyyyyyxy", 
+      "xyyyyyyyyx", "xyyyyyyyyy", "yxxxxxxxxx", "yxxxxxxxxy", "yxxxxxxxyx", 
+      "yxxxxxxxyy", "yxxxxxxyxx", "yxxxxxxyxy", "yxxxxxxyyx", "yxxxxxxyyy", 
+      "yxxxxxyxxx", "yxxxxxyxxy", "yxxxxxyxyx", "yxxxxxyxyy", "yxxxxxyyxx", 
+      "yxxxxxyyxy", "yxxxxxyyyx", "yxxxxxyyyy", "yxxxxyxxxx", "yxxxxyxxxy", 
+      "yxxxxyxxyx", "yxxxxyxxyy", "yxxxxyxyxx", "yxxxxyxyxy", "yxxxxyxyyx", 
+      "yxxxxyxyyy", "yxxxxyyxxx", "yxxxxyyxxy", "yxxxxyyxyx", "yxxxxyyxyy", 
+      "yxxxxyyyxx", "yxxxxyyyxy", "yxxxxyyyyx", "yxxxxyyyyy", "yxxxyxxxxx", 
+      "yxxxyxxxxy", "yxxxyxxxyx", "yxxxyxxxyy", "yxxxyxxyxx", "yxxxyxxyxy", 
+      "yxxxyxxyyx", "yxxxyxxyyy", "yxxxyxyxxx", "yxxxyxyxxy", "yxxxyxyxyx", 
+      "yxxxyxyxyy", "yxxxyxyyxx", "yxxxyxyyxy", "yxxxyxyyyx", "yxxxyxyyyy", 
+      "yxxxyyxxxx", "yxxxyyxxxy", "yxxxyyxxyx", "yxxxyyxxyy", "yxxxyyxyxx", 
+      "yxxxyyxyxy", "yxxxyyxyyx", "yxxxyyxyyy", "yxxxyyyxxx", "yxxxyyyxxy", 
+      "yxxxyyyxyx", "yxxxyyyxyy", "yxxxyyyyxx", "yxxxyyyyxy", "yxxxyyyyyx", 
+      "yxxxyyyyyy", "yxxyxxxxxx", "yxxyxxxxxy", "yxxyxxxxyx", "yxxyxxxxyy", 
+      "yxxyxxxyxx", "yxxyxxxyxy", "yxxyxxxyyx", "yxxyxxxyyy", "yxxyxxyxxx", 
+      "yxxyxxyxxy", "yxxyxxyxyx", "yxxyxxyxyy", "yxxyxxyyxx", "yxxyxxyyxy", 
+      "yxxyxxyyyx", "yxxyxxyyyy", "yxxyxyxxxx", "yxxyxyxxxy", "yxxyxyxxyx", 
+      "yxxyxyxxyy", "yxxyxyxyxx", "yxxyxyxyxy", "yxxyxyxyyx", "yxxyxyxyyy", 
+      "yxxyxyyxxx", "yxxyxyyxxy", "yxxyxyyxyx", "yxxyxyyxyy", "yxxyxyyyxx", 
+      "yxxyxyyyxy", "yxxyxyyyyx", "yxxyxyyyyy", "yxxyyxxxxx", "yxxyyxxxxy", 
+      "yxxyyxxxyx", "yxxyyxxxyy", "yxxyyxxyxx", "yxxyyxxyxy", "yxxyyxxyyx", 
+      "yxxyyxxyyy", "yxxyyxyxxx", "yxxyyxyxxy", "yxxyyxyxyx", "yxxyyxyxyy", 
+      "yxxyyxyyxx", "yxxyyxyyxy", "yxxyyxyyyx", "yxxyyxyyyy", "yxxyyyxxxx", 
+      "yxxyyyxxxy", "yxxyyyxxyx", "yxxyyyxxyy", "yxxyyyxyxx", "yxxyyyxyxy", 
+      "yxxyyyxyyx", "yxxyyyxyyy", "yxxyyyyxxx", "yxxyyyyxxy", "yxxyyyyxyx", 
+      "yxxyyyyxyy", "yxxyyyyyxx", "yxxyyyyyxy", "yxxyyyyyyx", "yxxyyyyyyy", 
+      "yxyxxxxxxx", "yxyxxxxxxy", "yxyxxxxxyx", "yxyxxxxxyy", "yxyxxxxyxx", 
+      "yxyxxxxyxy", "yxyxxxxyyx", "yxyxxxxyyy", "yxyxxxyxxx", "yxyxxxyxxy", 
+      "yxyxxxyxyx", "yxyxxxyxyy", "yxyxxxyyxx", "yxyxxxyyxy", "yxyxxxyyyx", 
+      "yxyxxxyyyy", "yxyxxyxxxx", "yxyxxyxxxy", "yxyxxyxxyx", "yxyxxyxxyy", 
+      "yxyxxyxyxx", "yxyxxyxyxy", "yxyxxyxyyx", "yxyxxyxyyy", "yxyxxyyxxx", 
+      "yxyxxyyxxy", "yxyxxyyxyx", "yxyxxyyxyy", "yxyxxyyyxx", "yxyxxyyyxy", 
+      "yxyxxyyyyx", "yxyxxyyyyy", "yxyxyxxxxx", "yxyxyxxxxy", "yxyxyxxxyx", 
+      "yxyxyxxxyy", "yxyxyxxyxx", "yxyxyxxyxy", "yxyxyxxyyx", "yxyxyxxyyy", 
+      "yxyxyxyxxx", "yxyxyxyxxy", "yxyxyxyxyx", "yxyxyxyxyy", "yxyxyxyyxx", 
+      "yxyxyxyyxy", "yxyxyxyyyx", "yxyxyxyyyy", "yxyxyyxxxx", "yxyxyyxxxy", 
+      "yxyxyyxxyx", "yxyxyyxxyy", "yxyxyyxyxx", "yxyxyyxyxy", "yxyxyyxyyx", 
+      "yxyxyyxyyy", "yxyxyyyxxx", "yxyxyyyxxy", "yxyxyyyxyx", "yxyxyyyxyy", 
+      "yxyxyyyyxx", "yxyxyyyyxy", "yxyxyyyyyx", "yxyxyyyyyy", "yxyyxxxxxx", 
+      "yxyyxxxxxy", "yxyyxxxxyx", "yxyyxxxxyy", "yxyyxxxyxx", "yxyyxxxyxy", 
+      "yxyyxxxyyx", "yxyyxxxyyy", "yxyyxxyxxx", "yxyyxxyxxy", "yxyyxxyxyx", 
+      "yxyyxxyxyy", "yxyyxxyyxx", "yxyyxxyyxy", "yxyyxxyyyx", "yxyyxxyyyy", 
+      "yxyyxyxxxx", "yxyyxyxxxy", "yxyyxyxxyx", "yxyyxyxxyy", "yxyyxyxyxx", 
+      "yxyyxyxyxy", "yxyyxyxyyx", "yxyyxyxyyy", "yxyyxyyxxx", "yxyyxyyxxy", 
+      "yxyyxyyxyx", "yxyyxyyxyy", "yxyyxyyyxx", "yxyyxyyyxy", "yxyyxyyyyx", 
+      "yxyyxyyyyy", "yxyyyxxxxx", "yxyyyxxxxy", "yxyyyxxxyx", "yxyyyxxxyy", 
+      "yxyyyxxyxx", "yxyyyxxyxy", "yxyyyxxyyx", "yxyyyxxyyy", "yxyyyxyxxx", 
+      "yxyyyxyxxy", "yxyyyxyxyx", "yxyyyxyxyy", "yxyyyxyyxx", "yxyyyxyyxy", 
+      "yxyyyxyyyx", "yxyyyxyyyy", "yxyyyyxxxx", "yxyyyyxxxy", "yxyyyyxxyx", 
+      "yxyyyyxxyy", "yxyyyyxyxx", "yxyyyyxyxy", "yxyyyyxyyx", "yxyyyyxyyy", 
+      "yxyyyyyxxx", "yxyyyyyxxy", "yxyyyyyxyx", "yxyyyyyxyy", "yxyyyyyyxx", 
+      "yxyyyyyyxy", "yxyyyyyyyx", "yxyyyyyyyy", "yyxxxxxxxx", "yyxxxxxxxy", 
+      "yyxxxxxxyx", "yyxxxxxxyy", "yyxxxxxyxx", "yyxxxxxyxy", "yyxxxxxyyx", 
+      "yyxxxxxyyy", "yyxxxxyxxx", "yyxxxxyxxy", "yyxxxxyxyx", "yyxxxxyxyy", 
+      "yyxxxxyyxx", "yyxxxxyyxy", "yyxxxxyyyx", "yyxxxxyyyy", "yyxxxyxxxx", 
+      "yyxxxyxxxy", "yyxxxyxxyx", "yyxxxyxxyy", "yyxxxyxyxx", "yyxxxyxyxy", 
+      "yyxxxyxyyx", "yyxxxyxyyy", "yyxxxyyxxx", "yyxxxyyxxy", "yyxxxyyxyx", 
+      "yyxxxyyxyy", "yyxxxyyyxx", "yyxxxyyyxy", "yyxxxyyyyx", "yyxxxyyyyy", 
+      "yyxxyxxxxx", "yyxxyxxxxy", "yyxxyxxxyx", "yyxxyxxxyy", "yyxxyxxyxx", 
+      "yyxxyxxyxy", "yyxxyxxyyx", "yyxxyxxyyy", "yyxxyxyxxx", "yyxxyxyxxy", 
+      "yyxxyxyxyx", "yyxxyxyxyy", "yyxxyxyyxx", "yyxxyxyyxy", "yyxxyxyyyx", 
+      "yyxxyxyyyy", "yyxxyyxxxx", "yyxxyyxxxy", "yyxxyyxxyx", "yyxxyyxxyy", 
+      "yyxxyyxyxx", "yyxxyyxyxy", "yyxxyyxyyx", "yyxxyyxyyy", "yyxxyyyxxx", 
+      "yyxxyyyxxy", "yyxxyyyxyx", "yyxxyyyxyy", "yyxxyyyyxx", "yyxxyyyyxy", 
+      "yyxxyyyyyx", "yyxxyyyyyy", "yyxyxxxxxx", "yyxyxxxxxy", "yyxyxxxxyx", 
+      "yyxyxxxxyy", "yyxyxxxyxx", "yyxyxxxyxy", "yyxyxxxyyx", "yyxyxxxyyy", 
+      "yyxyxxyxxx", "yyxyxxyxxy", "yyxyxxyxyx", "yyxyxxyxyy", "yyxyxxyyxx", 
+      "yyxyxxyyxy", "yyxyxxyyyx", "yyxyxxyyyy", "yyxyxyxxxx", "yyxyxyxxxy", 
+      "yyxyxyxxyx", "yyxyxyxxyy", "yyxyxyxyxx", "yyxyxyxyxy", "yyxyxyxyyx", 
+      "yyxyxyxyyy", "yyxyxyyxxx", "yyxyxyyxxy", "yyxyxyyxyx", "yyxyxyyxyy", 
+      "yyxyxyyyxx", "yyxyxyyyxy", "yyxyxyyyyx", "yyxyxyyyyy", "yyxyyxxxxx", 
+      "yyxyyxxxxy", "yyxyyxxxyx", "yyxyyxxxyy", "yyxyyxxyxx", "yyxyyxxyxy", 
+      "yyxyyxxyyx", "yyxyyxxyyy", "yyxyyxyxxx", "yyxyyxyxxy", "yyxyyxyxyx", 
+      "yyxyyxyxyy", "yyxyyxyyxx", "yyxyyxyyxy", "yyxyyxyyyx", "yyxyyxyyyy", 
+      "yyxyyyxxxx", "yyxyyyxxxy", "yyxyyyxxyx", "yyxyyyxxyy", "yyxyyyxyxx", 
+      "yyxyyyxyxy", "yyxyyyxyyx", "yyxyyyxyyy", "yyxyyyyxxx", "yyxyyyyxxy", 
+      "yyxyyyyxyx", "yyxyyyyxyy", "yyxyyyyyxx", "yyxyyyyyxy", "yyxyyyyyyx", 
+      "yyxyyyyyyy", "yyyxxxxxxx", "yyyxxxxxxy", "yyyxxxxxyx", "yyyxxxxxyy", 
+      "yyyxxxxyxx", "yyyxxxxyxy", "yyyxxxxyyx", "yyyxxxxyyy", "yyyxxxyxxx", 
+      "yyyxxxyxxy", "yyyxxxyxyx", "yyyxxxyxyy", "yyyxxxyyxx", "yyyxxxyyxy", 
+      "yyyxxxyyyx", "yyyxxxyyyy", "yyyxxyxxxx", "yyyxxyxxxy", "yyyxxyxxyx", 
+      "yyyxxyxxyy", "yyyxxyxyxx", "yyyxxyxyxy", "yyyxxyxyyx", "yyyxxyxyyy", 
+      "yyyxxyyxxx", "yyyxxyyxxy", "yyyxxyyxyx", "yyyxxyyxyy", "yyyxxyyyxx", 
+      "yyyxxyyyxy", "yyyxxyyyyx", "yyyxxyyyyy", "yyyxyxxxxx", "yyyxyxxxxy", 
+      "yyyxyxxxyx", "yyyxyxxxyy", "yyyxyxxyxx", "yyyxyxxyxy", "yyyxyxxyyx", 
+      "yyyxyxxyyy", "yyyxyxyxxx", "yyyxyxyxxy", "yyyxyxyxyx", "yyyxyxyxyy", 
+      "yyyxyxyyxx", "yyyxyxyyxy", "yyyxyxyyyx", "yyyxyxyyyy", "yyyxyyxxxx", 
+      "yyyxyyxxxy", "yyyxyyxxyx", "yyyxyyxxyy", "yyyxyyxyxx", "yyyxyyxyxy", 
+      "yyyxyyxyyx", "yyyxyyxyyy", "yyyxyyyxxx", "yyyxyyyxxy", "yyyxyyyxyx", 
+      "yyyxyyyxyy", "yyyxyyyyxx", "yyyxyyyyxy", "yyyxyyyyyx", "yyyxyyyyyy", 
+      "yyyyxxxxxx", "yyyyxxxxxy", "yyyyxxxxyx", "yyyyxxxxyy", "yyyyxxxyxx", 
+      "yyyyxxxyxy", "yyyyxxxyyx", "yyyyxxxyyy", "yyyyxxyxxx", "yyyyxxyxxy", 
+      "yyyyxxyxyx", "yyyyxxyxyy", "yyyyxxyyxx", "yyyyxxyyxy", "yyyyxxyyyx", 
+      "yyyyxxyyyy", "yyyyxyxxxx", "yyyyxyxxxy", "yyyyxyxxyx", "yyyyxyxxyy", 
+      "yyyyxyxyxx", "yyyyxyxyxy", "yyyyxyxyyx", "yyyyxyxyyy", "yyyyxyyxxx", 
+      "yyyyxyyxxy", "yyyyxyyxyx", "yyyyxyyxyy", "yyyyxyyyxx", "yyyyxyyyxy", 
+      "yyyyxyyyyx", "yyyyxyyyyy", "yyyyyxxxxx", "yyyyyxxxxy", "yyyyyxxxyx", 
+      "yyyyyxxxyy", "yyyyyxxyxx", "yyyyyxxyxy", "yyyyyxxyyx", "yyyyyxxyyy", 
+      "yyyyyxyxxx", "yyyyyxyxxy", "yyyyyxyxyx", "yyyyyxyxyy", "yyyyyxyyxx", 
+      "yyyyyxyyxy", "yyyyyxyyyx", "yyyyyxyyyy", "yyyyyyxxxx", "yyyyyyxxxy", 
+      "yyyyyyxxyx", "yyyyyyxxyy", "yyyyyyxyxx", "yyyyyyxyxy", "yyyyyyxyyx", 
+      "yyyyyyxyyy", "yyyyyyyxxx", "yyyyyyyxxy", "yyyyyyyxyx", "yyyyyyyxyy", 
+      "yyyyyyyyxx", "yyyyyyyyxy", "yyyyyyyyyx", "yyyyyyyyyy"}\)], "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({a, b, Sequence[c, d], e}\)], "Input"],
+
+Cell[BoxData[
+    \({a, b, c, d, e}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({a, b, c, d, e} /. c \[RuleDelayed] Sequence[x, y]\)], "Input"],
+
+Cell[BoxData[
+    \({a, b, x, y, d, e}\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+Use Sequence to replace one element by multiple elements in a list.\
+\
+\>", "Text"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({a, b, c, d, e} /. c \[RuleDelayed] Sequence[]\)], "Input"],
+
+Cell[BoxData[
+    \({a, b, d, e}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({a, b, c, d, e} /. {first___, last_} \[Rule] last\)], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(last\\)\\\" is similar to existing symbol \\\
+\"\\!\\(Last\\)\\\". \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    \(e\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({a, b, c, d, e} /. {first___, last_} \[Rule] {first}\)], "Input"],
+
+Cell[BoxData[
+    \({a, b, c, d}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({a, b, c, d, e} /. {first___, last_} \[Rule] first\)], "Input"],
+
+Cell[BoxData[
+    \(Sequence[a, b, c, d]\)], "Output"]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Macintosh",
+ScreenRectangle->{{0, 1280}, {0, 728}},
+WindowSize->{1166, 679},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+ShowSelection->True,
+FontSize->36
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{
+  "Info3449905758-9830492"->{
+    Cell[2412, 93, 68, 1, 46, "Print",
+      CellTags->"Info3449905758-9830492"],
+    Cell[2483, 96, 472, 13, 46, "Print",
+      CellTags->"Info3449905758-9830492"]}
+  }
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{
+  {"Info3449905758-9830492", 21871, 454}
+  }
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 35, 0, 88, "Title"],
+Cell[1814, 55, 97, 3, 54, "Text"],
+Cell[1914, 60, 90, 1, 50, "Input"],
+Cell[2007, 63, 35, 4, 134, "Text"],
+Cell[2045, 69, 126, 2, 140, "Input"],
+
+Cell[CellGroupData[{
+Cell[2196, 75, 50, 1, 50, "Input"],
+Cell[2249, 78, 50, 1, 50, "Output"]
+}, Open  ]],
+Cell[2314, 82, 26, 4, 134, "Text"],
+
+Cell[CellGroupData[{
+Cell[2365, 90, 44, 1, 50, "Input"],
+Cell[2412, 93, 68, 1, 46, "Print",
+  CellTags->"Info3449905758-9830492"],
+Cell[2483, 96, 472, 13, 46, "Print",
+  CellTags->"Info3449905758-9830492"]
+}, Open  ]],
+Cell[2970, 112, 66, 1, 50, "Input"],
+
+Cell[CellGroupData[{
+Cell[3061, 117, 80, 1, 50, "Input"],
+Cell[3144, 120, 46, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3227, 126, 92, 1, 95, "Input"],
+Cell[3322, 129, 62, 1, 50, "Output"]
+}, Open  ]],
+Cell[3399, 133, 54, 5, 174, "Text"],
+Cell[3456, 140, 105, 2, 95, "Input"],
+
+Cell[CellGroupData[{
+Cell[3586, 146, 149, 2, 95, "Input"],
+Cell[3738, 150, 44, 1, 50, "Output"]
+}, Open  ]],
+Cell[3797, 154, 89, 1, 95, "Input"],
+
+Cell[CellGroupData[{
+Cell[3911, 159, 50, 1, 50, "Input"],
+Cell[3964, 162, 15798, 205, 11525, "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[19799, 372, 58, 1, 47, "Input"],
+Cell[19860, 375, 49, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[19946, 381, 83, 1, 50, "Input"],
+Cell[20032, 384, 52, 1, 50, "Output"]
+}, Open  ]],
+Cell[20099, 388, 93, 3, 54, "Text"],
+
+Cell[CellGroupData[{
+Cell[20217, 395, 79, 1, 50, "Input"],
+Cell[20299, 398, 46, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[20382, 404, 82, 1, 50, "Input"],
+Cell[20467, 407, 356, 5, 21, "Message"],
+Cell[20826, 414, 35, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[20898, 420, 85, 1, 50, "Input"],
+Cell[20986, 423, 46, 1, 50, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[21069, 429, 83, 1, 50, "Input"],
+Cell[21155, 432, 54, 1, 50, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

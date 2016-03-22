@@ -1,0 +1,1241 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     40419,       1010]*)
+(*NotebookOutlinePosition[     41140,       1035]*)
+(*  CellTagsIndexPosition[     41096,       1031]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[TextData[{
+  "Very nice work - ",
+  Cell[BoxData[
+      \(TraditionalForm\`10\/10\)]]
+}], "Text",
+  FontColor->RGBColor[1, 0, 0]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Assignment #3 - The Cases Statement and    \
+Triple-Underscore Pattern Matching \nTrevor Tomesh",
+  FontColor->RGBColor[1, 0, 0]]], "Title",
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell["Due: February 10", "Subtitle",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[TextData[{
+  StyleBox["#1\tUse the Cases statement to pick out all the third powers from \
+the list {",
+    FontColor->RGBColor[0, 0, 1]],
+  Cell[BoxData[
+      \(TraditionalForm\`x\^3, x\^5, y\^3, y\^2, \((x + 2)\)\^3\)]],
+  "}.\n\n"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{x\^3, x\^5, y\^3, y\^2, \((x + 2)\)\^3}, _\^3]\)], "Input"],
+
+Cell[BoxData[
+    \({x\^3, y\^3, \((2 + x)\)\^3}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  StyleBox["#2\tUse the Cases statement to pick out all the third powers from \
+the expression ",
+    FontColor->RGBColor[0, 0, 1]],
+  Cell[BoxData[
+      \(TraditionalForm\`x\^3 + x\^5 + y\^3 + y\^2 + \((x + 2)\)\^3\)]],
+  "\n\n"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"Cases", "[", 
+      RowBox[{
+        FormBox[\(x\^3 + x\^5 + y\^3 + y\^2 + \((x + 2)\)\^3\),
+          "TraditionalForm"], ",", \(_\^3\)}], "]"}]], "Input"],
+
+Cell[BoxData[
+    \({x\^3, \((2 + x)\)\^3, y\^3}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  StyleBox["#3\tUse the Cases statement to pick out all the cubes, ",
+    FontColor->RGBColor[0, 0, 1]],
+  Cell[BoxData[
+      \(TraditionalForm\`\*"\"\<\>" something\^\(\*"\"\<\>" 3\)\)]],
+  ",",
+  StyleBox[" from the list {",
+    FontColor->RGBColor[0, 0, 1]],
+  Cell[BoxData[
+      \(TraditionalForm\`x\^3, x\^5, y\^3, y\^2, \((x + 2)\)\^3\)]],
+  "} and turn each one into its respective base, ",
+  Cell[BoxData[
+      \(TraditionalForm\`\*"\"\<\>" something \*"\"\<\>"\)]],
+  ".\n\n"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{x\^3, x\^5, y\^3, y\^2, \((x + 2)\)\^3}, 
+      X_\^3 \[Rule] X]\)], "Input"],
+
+Cell[BoxData[
+    \({x, y, 2 + x}\)], "Output"]
+}, Open  ]],
+
+Cell["", "Text"],
+
+Cell[TextData[{
+  StyleBox["#4\tUse the Cases statement to pick out each power",
+    FontColor->RGBColor[0, 0, 1]],
+  ",",
+  StyleBox[" ",
+    FontColor->RGBColor[0, 0, 1]],
+  Cell[BoxData[
+      \(TraditionalForm\`x\^n\)]],
+  ", where ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\)]],
+  " and ",
+  Cell[BoxData[
+      \(TraditionalForm\`n\)]],
+  " are arbitrary, ",
+  StyleBox["from the list {",
+    FontColor->RGBColor[0, 0, 1]],
+  Cell[BoxData[
+      \(TraditionalForm\`x\^3, z\^5, a\^3, b\^2, \((x + 2)\)\^3\)]],
+  "} and turn each one into its respective base, ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\)]],
+  ".\n\n"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{x\^3, z\^5, a\^3, b\^2, \((x + 2)\)\^3}, 
+      x_\^_ \[Rule] x]\)], "Input"],
+
+Cell[BoxData[
+    \({x, z, a, b, 2 + x}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  StyleBox["#5\tEvaluate First/@{",
+    FontColor->RGBColor[0, 0, 1]],
+  Cell[BoxData[
+      \(TraditionalForm\`x\^3, z\^5, a\^3, b\^2, \((x + 2)\)\^3\)]],
+  "}",
+  StyleBox[". What do you observe?",
+    FontColor->RGBColor[0, 0, 1]],
+  "\n\n"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(First /@ {x\^3, z\^5, a\^3, b\^2, \((x + 2)\)\^3}\)], "Input"],
+
+Cell[BoxData[
+    \({x, z, a, b, 2 + x}\)], "Output"]
+}, Open  ]],
+
+Cell["It does the same thing as in problem 4.", "Text"],
+
+Cell[TextData[{
+  StyleBox["#6\tUse the Cases statement to turn everything in ",
+    FontColor->RGBColor[0, 0, 1]],
+  StyleBox["{",
+    FontColor->RGBColor[0, 0, 1]],
+  Cell[BoxData[
+      \(TraditionalForm\`x\^3, x\^5, y\^3, y\^2, \((x + 2)\)\^3\)]],
+  "} into \"Hi.\"",
+  "\n\n"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{x\^3, x\^5, y\^3, y\^2, \((x + 2)\)\^3}, _\^_ \[Rule] 
+        Hi]\)], "Input"],
+
+Cell[BoxData[
+    \({Hi, Hi, Hi, Hi, Hi}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  StyleBox["#7\tUse the Cases statement to determine the length of every \
+(sub-)list in the list ",
+    FontColor->RGBColor[0, 0, 1]],
+  Cell[BoxData[
+      \(TraditionalForm\`{{a, b, c}, {d, e}, {}, {f, g, h, i}, {j}}\)]],
+  ".\n\n"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{{a, b, c}, {d, e}, {}, {f, g, h, i}, {j}}, 
+      x_ \[RuleDelayed] Length[x]]\)], "Input"],
+
+Cell[BoxData[
+    \({3, 2, 0, 4, 1}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  StyleBox["#8\tUse the Cases statement to pick out all of the (sub-)lists in \
+the list ",
+    FontColor->RGBColor[0, 0, 1]],
+  Cell[BoxData[
+      \(TraditionalForm\`{{a, b, c}, {d, e}, {}, {f, g, h, i}, {j}}\)]],
+  " that are of length 2 or greater.\n\n"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{{a, b, c}, {d, e}, {}, {f, g, h, i}, {d, e}, {}, {f, g, h, 
+          i}, {j}}, x_ /; Length[x] \[GreaterEqual] 2]\)], "Input"],
+
+Cell[BoxData[
+    \({{a, b, c}, {d, e}, {f, g, h, i}, {d, e}, {f, g, h, i}}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  StyleBox["#9\tUse a replacement statement to",
+    FontColor->RGBColor[0, 0, 1]],
+  " relocate the first two elements from the list ",
+  Cell[BoxData[
+      \(TraditionalForm\`{1, 2, 3, 4, 5, 6, 7, 8}\)]],
+  " to the back of the list (with the \"",
+  Cell[BoxData[
+      \(TraditionalForm\`1\)]],
+  "\" still before \"",
+  Cell[BoxData[
+      \(TraditionalForm\`2\)]],
+  "\".)\n\n"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \({1, 2, 3, 4, 5, 6, 7, 
+        8} /. {eenie_, meenie_, moe___} \[Rule] {moe, eenie, 
+          meenie}\)], "Input"],
+
+Cell[BoxData[
+    \({3, 4, 5, 6, 7, 8, 1, 2}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  StyleBox["#10\tWrite a function",
+    FontColor->RGBColor[0, 0, 1]],
+  " that reproduces the first two elements of a list at the end of the list. \
+The definition of your function should have the form \
+f[{a_,b_,rest___}]:=(tell me what goes here). Test your function on a simple \
+example.\n\n"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(listerz = {1, zebra, taco, g, aardvark}\)], "Input"],
+
+Cell[BoxData[
+    \({1, zebra, taco, g, aardvark}\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(f[{a_, b_, rest___}] := {rest, a, b}\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(f[listerz]\)], "Input"],
+
+Cell[BoxData[
+    \({taco, g, aardvark, 1, zebra}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  StyleBox["#11\tUse the expression ",
+    FontColor->RGBColor[0, 0, 1]],
+  Cell[BoxData[
+      \(TraditionalForm\`MyList = Distribute[Table[{H, T}, {8}], List]\)]],
+  " to generate all ",
+  Cell[BoxData[
+      \(TraditionalForm\`2\^8\)]],
+  " sequences of length 8 consisting of heads and tails. Then use a Cases \
+statement to pick out all such sequences that contain at least two heads. \
+(Hint: you will need to use the triple underscore ___ three times.)\n\n"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+    \(\(MyList = Distribute[Table[{H, T}, {8}], List];\)\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[MyList, {___, H, ___, H, ___}]\)], "Input"],
+
+Cell[BoxData[
+    \({{H, H, H, H, H, H, H, H}, {H, H, H, H, H, H, H, T}, {H, H, H, H, H, H, 
+        T, H}, {H, H, H, H, H, H, T, T}, {H, H, H, H, H, T, H, H}, {H, H, H, 
+        H, H, T, H, T}, {H, H, H, H, H, T, T, H}, {H, H, H, H, H, T, T, 
+        T}, {H, H, H, H, T, H, H, H}, {H, H, H, H, T, H, H, T}, {H, H, H, H, 
+        T, H, T, H}, {H, H, H, H, T, H, T, T}, {H, H, H, H, T, T, H, H}, {H, 
+        H, H, H, T, T, H, T}, {H, H, H, H, T, T, T, H}, {H, H, H, H, T, T, T, 
+        T}, {H, H, H, T, H, H, H, H}, {H, H, H, T, H, H, H, T}, {H, H, H, T, 
+        H, H, T, H}, {H, H, H, T, H, H, T, T}, {H, H, H, T, H, T, H, H}, {H, 
+        H, H, T, H, T, H, T}, {H, H, H, T, H, T, T, H}, {H, H, H, T, H, T, T, 
+        T}, {H, H, H, T, T, H, H, H}, {H, H, H, T, T, H, H, T}, {H, H, H, T, 
+        T, H, T, H}, {H, H, H, T, T, H, T, T}, {H, H, H, T, T, T, H, H}, {H, 
+        H, H, T, T, T, H, T}, {H, H, H, T, T, T, T, H}, {H, H, H, T, T, T, T, 
+        T}, {H, H, T, H, H, H, H, H}, {H, H, T, H, H, H, H, T}, {H, H, T, H, 
+        H, H, T, H}, {H, H, T, H, H, H, T, T}, {H, H, T, H, H, T, H, H}, {H, 
+        H, T, H, H, T, H, T}, {H, H, T, H, H, T, T, H}, {H, H, T, H, H, T, T, 
+        T}, {H, H, T, H, T, H, H, H}, {H, H, T, H, T, H, H, T}, {H, H, T, H, 
+        T, H, T, H}, {H, H, T, H, T, H, T, T}, {H, H, T, H, T, T, H, H}, {H, 
+        H, T, H, T, T, H, T}, {H, H, T, H, T, T, T, H}, {H, H, T, H, T, T, T, 
+        T}, {H, H, T, T, H, H, H, H}, {H, H, T, T, H, H, H, T}, {H, H, T, T, 
+        H, H, T, H}, {H, H, T, T, H, H, T, T}, {H, H, T, T, H, T, H, H}, {H, 
+        H, T, T, H, T, H, T}, {H, H, T, T, H, T, T, H}, {H, H, T, T, H, T, T, 
+        T}, {H, H, T, T, T, H, H, H}, {H, H, T, T, T, H, H, T}, {H, H, T, T, 
+        T, H, T, H}, {H, H, T, T, T, H, T, T}, {H, H, T, T, T, T, H, H}, {H, 
+        H, T, T, T, T, H, T}, {H, H, T, T, T, T, T, H}, {H, H, T, T, T, T, T, 
+        T}, {H, T, H, H, H, H, H, H}, {H, T, H, H, H, H, H, T}, {H, T, H, H, 
+        H, H, T, H}, {H, T, H, H, H, H, T, T}, {H, T, H, H, H, T, H, H}, {H, 
+        T, H, H, H, T, H, T}, {H, T, H, H, H, T, T, H}, {H, T, H, H, H, T, T, 
+        T}, {H, T, H, H, T, H, H, H}, {H, T, H, H, T, H, H, T}, {H, T, H, H, 
+        T, H, T, H}, {H, T, H, H, T, H, T, T}, {H, T, H, H, T, T, H, H}, {H, 
+        T, H, H, T, T, H, T}, {H, T, H, H, T, T, T, H}, {H, T, H, H, T, T, T, 
+        T}, {H, T, H, T, H, H, H, H}, {H, T, H, T, H, H, H, T}, {H, T, H, T, 
+        H, H, T, H}, {H, T, H, T, H, H, T, T}, {H, T, H, T, H, T, H, H}, {H, 
+        T, H, T, H, T, H, T}, {H, T, H, T, H, T, T, H}, {H, T, H, T, H, T, T, 
+        T}, {H, T, H, T, T, H, H, H}, {H, T, H, T, T, H, H, T}, {H, T, H, T, 
+        T, H, T, H}, {H, T, H, T, T, H, T, T}, {H, T, H, T, T, T, H, H}, {H, 
+        T, H, T, T, T, H, T}, {H, T, H, T, T, T, T, H}, {H, T, H, T, T, T, T, 
+        T}, {H, T, T, H, H, H, H, H}, {H, T, T, H, H, H, H, T}, {H, T, T, H, 
+        H, H, T, H}, {H, T, T, H, H, H, T, T}, {H, T, T, H, H, T, H, H}, {H, 
+        T, T, H, H, T, H, T}, {H, T, T, H, H, T, T, H}, {H, T, T, H, H, T, T, 
+        T}, {H, T, T, H, T, H, H, H}, {H, T, T, H, T, H, H, T}, {H, T, T, H, 
+        T, H, T, H}, {H, T, T, H, T, H, T, T}, {H, T, T, H, T, T, H, H}, {H, 
+        T, T, H, T, T, H, T}, {H, T, T, H, T, T, T, H}, {H, T, T, H, T, T, T, 
+        T}, {H, T, T, T, H, H, H, H}, {H, T, T, T, H, H, H, T}, {H, T, T, T, 
+        H, H, T, H}, {H, T, T, T, H, H, T, T}, {H, T, T, T, H, T, H, H}, {H, 
+        T, T, T, H, T, H, T}, {H, T, T, T, H, T, T, H}, {H, T, T, T, H, T, T, 
+        T}, {H, T, T, T, T, H, H, H}, {H, T, T, T, T, H, H, T}, {H, T, T, T, 
+        T, H, T, H}, {H, T, T, T, T, H, T, T}, {H, T, T, T, T, T, H, H}, {H, 
+        T, T, T, T, T, H, T}, {H, T, T, T, T, T, T, H}, {T, H, H, H, H, H, H, 
+        H}, {T, H, H, H, H, H, H, T}, {T, H, H, H, H, H, T, H}, {T, H, H, H, 
+        H, H, T, T}, {T, H, H, H, H, T, H, H}, {T, H, H, H, H, T, H, T}, {T, 
+        H, H, H, H, T, T, H}, {T, H, H, H, H, T, T, T}, {T, H, H, H, T, H, H, 
+        H}, {T, H, H, H, T, H, H, T}, {T, H, H, H, T, H, T, H}, {T, H, H, H, 
+        T, H, T, T}, {T, H, H, H, T, T, H, H}, {T, H, H, H, T, T, H, T}, {T, 
+        H, H, H, T, T, T, H}, {T, H, H, H, T, T, T, T}, {T, H, H, T, H, H, H, 
+        H}, {T, H, H, T, H, H, H, T}, {T, H, H, T, H, H, T, H}, {T, H, H, T, 
+        H, H, T, T}, {T, H, H, T, H, T, H, H}, {T, H, H, T, H, T, H, T}, {T, 
+        H, H, T, H, T, T, H}, {T, H, H, T, H, T, T, T}, {T, H, H, T, T, H, H, 
+        H}, {T, H, H, T, T, H, H, T}, {T, H, H, T, T, H, T, H}, {T, H, H, T, 
+        T, H, T, T}, {T, H, H, T, T, T, H, H}, {T, H, H, T, T, T, H, T}, {T, 
+        H, H, T, T, T, T, H}, {T, H, H, T, T, T, T, T}, {T, H, T, H, H, H, H, 
+        H}, {T, H, T, H, H, H, H, T}, {T, H, T, H, H, H, T, H}, {T, H, T, H, 
+        H, H, T, T}, {T, H, T, H, H, T, H, H}, {T, H, T, H, H, T, H, T}, {T, 
+        H, T, H, H, T, T, H}, {T, H, T, H, H, T, T, T}, {T, H, T, H, T, H, H, 
+        H}, {T, H, T, H, T, H, H, T}, {T, H, T, H, T, H, T, H}, {T, H, T, H, 
+        T, H, T, T}, {T, H, T, H, T, T, H, H}, {T, H, T, H, T, T, H, T}, {T, 
+        H, T, H, T, T, T, H}, {T, H, T, H, T, T, T, T}, {T, H, T, T, H, H, H, 
+        H}, {T, H, T, T, H, H, H, T}, {T, H, T, T, H, H, T, H}, {T, H, T, T, 
+        H, H, T, T}, {T, H, T, T, H, T, H, H}, {T, H, T, T, H, T, H, T}, {T, 
+        H, T, T, H, T, T, H}, {T, H, T, T, H, T, T, T}, {T, H, T, T, T, H, H, 
+        H}, {T, H, T, T, T, H, H, T}, {T, H, T, T, T, H, T, H}, {T, H, T, T, 
+        T, H, T, T}, {T, H, T, T, T, T, H, H}, {T, H, T, T, T, T, H, T}, {T, 
+        H, T, T, T, T, T, H}, {T, T, H, H, H, H, H, H}, {T, T, H, H, H, H, H, 
+        T}, {T, T, H, H, H, H, T, H}, {T, T, H, H, H, H, T, T}, {T, T, H, H, 
+        H, T, H, H}, {T, T, H, H, H, T, H, T}, {T, T, H, H, H, T, T, H}, {T, 
+        T, H, H, H, T, T, T}, {T, T, H, H, T, H, H, H}, {T, T, H, H, T, H, H, 
+        T}, {T, T, H, H, T, H, T, H}, {T, T, H, H, T, H, T, T}, {T, T, H, H, 
+        T, T, H, H}, {T, T, H, H, T, T, H, T}, {T, T, H, H, T, T, T, H}, {T, 
+        T, H, H, T, T, T, T}, {T, T, H, T, H, H, H, H}, {T, T, H, T, H, H, H, 
+        T}, {T, T, H, T, H, H, T, H}, {T, T, H, T, H, H, T, T}, {T, T, H, T, 
+        H, T, H, H}, {T, T, H, T, H, T, H, T}, {T, T, H, T, H, T, T, H}, {T, 
+        T, H, T, H, T, T, T}, {T, T, H, T, T, H, H, H}, {T, T, H, T, T, H, H, 
+        T}, {T, T, H, T, T, H, T, H}, {T, T, H, T, T, H, T, T}, {T, T, H, T, 
+        T, T, H, H}, {T, T, H, T, T, T, H, T}, {T, T, H, T, T, T, T, H}, {T, 
+        T, T, H, H, H, H, H}, {T, T, T, H, H, H, H, T}, {T, T, T, H, H, H, T, 
+        H}, {T, T, T, H, H, H, T, T}, {T, T, T, H, H, T, H, H}, {T, T, T, H, 
+        H, T, H, T}, {T, T, T, H, H, T, T, H}, {T, T, T, H, H, T, T, T}, {T, 
+        T, T, H, T, H, H, H}, {T, T, T, H, T, H, H, T}, {T, T, T, H, T, H, T, 
+        H}, {T, T, T, H, T, H, T, T}, {T, T, T, H, T, T, H, H}, {T, T, T, H, 
+        T, T, H, T}, {T, T, T, H, T, T, T, H}, {T, T, T, T, H, H, H, H}, {T, 
+        T, T, T, H, H, H, T}, {T, T, T, T, H, H, T, H}, {T, T, T, T, H, H, T, 
+        T}, {T, T, T, T, H, T, H, H}, {T, T, T, T, H, T, H, T}, {T, T, T, T, 
+        H, T, T, H}, {T, T, T, T, T, H, H, H}, {T, T, T, T, T, H, H, T}, {T, 
+        T, T, T, T, H, T, H}, {T, T, T, T, T, T, H, H}}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  StyleBox["#12\tUse a Cases statement to pick out all of the sequences in \
+MyList that begin with HT.",
+    FontColor->RGBColor[0, 0, 1]],
+  "\n\n"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[MyList, {H, T, ___}]\)], "Input"],
+
+Cell[BoxData[
+    \({{H, T, H, H, H, H, H, H}, {H, T, H, H, H, H, H, T}, {H, T, H, H, H, H, 
+        T, H}, {H, T, H, H, H, H, T, T}, {H, T, H, H, H, T, H, H}, {H, T, H, 
+        H, H, T, H, T}, {H, T, H, H, H, T, T, H}, {H, T, H, H, H, T, T, 
+        T}, {H, T, H, H, T, H, H, H}, {H, T, H, H, T, H, H, T}, {H, T, H, H, 
+        T, H, T, H}, {H, T, H, H, T, H, T, T}, {H, T, H, H, T, T, H, H}, {H, 
+        T, H, H, T, T, H, T}, {H, T, H, H, T, T, T, H}, {H, T, H, H, T, T, T, 
+        T}, {H, T, H, T, H, H, H, H}, {H, T, H, T, H, H, H, T}, {H, T, H, T, 
+        H, H, T, H}, {H, T, H, T, H, H, T, T}, {H, T, H, T, H, T, H, H}, {H, 
+        T, H, T, H, T, H, T}, {H, T, H, T, H, T, T, H}, {H, T, H, T, H, T, T, 
+        T}, {H, T, H, T, T, H, H, H}, {H, T, H, T, T, H, H, T}, {H, T, H, T, 
+        T, H, T, H}, {H, T, H, T, T, H, T, T}, {H, T, H, T, T, T, H, H}, {H, 
+        T, H, T, T, T, H, T}, {H, T, H, T, T, T, T, H}, {H, T, H, T, T, T, T, 
+        T}, {H, T, T, H, H, H, H, H}, {H, T, T, H, H, H, H, T}, {H, T, T, H, 
+        H, H, T, H}, {H, T, T, H, H, H, T, T}, {H, T, T, H, H, T, H, H}, {H, 
+        T, T, H, H, T, H, T}, {H, T, T, H, H, T, T, H}, {H, T, T, H, H, T, T, 
+        T}, {H, T, T, H, T, H, H, H}, {H, T, T, H, T, H, H, T}, {H, T, T, H, 
+        T, H, T, H}, {H, T, T, H, T, H, T, T}, {H, T, T, H, T, T, H, H}, {H, 
+        T, T, H, T, T, H, T}, {H, T, T, H, T, T, T, H}, {H, T, T, H, T, T, T, 
+        T}, {H, T, T, T, H, H, H, H}, {H, T, T, T, H, H, H, T}, {H, T, T, T, 
+        H, H, T, H}, {H, T, T, T, H, H, T, T}, {H, T, T, T, H, T, H, H}, {H, 
+        T, T, T, H, T, H, T}, {H, T, T, T, H, T, T, H}, {H, T, T, T, H, T, T, 
+        T}, {H, T, T, T, T, H, H, H}, {H, T, T, T, T, H, H, T}, {H, T, T, T, 
+        T, H, T, H}, {H, T, T, T, T, H, T, T}, {H, T, T, T, T, T, H, H}, {H, 
+        T, T, T, T, T, H, T}, {H, T, T, T, T, T, T, H}, {H, T, T, T, T, T, T, 
+        T}}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  StyleBox["#13\tUse a Cases statement to pick out all of the sequences in \
+MyList that contain (somewhere) the pattern HT.",
+    FontColor->RGBColor[0, 0, 1]],
+  "\n\n"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[MyList, {___, H, T, ___}]\)], "Input"],
+
+Cell[BoxData[
+    \({{H, H, H, H, H, H, H, T}, {H, H, H, H, H, H, T, H}, {H, H, H, H, H, H, 
+        T, T}, {H, H, H, H, H, T, H, H}, {H, H, H, H, H, T, H, T}, {H, H, H, 
+        H, H, T, T, H}, {H, H, H, H, H, T, T, T}, {H, H, H, H, T, H, H, 
+        H}, {H, H, H, H, T, H, H, T}, {H, H, H, H, T, H, T, H}, {H, H, H, H, 
+        T, H, T, T}, {H, H, H, H, T, T, H, H}, {H, H, H, H, T, T, H, T}, {H, 
+        H, H, H, T, T, T, H}, {H, H, H, H, T, T, T, T}, {H, H, H, T, H, H, H, 
+        H}, {H, H, H, T, H, H, H, T}, {H, H, H, T, H, H, T, H}, {H, H, H, T, 
+        H, H, T, T}, {H, H, H, T, H, T, H, H}, {H, H, H, T, H, T, H, T}, {H, 
+        H, H, T, H, T, T, H}, {H, H, H, T, H, T, T, T}, {H, H, H, T, T, H, H, 
+        H}, {H, H, H, T, T, H, H, T}, {H, H, H, T, T, H, T, H}, {H, H, H, T, 
+        T, H, T, T}, {H, H, H, T, T, T, H, H}, {H, H, H, T, T, T, H, T}, {H, 
+        H, H, T, T, T, T, H}, {H, H, H, T, T, T, T, T}, {H, H, T, H, H, H, H, 
+        H}, {H, H, T, H, H, H, H, T}, {H, H, T, H, H, H, T, H}, {H, H, T, H, 
+        H, H, T, T}, {H, H, T, H, H, T, H, H}, {H, H, T, H, H, T, H, T}, {H, 
+        H, T, H, H, T, T, H}, {H, H, T, H, H, T, T, T}, {H, H, T, H, T, H, H, 
+        H}, {H, H, T, H, T, H, H, T}, {H, H, T, H, T, H, T, H}, {H, H, T, H, 
+        T, H, T, T}, {H, H, T, H, T, T, H, H}, {H, H, T, H, T, T, H, T}, {H, 
+        H, T, H, T, T, T, H}, {H, H, T, H, T, T, T, T}, {H, H, T, T, H, H, H, 
+        H}, {H, H, T, T, H, H, H, T}, {H, H, T, T, H, H, T, H}, {H, H, T, T, 
+        H, H, T, T}, {H, H, T, T, H, T, H, H}, {H, H, T, T, H, T, H, T}, {H, 
+        H, T, T, H, T, T, H}, {H, H, T, T, H, T, T, T}, {H, H, T, T, T, H, H, 
+        H}, {H, H, T, T, T, H, H, T}, {H, H, T, T, T, H, T, H}, {H, H, T, T, 
+        T, H, T, T}, {H, H, T, T, T, T, H, H}, {H, H, T, T, T, T, H, T}, {H, 
+        H, T, T, T, T, T, H}, {H, H, T, T, T, T, T, T}, {H, T, H, H, H, H, H, 
+        H}, {H, T, H, H, H, H, H, T}, {H, T, H, H, H, H, T, H}, {H, T, H, H, 
+        H, H, T, T}, {H, T, H, H, H, T, H, H}, {H, T, H, H, H, T, H, T}, {H, 
+        T, H, H, H, T, T, H}, {H, T, H, H, H, T, T, T}, {H, T, H, H, T, H, H, 
+        H}, {H, T, H, H, T, H, H, T}, {H, T, H, H, T, H, T, H}, {H, T, H, H, 
+        T, H, T, T}, {H, T, H, H, T, T, H, H}, {H, T, H, H, T, T, H, T}, {H, 
+        T, H, H, T, T, T, H}, {H, T, H, H, T, T, T, T}, {H, T, H, T, H, H, H, 
+        H}, {H, T, H, T, H, H, H, T}, {H, T, H, T, H, H, T, H}, {H, T, H, T, 
+        H, H, T, T}, {H, T, H, T, H, T, H, H}, {H, T, H, T, H, T, H, T}, {H, 
+        T, H, T, H, T, T, H}, {H, T, H, T, H, T, T, T}, {H, T, H, T, T, H, H, 
+        H}, {H, T, H, T, T, H, H, T}, {H, T, H, T, T, H, T, H}, {H, T, H, T, 
+        T, H, T, T}, {H, T, H, T, T, T, H, H}, {H, T, H, T, T, T, H, T}, {H, 
+        T, H, T, T, T, T, H}, {H, T, H, T, T, T, T, T}, {H, T, T, H, H, H, H, 
+        H}, {H, T, T, H, H, H, H, T}, {H, T, T, H, H, H, T, H}, {H, T, T, H, 
+        H, H, T, T}, {H, T, T, H, H, T, H, H}, {H, T, T, H, H, T, H, T}, {H, 
+        T, T, H, H, T, T, H}, {H, T, T, H, H, T, T, T}, {H, T, T, H, T, H, H, 
+        H}, {H, T, T, H, T, H, H, T}, {H, T, T, H, T, H, T, H}, {H, T, T, H, 
+        T, H, T, T}, {H, T, T, H, T, T, H, H}, {H, T, T, H, T, T, H, T}, {H, 
+        T, T, H, T, T, T, H}, {H, T, T, H, T, T, T, T}, {H, T, T, T, H, H, H, 
+        H}, {H, T, T, T, H, H, H, T}, {H, T, T, T, H, H, T, H}, {H, T, T, T, 
+        H, H, T, T}, {H, T, T, T, H, T, H, H}, {H, T, T, T, H, T, H, T}, {H, 
+        T, T, T, H, T, T, H}, {H, T, T, T, H, T, T, T}, {H, T, T, T, T, H, H, 
+        H}, {H, T, T, T, T, H, H, T}, {H, T, T, T, T, H, T, H}, {H, T, T, T, 
+        T, H, T, T}, {H, T, T, T, T, T, H, H}, {H, T, T, T, T, T, H, T}, {H, 
+        T, T, T, T, T, T, H}, {H, T, T, T, T, T, T, T}, {T, H, H, H, H, H, H, 
+        T}, {T, H, H, H, H, H, T, H}, {T, H, H, H, H, H, T, T}, {T, H, H, H, 
+        H, T, H, H}, {T, H, H, H, H, T, H, T}, {T, H, H, H, H, T, T, H}, {T, 
+        H, H, H, H, T, T, T}, {T, H, H, H, T, H, H, H}, {T, H, H, H, T, H, H, 
+        T}, {T, H, H, H, T, H, T, H}, {T, H, H, H, T, H, T, T}, {T, H, H, H, 
+        T, T, H, H}, {T, H, H, H, T, T, H, T}, {T, H, H, H, T, T, T, H}, {T, 
+        H, H, H, T, T, T, T}, {T, H, H, T, H, H, H, H}, {T, H, H, T, H, H, H, 
+        T}, {T, H, H, T, H, H, T, H}, {T, H, H, T, H, H, T, T}, {T, H, H, T, 
+        H, T, H, H}, {T, H, H, T, H, T, H, T}, {T, H, H, T, H, T, T, H}, {T, 
+        H, H, T, H, T, T, T}, {T, H, H, T, T, H, H, H}, {T, H, H, T, T, H, H, 
+        T}, {T, H, H, T, T, H, T, H}, {T, H, H, T, T, H, T, T}, {T, H, H, T, 
+        T, T, H, H}, {T, H, H, T, T, T, H, T}, {T, H, H, T, T, T, T, H}, {T, 
+        H, H, T, T, T, T, T}, {T, H, T, H, H, H, H, H}, {T, H, T, H, H, H, H, 
+        T}, {T, H, T, H, H, H, T, H}, {T, H, T, H, H, H, T, T}, {T, H, T, H, 
+        H, T, H, H}, {T, H, T, H, H, T, H, T}, {T, H, T, H, H, T, T, H}, {T, 
+        H, T, H, H, T, T, T}, {T, H, T, H, T, H, H, H}, {T, H, T, H, T, H, H, 
+        T}, {T, H, T, H, T, H, T, H}, {T, H, T, H, T, H, T, T}, {T, H, T, H, 
+        T, T, H, H}, {T, H, T, H, T, T, H, T}, {T, H, T, H, T, T, T, H}, {T, 
+        H, T, H, T, T, T, T}, {T, H, T, T, H, H, H, H}, {T, H, T, T, H, H, H, 
+        T}, {T, H, T, T, H, H, T, H}, {T, H, T, T, H, H, T, T}, {T, H, T, T, 
+        H, T, H, H}, {T, H, T, T, H, T, H, T}, {T, H, T, T, H, T, T, H}, {T, 
+        H, T, T, H, T, T, T}, {T, H, T, T, T, H, H, H}, {T, H, T, T, T, H, H, 
+        T}, {T, H, T, T, T, H, T, H}, {T, H, T, T, T, H, T, T}, {T, H, T, T, 
+        T, T, H, H}, {T, H, T, T, T, T, H, T}, {T, H, T, T, T, T, T, H}, {T, 
+        H, T, T, T, T, T, T}, {T, T, H, H, H, H, H, T}, {T, T, H, H, H, H, T, 
+        H}, {T, T, H, H, H, H, T, T}, {T, T, H, H, H, T, H, H}, {T, T, H, H, 
+        H, T, H, T}, {T, T, H, H, H, T, T, H}, {T, T, H, H, H, T, T, T}, {T, 
+        T, H, H, T, H, H, H}, {T, T, H, H, T, H, H, T}, {T, T, H, H, T, H, T, 
+        H}, {T, T, H, H, T, H, T, T}, {T, T, H, H, T, T, H, H}, {T, T, H, H, 
+        T, T, H, T}, {T, T, H, H, T, T, T, H}, {T, T, H, H, T, T, T, T}, {T, 
+        T, H, T, H, H, H, H}, {T, T, H, T, H, H, H, T}, {T, T, H, T, H, H, T, 
+        H}, {T, T, H, T, H, H, T, T}, {T, T, H, T, H, T, H, H}, {T, T, H, T, 
+        H, T, H, T}, {T, T, H, T, H, T, T, H}, {T, T, H, T, H, T, T, T}, {T, 
+        T, H, T, T, H, H, H}, {T, T, H, T, T, H, H, T}, {T, T, H, T, T, H, T, 
+        H}, {T, T, H, T, T, H, T, T}, {T, T, H, T, T, T, H, H}, {T, T, H, T, 
+        T, T, H, T}, {T, T, H, T, T, T, T, H}, {T, T, H, T, T, T, T, T}, {T, 
+        T, T, H, H, H, H, T}, {T, T, T, H, H, H, T, H}, {T, T, T, H, H, H, T, 
+        T}, {T, T, T, H, H, T, H, H}, {T, T, T, H, H, T, H, T}, {T, T, T, H, 
+        H, T, T, H}, {T, T, T, H, H, T, T, T}, {T, T, T, H, T, H, H, H}, {T, 
+        T, T, H, T, H, H, T}, {T, T, T, H, T, H, T, H}, {T, T, T, H, T, H, T, 
+        T}, {T, T, T, H, T, T, H, H}, {T, T, T, H, T, T, H, T}, {T, T, T, H, 
+        T, T, T, H}, {T, T, T, H, T, T, T, T}, {T, T, T, T, H, H, H, T}, {T, 
+        T, T, T, H, H, T, H}, {T, T, T, T, H, H, T, T}, {T, T, T, T, H, T, H, 
+        H}, {T, T, T, T, H, T, H, T}, {T, T, T, T, H, T, T, H}, {T, T, T, T, 
+        H, T, T, T}, {T, T, T, T, T, H, H, T}, {T, T, T, T, T, H, T, H}, {T, 
+        T, T, T, T, H, T, T}, {T, T, T, T, T, T, H, T}}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  StyleBox["#14\tUse the command DeleteCases to exhibit all of the sequences \
+in MyList that do not contain the pattern HT.",
+    FontColor->RGBColor[0, 0, 1]],
+  "\n"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(DeleteCases[MyList, {___, H, T, ___}]\)], "Input"],
+
+Cell[BoxData[
+    \({{H, H, H, H, H, H, H, H}, {T, H, H, H, H, H, H, H}, {T, T, H, H, H, H, 
+        H, H}, {T, T, T, H, H, H, H, H}, {T, T, T, T, H, H, H, H}, {T, T, T, 
+        T, T, H, H, H}, {T, T, T, T, T, T, H, H}, {T, T, T, T, T, T, T, 
+        H}, {T, T, T, T, T, T, T, T}}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["#15\tUse the Count command in conjunction with a \
+Cases statement to pick out all of the sequences in MyList that have exactly \
+three heads and five tails. (Hint: Thinking of using /;)",
+  FontColor->RGBColor[0, 0, 1]]], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[MyList, x_ /; Count[x, H] \[Equal] 3]\)], "Input"],
+
+Cell[BoxData[
+    \({{H, H, H, T, T, T, T, T}, {H, H, T, H, T, T, T, T}, {H, H, T, T, H, T, 
+        T, T}, {H, H, T, T, T, H, T, T}, {H, H, T, T, T, T, H, T}, {H, H, T, 
+        T, T, T, T, H}, {H, T, H, H, T, T, T, T}, {H, T, H, T, H, T, T, 
+        T}, {H, T, H, T, T, H, T, T}, {H, T, H, T, T, T, H, T}, {H, T, H, T, 
+        T, T, T, H}, {H, T, T, H, H, T, T, T}, {H, T, T, H, T, H, T, T}, {H, 
+        T, T, H, T, T, H, T}, {H, T, T, H, T, T, T, H}, {H, T, T, T, H, H, T, 
+        T}, {H, T, T, T, H, T, H, T}, {H, T, T, T, H, T, T, H}, {H, T, T, T, 
+        T, H, H, T}, {H, T, T, T, T, H, T, H}, {H, T, T, T, T, T, H, H}, {T, 
+        H, H, H, T, T, T, T}, {T, H, H, T, H, T, T, T}, {T, H, H, T, T, H, T, 
+        T}, {T, H, H, T, T, T, H, T}, {T, H, H, T, T, T, T, H}, {T, H, T, H, 
+        H, T, T, T}, {T, H, T, H, T, H, T, T}, {T, H, T, H, T, T, H, T}, {T, 
+        H, T, H, T, T, T, H}, {T, H, T, T, H, H, T, T}, {T, H, T, T, H, T, H, 
+        T}, {T, H, T, T, H, T, T, H}, {T, H, T, T, T, H, H, T}, {T, H, T, T, 
+        T, H, T, H}, {T, H, T, T, T, T, H, H}, {T, T, H, H, H, T, T, T}, {T, 
+        T, H, H, T, H, T, T}, {T, T, H, H, T, T, H, T}, {T, T, H, H, T, T, T, 
+        H}, {T, T, H, T, H, H, T, T}, {T, T, H, T, H, T, H, T}, {T, T, H, T, 
+        H, T, T, H}, {T, T, H, T, T, H, H, T}, {T, T, H, T, T, H, T, H}, {T, 
+        T, H, T, T, T, H, H}, {T, T, T, H, H, H, T, T}, {T, T, T, H, H, T, H, 
+        T}, {T, T, T, H, H, T, T, H}, {T, T, T, H, T, H, H, T}, {T, T, T, H, 
+        T, H, T, H}, {T, T, T, H, T, T, H, H}, {T, T, T, T, H, H, H, T}, {T, 
+        T, T, T, H, H, T, H}, {T, T, T, T, H, T, H, H}, {T, T, T, T, T, H, H, 
+        H}}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["\n#16\tUse a Cases statement to pick out all of the \
+sequences in MyList that begin and end with the same letter.",
+  FontColor->RGBColor[0, 0, 1]]], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[MyList, {x_, ___, x_}]\)], "Input"],
+
+Cell[BoxData[
+    \({{H, H, H, H, H, H, H, H}, {H, H, H, H, H, H, T, H}, {H, H, H, H, H, T, 
+        H, H}, {H, H, H, H, H, T, T, H}, {H, H, H, H, T, H, H, H}, {H, H, H, 
+        H, T, H, T, H}, {H, H, H, H, T, T, H, H}, {H, H, H, H, T, T, T, 
+        H}, {H, H, H, T, H, H, H, H}, {H, H, H, T, H, H, T, H}, {H, H, H, T, 
+        H, T, H, H}, {H, H, H, T, H, T, T, H}, {H, H, H, T, T, H, H, H}, {H, 
+        H, H, T, T, H, T, H}, {H, H, H, T, T, T, H, H}, {H, H, H, T, T, T, T, 
+        H}, {H, H, T, H, H, H, H, H}, {H, H, T, H, H, H, T, H}, {H, H, T, H, 
+        H, T, H, H}, {H, H, T, H, H, T, T, H}, {H, H, T, H, T, H, H, H}, {H, 
+        H, T, H, T, H, T, H}, {H, H, T, H, T, T, H, H}, {H, H, T, H, T, T, T, 
+        H}, {H, H, T, T, H, H, H, H}, {H, H, T, T, H, H, T, H}, {H, H, T, T, 
+        H, T, H, H}, {H, H, T, T, H, T, T, H}, {H, H, T, T, T, H, H, H}, {H, 
+        H, T, T, T, H, T, H}, {H, H, T, T, T, T, H, H}, {H, H, T, T, T, T, T, 
+        H}, {H, T, H, H, H, H, H, H}, {H, T, H, H, H, H, T, H}, {H, T, H, H, 
+        H, T, H, H}, {H, T, H, H, H, T, T, H}, {H, T, H, H, T, H, H, H}, {H, 
+        T, H, H, T, H, T, H}, {H, T, H, H, T, T, H, H}, {H, T, H, H, T, T, T, 
+        H}, {H, T, H, T, H, H, H, H}, {H, T, H, T, H, H, T, H}, {H, T, H, T, 
+        H, T, H, H}, {H, T, H, T, H, T, T, H}, {H, T, H, T, T, H, H, H}, {H, 
+        T, H, T, T, H, T, H}, {H, T, H, T, T, T, H, H}, {H, T, H, T, T, T, T, 
+        H}, {H, T, T, H, H, H, H, H}, {H, T, T, H, H, H, T, H}, {H, T, T, H, 
+        H, T, H, H}, {H, T, T, H, H, T, T, H}, {H, T, T, H, T, H, H, H}, {H, 
+        T, T, H, T, H, T, H}, {H, T, T, H, T, T, H, H}, {H, T, T, H, T, T, T, 
+        H}, {H, T, T, T, H, H, H, H}, {H, T, T, T, H, H, T, H}, {H, T, T, T, 
+        H, T, H, H}, {H, T, T, T, H, T, T, H}, {H, T, T, T, T, H, H, H}, {H, 
+        T, T, T, T, H, T, H}, {H, T, T, T, T, T, H, H}, {H, T, T, T, T, T, T, 
+        H}, {T, H, H, H, H, H, H, T}, {T, H, H, H, H, H, T, T}, {T, H, H, H, 
+        H, T, H, T}, {T, H, H, H, H, T, T, T}, {T, H, H, H, T, H, H, T}, {T, 
+        H, H, H, T, H, T, T}, {T, H, H, H, T, T, H, T}, {T, H, H, H, T, T, T, 
+        T}, {T, H, H, T, H, H, H, T}, {T, H, H, T, H, H, T, T}, {T, H, H, T, 
+        H, T, H, T}, {T, H, H, T, H, T, T, T}, {T, H, H, T, T, H, H, T}, {T, 
+        H, H, T, T, H, T, T}, {T, H, H, T, T, T, H, T}, {T, H, H, T, T, T, T, 
+        T}, {T, H, T, H, H, H, H, T}, {T, H, T, H, H, H, T, T}, {T, H, T, H, 
+        H, T, H, T}, {T, H, T, H, H, T, T, T}, {T, H, T, H, T, H, H, T}, {T, 
+        H, T, H, T, H, T, T}, {T, H, T, H, T, T, H, T}, {T, H, T, H, T, T, T, 
+        T}, {T, H, T, T, H, H, H, T}, {T, H, T, T, H, H, T, T}, {T, H, T, T, 
+        H, T, H, T}, {T, H, T, T, H, T, T, T}, {T, H, T, T, T, H, H, T}, {T, 
+        H, T, T, T, H, T, T}, {T, H, T, T, T, T, H, T}, {T, H, T, T, T, T, T, 
+        T}, {T, T, H, H, H, H, H, T}, {T, T, H, H, H, H, T, T}, {T, T, H, H, 
+        H, T, H, T}, {T, T, H, H, H, T, T, T}, {T, T, H, H, T, H, H, T}, {T, 
+        T, H, H, T, H, T, T}, {T, T, H, H, T, T, H, T}, {T, T, H, H, T, T, T, 
+        T}, {T, T, H, T, H, H, H, T}, {T, T, H, T, H, H, T, T}, {T, T, H, T, 
+        H, T, H, T}, {T, T, H, T, H, T, T, T}, {T, T, H, T, T, H, H, T}, {T, 
+        T, H, T, T, H, T, T}, {T, T, H, T, T, T, H, T}, {T, T, H, T, T, T, T, 
+        T}, {T, T, T, H, H, H, H, T}, {T, T, T, H, H, H, T, T}, {T, T, T, H, 
+        H, T, H, T}, {T, T, T, H, H, T, T, T}, {T, T, T, H, T, H, H, T}, {T, 
+        T, T, H, T, H, T, T}, {T, T, T, H, T, T, H, T}, {T, T, T, H, T, T, T, 
+        T}, {T, T, T, T, H, H, H, T}, {T, T, T, T, H, H, T, T}, {T, T, T, T, 
+        H, T, H, T}, {T, T, T, T, H, T, T, T}, {T, T, T, T, T, H, H, T}, {T, 
+        T, T, T, T, H, T, T}, {T, T, T, T, T, T, H, T}, {T, T, T, T, T, T, T, 
+        T}}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["\n#17\tUse a Cases statement to pick out all of the \
+sequences in MyList that consist of a run of one or more heads (starting at \
+the beginning of the sequence), followed by a run of one or more tails, \
+followed by a run of one or more heads (at the end of the sequence.) Hint: \
+Look up the .. command.",
+  FontColor->RGBColor[0, 0, 1]]], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[MyList, {H .. , T .. , H .. }]\)], "Input"],
+
+Cell[BoxData[
+    \({{H, H, H, H, H, H, T, H}, {H, H, H, H, H, T, H, H}, {H, H, H, H, H, T, 
+        T, H}, {H, H, H, H, T, H, H, H}, {H, H, H, H, T, T, H, H}, {H, H, H, 
+        H, T, T, T, H}, {H, H, H, T, H, H, H, H}, {H, H, H, T, T, H, H, 
+        H}, {H, H, H, T, T, T, H, H}, {H, H, H, T, T, T, T, H}, {H, H, T, H, 
+        H, H, H, H}, {H, H, T, T, H, H, H, H}, {H, H, T, T, T, H, H, H}, {H, 
+        H, T, T, T, T, H, H}, {H, H, T, T, T, T, T, H}, {H, T, H, H, H, H, H, 
+        H}, {H, T, T, H, H, H, H, H}, {H, T, T, T, H, H, H, H}, {H, T, T, T, 
+        T, H, H, H}, {H, T, T, T, T, T, H, H}, {H, T, T, T, T, T, T, 
+        H}}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  StyleBox["\n#18\tUse FullForm to determine what ",
+    FontColor->RGBColor[0, 0, 1]],
+  StyleBox["Mathematica",
+    FontSlant->"Italic",
+    FontColor->RGBColor[0, 0, 1]],
+  StyleBox[" ",
+    FontColor->RGBColor[0, 0, 1]],
+  "command is representated by the \"/.\" in the expression ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^2 + 1 /. x \[Rule] 3\)]],
+  ". Note that you will have to use either HoldForm or Unevaluated in \
+conjunction with FullForm in order to do this."
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(FullForm[Unevaluated[x\^2 + 1 /. x \[Rule] 3]]\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      StyleBox[\(Unevaluated[ReplaceAll[Plus[Power[x, 2], 1], Rule[x, 3]]]\),
+        ShowSpecialCharacters->False,
+        ShowStringCharacters->True,
+        NumberMarks->True],
+      FullForm]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["The \"/.\" means \"ReplaceAll\". ", "Subsubsection"],
+
+Cell[TextData[{
+  "\n#19\tBesides the command (\"Head\") that represents \"/.\", what other \
+",
+  StyleBox["Mathematica",
+    FontSlant->"Italic"],
+  " commands make up the expression in #18? (Don't count HoldForm.)"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+  "Plus[ ] = +\nPower[ ] = ",
+  Cell[BoxData[
+      \(TraditionalForm\`x\^2\)]],
+  "\nRule[ ] Defines the rule for the function"
+}], "Subsubsection"],
+
+Cell[TextData[{
+  "\n#20\tEnter (and evaluate) the expression ",
+  Cell[BoxData[
+      \(TraditionalForm\`a + y /. a \[Rule] x\)]],
+  " without typing either a \"/\" nor a \".\" (You are allowed to type an \"\
+\[Rule]\", however.)"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[BoxData[
+    \(Clear[x]\)], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(ReplaceAll[a + y, a \[Rule] x]\)], "Input"],
+
+Cell[BoxData[
+    \(x + y\)], "Output"]
+}, Open  ]],
+
+Cell["\<\
+
+#21\tEvaluate Plus@@{a,b,3}\
+\>", "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Plus @@ {a, b, 3}\)], "Input"],
+
+Cell[BoxData[
+    \(3 + a + b\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "\n#22\tUse FullForm and HoldForm to determine the ",
+  StyleBox["Mathematica",
+    FontSlant->"Italic"],
+  " command that is represented by \"@@\"."
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(FullForm[HoldForm[Plus @@ {a, b, 3}]]\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      StyleBox[\(HoldForm[Apply[Plus, List[a, b, 3]]]\),
+        ShowSpecialCharacters->False,
+        ShowStringCharacters->True,
+        NumberMarks->True],
+      FullForm]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\"@@\" means \"apply\"", "Subsubsection"],
+
+Cell["\<\
+
+#23\tRepeat the calculation in #21 without typing a single \"@\".\
+\>", "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(3 + a + b\)], "Input"],
+
+Cell[BoxData[
+    \(3 + a + b\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Apply[Plus, {a, b, 3}]\)], "Input"],
+
+Cell[BoxData[
+    \(3 + a + b\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "\n#24\tUse @@ to turn a+b+3 into {a,b,3}. (Note: you will have to use \
+parentheses around ",
+  Cell[BoxData[
+      \(TraditionalForm\`a + b + 3\)]],
+  ", i.e (a+b+3).)"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(List @@ \((a + b + 3)\)\)], "Input"],
+
+Cell[BoxData[
+    \({3, a, b}\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "\n#25\tVerify that the expression ",
+  Cell[BoxData[
+      \(TraditionalForm\`2\/\@3\)]],
+  " does not match the pattern ",
+  Cell[BoxData[
+      \(TraditionalForm\`_\/\@_\)]],
+  " by evaluating ",
+  Cell[BoxData[
+      \(TraditionalForm\`MatchQ[2\/\@3, _\/\@_]\)]],
+  "."
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(TraditionalForm\`MatchQ[2\/\@3, _\/\@_]\)], "Input",
+  FormatType->StandardForm],
+
+Cell[BoxData[
+    \(False\)], "Output"]
+}, Open  ]],
+
+Cell[TextData[{
+  "\n#26\tExplain the result that you get when you evaluate ",
+  Cell[BoxData[
+      \(TraditionalForm\`Cases[{7, \@5, 2\/\@3}, _\/\@_]\)]],
+  ".\n\n"
+}], "Text",
+  FontSize->18,
+  FontColor->RGBColor[0, 0, 1]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Cases[{7, \@5, 2\/\@3}, _\/\@_]\)], "Input"],
+
+Cell[BoxData[
+    \({\@5}\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(FullForm[{7, \@5, 2\/\@3}]\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      StyleBox[\(List[7, Power[5, Rational[1, 2]], 
+          Times[2, Power[3, Rational[\(-1\), 2]]]]\),
+        ShowSpecialCharacters->False,
+        ShowStringCharacters->True,
+        NumberMarks->True],
+      FullForm]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(FullForm[_\/\@_]\)], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      StyleBox[\(Power[Blank[], Rational[1, 2]]\),
+        ShowSpecialCharacters->False,
+        ShowStringCharacters->True,
+        NumberMarks->True],
+      FullForm]], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[TextData[{
+  StyleBox["Mathematica",
+    FontSlant->"Italic"],
+  " sees ",
+  Cell[BoxData[
+      \(\@5\)]],
+  " as ",
+  Cell[BoxData[
+      \(TraditionalForm\`5\^\(1/2\)\)]],
+  ", whereas it sees ",
+  Cell[BoxData[
+      \(TraditionalForm\`2\/\@3\)]],
+  "as ",
+  Cell[BoxData[
+      \(TraditionalForm\`2*3\^\(\(-1\)/2\)\)]],
+  ". The issue is, it sees ",
+  Cell[BoxData[
+      \(FullForm[_\/\@_]\)]],
+  "as ",
+  Cell[BoxData[
+      \(TraditionalForm\`_\^\(1/2\)\)]],
+  ", therefore, only the former is actually in the correct form for the cases \
+statement to pick it out."
+}], "Subsubsection"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1280}, {0, 685}},
+WindowSize->{1072, 651},
+WindowMargins->{{51, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+FontSize->24
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 134, 5, 46, "Text"],
+
+Cell[CellGroupData[{
+Cell[1913, 60, 196, 3, 205, "Title"],
+Cell[2112, 65, 84, 2, 45, "Subtitle"],
+Cell[2199, 69, 299, 9, 86, "Text"],
+
+Cell[CellGroupData[{
+Cell[2523, 82, 86, 1, 42, "Input"],
+Cell[2612, 85, 62, 1, 42, "Output"]
+}, Open  ]],
+Cell[2689, 89, 306, 9, 86, "Text"],
+
+Cell[CellGroupData[{
+Cell[3020, 102, 183, 4, 42, "Input"],
+Cell[3206, 108, 62, 1, 42, "Output"]
+}, Open  ]],
+Cell[3283, 112, 563, 16, 110, "Text"],
+
+Cell[CellGroupData[{
+Cell[3871, 132, 104, 2, 42, "Input"],
+Cell[3978, 136, 47, 1, 41, "Output"]
+}, Open  ]],
+Cell[4040, 140, 16, 0, 45, "Text"],
+Cell[4059, 142, 687, 25, 110, "Text"],
+
+Cell[CellGroupData[{
+Cell[4771, 171, 104, 2, 42, "Input"],
+Cell[4878, 175, 53, 1, 41, "Output"]
+}, Open  ]],
+Cell[4946, 179, 319, 11, 86, "Text"],
+
+Cell[CellGroupData[{
+Cell[5290, 194, 82, 1, 42, "Input"],
+Cell[5375, 197, 53, 1, 41, "Output"]
+}, Open  ]],
+Cell[5443, 201, 55, 0, 45, "Text"],
+Cell[5501, 203, 340, 11, 86, "Text"],
+
+Cell[CellGroupData[{
+Cell[5866, 218, 106, 2, 42, "Input"],
+Cell[5975, 222, 54, 1, 41, "Output"]
+}, Open  ]],
+Cell[6044, 226, 310, 9, 86, "Text"],
+
+Cell[CellGroupData[{
+Cell[6379, 239, 118, 2, 41, "Input"],
+Cell[6500, 243, 49, 1, 41, "Output"]
+}, Open  ]],
+Cell[6564, 247, 333, 9, 110, "Text"],
+
+Cell[CellGroupData[{
+Cell[6922, 260, 154, 2, 75, "Input"],
+Cell[7079, 264, 89, 1, 41, "Output"]
+}, Open  ]],
+Cell[7183, 268, 459, 15, 110, "Text"],
+
+Cell[CellGroupData[{
+Cell[7667, 287, 135, 3, 75, "Input"],
+Cell[7805, 292, 58, 1, 41, "Output"]
+}, Open  ]],
+Cell[7878, 296, 373, 9, 110, "Text"],
+
+Cell[CellGroupData[{
+Cell[8276, 309, 72, 1, 41, "Input"],
+Cell[8351, 312, 63, 1, 41, "Output"]
+}, Open  ]],
+Cell[8429, 316, 69, 1, 41, "Input"],
+
+Cell[CellGroupData[{
+Cell[8523, 321, 43, 1, 41, "Input"],
+Cell[8569, 324, 63, 1, 41, "Output"]
+}, Open  ]],
+Cell[8647, 328, 540, 13, 134, "Text"],
+Cell[9190, 343, 83, 1, 41, "Input"],
+
+Cell[CellGroupData[{
+Cell[9298, 348, 69, 1, 41, "Input"],
+Cell[9370, 351, 7284, 93, 4223, "Output"]
+}, Open  ]],
+Cell[16669, 447, 225, 7, 86, "Text"],
+
+Cell[CellGroupData[{
+Cell[16919, 458, 59, 1, 41, "Input"],
+Cell[16981, 461, 1914, 25, 1095, "Output"]
+}, Open  ]],
+Cell[18910, 489, 246, 7, 86, "Text"],
+
+Cell[CellGroupData[{
+Cell[19181, 500, 64, 1, 41, "Input"],
+Cell[19248, 503, 7284, 93, 4223, "Output"]
+}, Open  ]],
+Cell[26547, 599, 244, 7, 62, "Text"],
+
+Cell[CellGroupData[{
+Cell[26816, 610, 70, 1, 41, "Input"],
+Cell[26889, 613, 295, 4, 177, "Output"]
+}, Open  ]],
+Cell[27199, 620, 302, 5, 62, "Text"],
+
+Cell[CellGroupData[{
+Cell[27526, 629, 76, 1, 41, "Input"],
+Cell[27605, 632, 1679, 22, 959, "Output"]
+}, Open  ]],
+Cell[29299, 657, 230, 4, 62, "Text"],
+
+Cell[CellGroupData[{
+Cell[29554, 665, 61, 1, 41, "Input"],
+Cell[29618, 668, 3794, 49, 2183, "Output"]
+}, Open  ]],
+Cell[33427, 720, 422, 7, 110, "Text"],
+
+Cell[CellGroupData[{
+Cell[33874, 731, 69, 1, 41, "Input"],
+Cell[33946, 734, 652, 9, 381, "Output"]
+}, Open  ]],
+Cell[34613, 746, 553, 15, 86, "Text"],
+
+Cell[CellGroupData[{
+Cell[35191, 765, 79, 1, 42, "Input"],
+Cell[35273, 768, 233, 6, 41, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[35543, 779, 58, 0, 40, "Subsubsection"],
+Cell[35604, 781, 277, 8, 86, "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[35918, 794, 165, 5, 96, "Subsubsection"],
+Cell[36086, 801, 291, 8, 86, "Text"],
+Cell[36380, 811, 41, 1, 41, "Input"],
+
+Cell[CellGroupData[{
+Cell[36446, 816, 63, 1, 41, "Input"],
+Cell[36512, 819, 39, 1, 41, "Output"]
+}, Open  ]],
+Cell[36566, 823, 100, 5, 62, "Text"],
+
+Cell[CellGroupData[{
+Cell[36691, 832, 50, 1, 41, "Input"],
+Cell[36744, 835, 43, 1, 41, "Output"]
+}, Open  ]],
+Cell[36802, 839, 227, 7, 62, "Text"],
+
+Cell[CellGroupData[{
+Cell[37054, 850, 70, 1, 41, "Input"],
+Cell[37127, 853, 212, 6, 41, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[37388, 865, 47, 0, 40, "Subsubsection"],
+Cell[37438, 867, 138, 5, 62, "Text"],
+
+Cell[CellGroupData[{
+Cell[37601, 876, 42, 1, 41, "Input"],
+Cell[37646, 879, 43, 1, 41, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[37726, 885, 55, 1, 41, "Input"],
+Cell[37784, 888, 43, 1, 41, "Output"]
+}, Open  ]],
+Cell[37842, 892, 248, 8, 62, "Text"],
+
+Cell[CellGroupData[{
+Cell[38115, 904, 56, 1, 41, "Input"],
+Cell[38174, 907, 43, 1, 41, "Output"]
+}, Open  ]],
+Cell[38232, 911, 351, 13, 72, "Text"],
+
+Cell[CellGroupData[{
+Cell[38608, 928, 100, 2, 80, "Input"],
+Cell[38711, 932, 39, 1, 41, "Output"]
+}, Open  ]],
+Cell[38765, 936, 226, 7, 120, "Text"],
+
+Cell[CellGroupData[{
+Cell[39016, 947, 64, 1, 78, "Input"],
+Cell[39083, 950, 39, 1, 46, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[39159, 956, 59, 1, 78, "Input"],
+Cell[39221, 959, 261, 7, 41, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[39519, 971, 49, 1, 67, "Input"],
+Cell[39571, 974, 206, 6, 41, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[39804, 984, 599, 23, 134, "Subsubsection"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
